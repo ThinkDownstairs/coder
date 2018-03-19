@@ -1,10 +1,13 @@
 import pygame
+
+import game_objects
 import consts
 import color
 from typing import Tuple, List
 
-class Snippet(object):
+class Snippet(game_objects.GameObject):
     def __init__(self, color: Tuple[int, int, int], mouse_pos_x: int) -> None:
+        super().__init__()
         self._rect = None # type: pygame.Rect
         self._textsurface = None # type: pygame.Surface
         self._myfont = None 
@@ -20,18 +23,4 @@ class Snippet(object):
 
     def update(self, delta) -> bool:
         self._y -= delta
-        return (bool(self._y < 0) or self._is_killed)
-
-
-class SnippetManager(object):
-    def __init__(self) -> None:
-        self._snips = [] #type: List[pygame.Rect]
-
-    def add_snippet(self, color, x):
-        self._snips.append(Snippet(color, x))
-
-    def render(self, screen, delta):
-        for snip in self._snips:
-            if snip.update(delta):
-                self._snips.remove(snip) # remove snips from list
-            snip.render(screen)
+        #return (bool(self._y < 0) or self._is_kill
