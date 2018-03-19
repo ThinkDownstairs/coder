@@ -6,8 +6,6 @@ from typing import List
 class Bugs(object):
     def __init__(self, color, x, y) -> None:
         self._rect = None # type: pygame.Rect
-        self._textsurface = None
-        self._myfont = None 
         self._x = x
         self._y = y
         self._col = color
