@@ -1,0 +1,6 @@
+dead.wav  -->  https://opengameart.org/content/retro-deaddestroyeddamaged-sound  # catched exception
+insectoralien.flac  -->  https://opengameart.org/content/insect-or-alien-scream  # killed bug
+teleport.wav  -->  https://opengameart.org/content/teleport-spell                # bug appears
+game_sounds.zip  -->  https://opengameart.org/content/techno-game-sounds      
+menu_choice.mp3  -->  https://opengameart.org/content/menu-choice                # exception appears
+ch_ay_na.ogg  -->  https://opengameart.org/content/ch-ay-na

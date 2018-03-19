@@ -1,0 +1,7 @@
+vim  -->  https://commons.wikimedia.org/wiki/File:Icon-Vim.svg
+vscode -->  https://commons.wikimedia.org/wiki/File:Visual_Studio_Code_1.18_icon.svg
+intellij  -->  https://commons.wikimedia.org/wiki/File:IntelliJ_IDEA_Logo.svg
+emacs  -->  https://commons.wikimedia.org/wiki/File:Emacs-logo.svg
+nano  -->  https://commons.wikimedia.org/wiki/File:Gnu-nano.svg
+atom  -->  https://commons.wikimedia.org/wiki/File:Icon_Atom.svg
+sprites  -->  https://opengameart.org/content/old-bugs
