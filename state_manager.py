@@ -11,7 +11,6 @@ class State(object):
   def set_state_manager(self, state_manager):
     self._state_manager = state_manager
     self._screen = state_manager.screen
-    
 
   def render(self) -> None:
     pass
@@ -78,3 +77,4 @@ class StateManager(object):
   current = property (lambda self: self._current)
   next = property (lambda self: self._next)
   screen = property (lambda self: self._screen)
+
