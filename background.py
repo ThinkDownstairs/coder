@@ -52,7 +52,7 @@ class Background(object):
         for c in self._chars:
             c.y += (c.v * delta)
 
-    def render(self, target: pygame.Surface, x: int, y: int) -> None:
+    def render(self, target: pygame.Surface) -> None:
         target.fill((30, 30, 30))
         for c in self._chars:
             target.blit(c.surface, (c.x, int(c.y)))
@@ -78,7 +78,7 @@ if __name__ == '__main__':
         # UPDATE
         b.update(delta)
         # RENDER
-        b.render(screen, 5, 5)
+        b.render(screen)
         #pygame.display.flip()
         pygame.display.update()
         # TICK
