@@ -46,12 +46,17 @@ class About(state_manager.State):
         pygame.display.flip()
 
     def input(self) -> None:
-        pass
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                self.state_manager.terminate_main_loop()
+            elif event.type == pygame.KEYDOWN:
+                self.state_manager.terminate_main_loop() ### should not terminate --> should go to menu
+
 
     def update(self, delta: int, fps: float) -> None:
         self._y -= (SPEED * delta)
         if self._y < -consts.SCREEN_H:
-            self.state_manager.terminate_main_loop()
+            self.state_manager.terminate_main_loop() ### should not terminate --> should go to menu
         self._background.update(delta)
 
     def leave(self) -> None:
@@ -60,8 +65,9 @@ class About(state_manager.State):
     def enter(self) -> None:
         if self._surface is None:
             self._render_surface()
-        if self._background is None:
-            self._background = background.Background(consts.SCREEN_W, consts.SCREEN_H)
+        # always create a new background,
+        # so that characters start falling from the top :-)
+        self._background = background.Background(consts.SCREEN_W, consts.SCREEN_H)
         self._y = consts.SCREEN_H + 1
 
 if __name__ == '__main__':
