@@ -1,0 +1,2 @@
+class GO(object):
+    pass
