@@ -32,6 +32,11 @@ class Game(state_manager.State):
     self._catcher.render(self._screen, self.mouse_pos, self._w, "catcher", color.RED2, self._fps)
     self._cursor.render(self._screen, self.mouse_pos, color.LIGHTSEAGREEN)
     self._go_manager.render(self._screen)
+
+    myfont = pygame.font.SysFont('Comic Sans MS', 30)
+    textsurface = myfont.render(str(self.mouse_pos) + " fps: " + str(int(self._fps)), False, color.BLUEVIOLET)  # self._clock.get_fps()
+    self.screen.blit(textsurface, (0, 0))
+
     pygame.display.update()
 
   def input(self) -> None:
