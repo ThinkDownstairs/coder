@@ -2,6 +2,9 @@ import os, sys
 import pygame
 import state_manager
 import game
+import menu
+import about
+import quit_
 import consts
 
 if not pygame.font: print ('Warning, fonts disabled')
@@ -54,8 +57,14 @@ def init():
 
 if __name__ == '__main__':
     sm = state_manager.StateManager(init())
-    g = game.Game()
-    sm.add_state(g)
-    sm.change_state(game.Game)
+    m = menu.Menu()
+    m.add(menu.MenuEntry('Start', game.Game))
+    m.add(menu.MenuEntry('About', about.About))
+    m.add(menu.MenuEntry('Quit', quit_.Quit))
+    sm.add_state(m)
+    sm.add_state(game.Game())
+    sm.add_state(about.About())
+    sm.add_state(quit_.Quit())
+    sm.change_state(menu.Menu)
     sm.main_loop()
-            
+

@@ -22,14 +22,14 @@ class Player(object):
             animations.Surfaces.NANO,
             animations.Surfaces.VIM,
             animations.Surfaces.VSCODE]))
-        self._mouse_pos = None
+        self._pos = (0, 0)
 
-    def input(self, mouse_pos: Tuple[int, int]) -> None:
-        self._mouse_pos = mouse_pos
+    def set_pos(self, pos: Tuple[int, int]) -> None:
+        self._pos = pos
 
     def render(self, target: pygame.Surface) -> None:
-        self._catcher.render(target, consts.SCREEN_W - self._catcher.surface.get_width(), self._mouse_pos[1])
-        self._progger.render(target, self._mouse_pos[0], consts.SCREEN_H - self._progger.surface.get_height())
+        self._catcher.render(target, consts.SCREEN_W - self._catcher.surface.get_width(), self._pos[1])
+        self._progger.render(target, self._pos[0], consts.SCREEN_H - self._progger.surface.get_height())
 
     def update(self, delta) -> None:
         self._catcher.update(delta)

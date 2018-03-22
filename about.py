@@ -2,6 +2,8 @@
 import state_manager
 import background
 
+import menu
+
 import pygame
 import consts
 
@@ -50,13 +52,13 @@ class About(state_manager.State):
             if event.type == pygame.QUIT:
                 self.state_manager.terminate_main_loop()
             elif event.type == pygame.KEYDOWN:
-                self.state_manager.terminate_main_loop() ### should not terminate --> should go to menu
+                self.state_manager.change_state(menu.Menu)
 
 
     def update(self, delta: int, fps: float) -> None:
         self._y -= (SPEED * delta)
         if self._y < -consts.SCREEN_H:
-            self.state_manager.terminate_main_loop() ### should not terminate --> should go to menu
+            self.state_manager.change_state(menu.Menu)
         self._background.update(delta)
 
     def leave(self) -> None:

@@ -9,6 +9,7 @@ import random
 import snippets
 import exceptions
 import go_manager
+import menu
 
 class Game(state_manager.State):
   def __init__(self) -> None:
@@ -42,14 +43,14 @@ class Game(state_manager.State):
       if event.type == pygame.QUIT:
         self.state_manager.terminate_main_loop()
       if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
-        self.state_manager.terminate_main_loop()
+        self.state_manager.change_state(menu.Menu)
       if event.type == pygame.MOUSEMOTION:
         self.mouse_pos = event.pos
+        self._player.set_pos(self.mouse_pos)
       if event.type == pygame.MOUSEBUTTONDOWN:
         l, m, r = pygame.mouse.get_pressed()
         if l == 1:
           self._go_manager.add_object(snippets.Snippet(color.POWDERBLUE, self.mouse_pos[0]))
-    self._player.input(self.mouse_pos)
 
   def update(self, delta: int, fps: float) -> None:
     self._delta = delta
@@ -67,4 +68,4 @@ class Game(state_manager.State):
 
   def enter(self) -> None:
     pass
-    
+

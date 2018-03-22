@@ -10,17 +10,17 @@ class Excepties(game_objects.GameObject):
     def __init__(self, color: Tuple[int, int, int]) -> None:
         super().__init__()
         self._rect = None # type: pygame.Rect
-        self._x = 600
-        self._y = random.randint(10, 600) 
+        self._x = 0
+        self._y = random.randint(10, 500)
         self._col = color
         self._delete_me = False # type: bool
 
 
-    def render(self, screen):    
+    def render(self, screen) -> None:
         self._rect = pygame.Rect(int(self._x), int(self._y), consts.EXCEPTIE_W, consts.EXCEPTIE_H)
         pygame.draw.rect(screen, self._col, self._rect, 0)
 
     def update(self, delta) -> bool:
-        self._x -= (delta * consts.EXCEPTIE_SPEED)
+        self._x += (delta * consts.EXCEPTIE_SPEED)
         #return (bool(self._x < 0) or self._is_catched)
 
