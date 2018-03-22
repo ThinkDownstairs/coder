@@ -62,7 +62,7 @@ class Game(state_manager.State):
       self._go_manager.add_object(bugs.Bugs(color.PURPLE2, random.randint(30, 600), random.randint(30, 600)))
       #for every bug comes an exception
       self._go_manager.add_object(exceptions.Excepties(color.BISQUE1))
-      self._next_bug_count = random.randint(1000, 2500)
+      self._next_bug_count = random.randint(1500, 3500)
     #self._bug_manager.inject_snippets(self._snip_manager._snips)
     #self._except_list = self._except_manager.get_exceptions_list()
     #self._catcher.update(self._except_list)

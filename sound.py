@@ -63,7 +63,7 @@ if __name__ == '__main__':
     s = Sound()
     s.play(Sounds.MUSIC, True)
     cnt = 0
-    while cnt < 100:
+    while cnt < 1000:
         cnt += 1
         time.sleep(.1)
         if random.random() < .05:

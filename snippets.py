@@ -18,9 +18,9 @@ class Snippet(game_objects.GameObject):
 
 
     def render(self, screen):    
-        self._rect = pygame.Rect(self._x, self._y, consts.SNIPPET_W, consts.SNIPPET_H)
         pygame.draw.rect(screen, self._col, self._rect, 0)
 
     def update(self, delta) -> bool:
         self._y -= delta
+        self._rect = pygame.Rect(self._x, self._y, consts.SNIPPET_W, consts.SNIPPET_H)
         #return (bool(self._y < 0) or self._is_kill
