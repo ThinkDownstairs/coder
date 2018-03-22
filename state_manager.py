@@ -71,9 +71,9 @@ class StateManager(object):
         self._current = self._next
         self._current.enter()
         self._next = None
-      self._current.render()
       self._current.input()
       self._current.update(self._delta, self._fps)
+      self._current.render()
   current = property (lambda self: self._current)
   next = property (lambda self: self._next)
   screen = property (lambda self: self._screen)

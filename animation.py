@@ -39,9 +39,14 @@ class Animation(object):
             return
         target.blit(self._current, (x, y))
 
+    def _get_surface(self):
+        if self._current is None:
+            self._current = self._sprite.subsurface((self._width * self._idx, 0, self._width, self._height))
+        return self._current
+
     width = property(lambda s: s._width)
     height = property(lambda s: s._height)
-    surface = property(lambda s: s._current)
+    surface = property(_get_surface)
     done = property(lambda s: s._done)
 
 
@@ -56,7 +61,7 @@ if __name__ == '__main__':
         fn = sys.argv[1]
         cnt = int(sys.argv[2])
     except:
-        fn = 'test.png'
+        fn = 'res/export/try-except.png'
         cnt = 6
     def load_image(filename: str) -> pygame.Surface:
         return pygame.image.load(filename).convert_alpha()

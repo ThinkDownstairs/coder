@@ -7,10 +7,10 @@ import pygame
 
 import animation
 
-DIRECTORY = '~/Bilder/coder/export'
+DIRECTORY = 'res/export'
 
 _surfaces = {}
-class SurfaceType(enum.Enum):
+class Surfaces(enum.Enum):
     VIM = auto()
     ATOM = auto()
     EMACS = auto()
@@ -69,10 +69,11 @@ class SurfaceType(enum.Enum):
         elif self == Surfaces.RECURSIONERROR: fn = 'recursionerror.png'
         elif self == Surfaces.RUNTIMEERROR: fn = 'runtimeerror.png'
         elif self == Surfaces.TYPEERROR: fn = 'typeerror.png'
-        else raise Exception('Unknown Surface Type: {}'.format(str(self)))
+        else: raise Exception('Unknown Surface Type: {}'.format(str(self)))
         return os.path.join(DIRECTORY, fn)
 
     def get_surface(self):
+        global _surfaces
         if self in _surfaces:
             return _surfaces[self]
         surface = pygame.image.load(self.get_filename()).convert_alpha()
@@ -81,20 +82,20 @@ class SurfaceType(enum.Enum):
 
 
 class Player(animation.Animation):
-    def __init__(self, player_type: SurfaceType):
+    def __init__(self, player_type: Surfaces):
         super().__init__(player_type.get_surface(), 1, 1, False)
 
 class Bug(animation.Animation):
-    def __init__(self, bug_type: SurfaceType):
+    def __init__(self, bug_type: Surfaces):
         super().__init__(bug_type.get_surface(), 3, 12, False)
 
 class TryExcept(animation.Animation):
     def __init__(self):
-        super().__init__(SurfaceType.TRY_EXCEPT.get_surface(), 1, 1, False)
+        super().__init__(Surfaces.TRY_EXCEPT.get_surface(), 1, 1, False)
 
 class CatchException(animation.Animation):
     def __init__(self, x: int, y: int):
-        super().__init__(SurfaceType.CATCH_EXCEPTION.get_surface(), 8, 20, True)
+        super().__init__(Surfaces.CATCH_EXCEPTION.get_surface(), 8, 20, True)
         self._x = x
         self._y = y
 
@@ -102,11 +103,13 @@ class CatchException(animation.Animation):
         super().render(target, self._x, self._y)
 
 class Snippet(animation.Animation):
-    def __init__(self, snippet_type: SurfaceType):
+    def __init__(self, snippet_type: Surfaces):
         super().__init__(snippet_type.get_surface(), 1, 1, False)
 
 class Error(animation.Animation):
-    def __init__(self, error_type: SurfaceType):
+    def __init__(self, error_type: Surfaces):
         super().__init__(error_type.get_surface(), 1, 1, False)
+
+
 
 

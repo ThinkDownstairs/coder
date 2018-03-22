@@ -19,7 +19,7 @@ class GoManager(object):
         for go in self._go_list:
             go.render(target)
 
-    def update(self, delta: int, catcher: player.Player):
+    def update(self, delta: int, player_: player.Player):
         for go in self._go_list:
             go.update(delta)
 
@@ -28,10 +28,12 @@ class GoManager(object):
         excepties = [go for go in self._go_list if isinstance(go, exceptions.Excepties)]
         bugs_ = [go for go in self._go_list if isinstance(go, bugs.Bugs)]
 
+        # TODO : lukas !!!! player auf animationnen umgebaut,.. hier collision detection machen!! auf sprite, nicht rect!!
         # collision detection
-        for ex in excepties:
-            if ex._rect.colliderect(catcher._rect):
-                ex._delete_me = True
+        #catcher = player_.catcher.
+        #for ex in excepties:
+        #    if ex._rect.colliderect(catcher._rect):
+        #        ex._delete_me = True
 
         for s in snips:
             for b in bugs_:

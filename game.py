@@ -14,8 +14,7 @@ class Game(state_manager.State):
   def __init__(self) -> None:
     super().__init__()
     pygame.font.init() # init fonts, do i have to do it here?
-    self._progger = player.Player() # The one who shoots code snippets
-    self._catcher = player.Player() # The one who tries to catch the Exceptions :D
+    self._player = player.Player() # The one who shoots code snippets
     self._cursor = cursor.Cursor() #my cursor :D
     self._go_manager = go_manager.GoManager()
     self.mouse_pos = (0, 0)
@@ -28,8 +27,7 @@ class Game(state_manager.State):
 
   def render(self) -> None:
     self._screen.fill(color.BLACK)
-    self._progger.render(self._screen, self.mouse_pos, self._h, "progger", color.BLUE, self._fps)
-    self._catcher.render(self._screen, self.mouse_pos, self._w, "catcher", color.RED2, self._fps)
+    self._player.render(self.screen)
     self._cursor.render(self._screen, self.mouse_pos, color.LIGHTSEAGREEN)
     self._go_manager.render(self._screen)
 
@@ -51,12 +49,13 @@ class Game(state_manager.State):
         l, m, r = pygame.mouse.get_pressed()
         if l == 1:
           self._go_manager.add_object(snippets.Snippet(color.POWDERBLUE, self.mouse_pos[0]))
+    self._player.input(self.mouse_pos)
 
   def update(self, delta: int, fps: float) -> None:
     self._delta = delta
     self._fps = fps
     self._next_bug_count -= delta
-    self._go_manager.update(delta, self._catcher)
+    self._go_manager.update(delta, self._player)
     if self._next_bug_count < 0:
       self._go_manager.add_object(bugs.Bugs(color.PURPLE2, random.randint(30, 600), random.randint(30, 600)))
       #for every bug comes an exception

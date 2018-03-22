@@ -1,29 +1,38 @@
+
+from typing import Tuple
+
 import pygame
 import color
 import consts
 
 
+import random
+
+import animations
+
+
 class Player(object):
     def __init__(self) -> None:
-        self._rect = None
-        self._textsurface = None
-        self._myfont = None
+        super().__init__()
+        self._catcher = animations.TryExcept()
+        self._progger = animations.Player(random.choice([ ## TODO : refactor to let the use decide which editor to use, not random
+            animations.Surfaces.ATOM,
+            animations.Surfaces.EMACS,
+            animations.Surfaces.INTELLIJ,
+            animations.Surfaces.NANO,
+            animations.Surfaces.VIM,
+            animations.Surfaces.VSCODE]))
+        self._mouse_pos = None
 
-    def render(self, screen, mouse_pos, height, axis, p_color, fps):
-        if axis == "progger": # blue shape
-            self._rect = pygame.Rect(mouse_pos[0], height - consts.CODER_H, consts.CODER_W, consts.CODER_H)
-        if axis == "catcher": # red shape
-            self._rect = pygame.Rect(0, mouse_pos[1], consts.CODER_W, consts.CODER_H)
-        # if width is zero rectangle can be filled
-        pygame.draw.rect(screen, p_color, self._rect, 0)
+    def input(self, mouse_pos: Tuple[int, int]) -> None:
+        self._mouse_pos = mouse_pos
 
-    def is_collide(self, ex: pygame.Rect):
-        pass
-        #if (self._rect is not None) and (ex is not None):
-            #return self._rect.colliderect(ex)
+    def render(self, target: pygame.Surface) -> None:
+        self._catcher.render(target, consts.SCREEN_W - self._catcher.surface.get_width(), self._mouse_pos[1])
+        self._progger.render(target, self._mouse_pos[0], consts.SCREEN_H - self._progger.surface.get_height())
 
-    def update(self, excepties_list):
-        pass
-        #for ex in excepties_list:
-        #    ex._is_catched = self.is_collide(ex._rect)
-        #    if ex._is_catched: print("catched")
+    def update(self, delta) -> None:
+        self._catcher.update(delta)
+        self._progger.update(delta)
+
+    catcher = property(lambda s: s._catcher)
