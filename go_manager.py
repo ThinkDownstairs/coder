@@ -18,11 +18,11 @@ class GoManager(object):
     def render(self, target: pygame.Surface):
         for go in self._go_list:
             go.render(target)
- 
+
     def update(self, delta: int, catcher: player.Player):
         for go in self._go_list:
             go.update(delta)
-        
+
         #get all lists of different gameobjects
         snips = [go for go in self._go_list if isinstance(go, snippets.Snippet)]
         excepties = [go for go in self._go_list if isinstance(go, exceptions.Excepties)]
@@ -32,7 +32,7 @@ class GoManager(object):
         for ex in excepties:
             if ex._rect.colliderect(catcher._rect):
                 ex._delete_me = True
-        
+
         for s in snips:
             for b in bugs_:
                 if s._rect.colliderect(b._rect):
@@ -45,4 +45,4 @@ class GoManager(object):
 
 if __name__ == '__main__':
     print([i for i in range(0, 10) ])
-    
+

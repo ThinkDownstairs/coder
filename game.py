@@ -1,5 +1,5 @@
 import state_manager
-import pygame 
+import pygame
 import consts
 import color
 import player
@@ -17,10 +17,7 @@ class Game(state_manager.State):
     self._progger = player.Player() # The one who shoots code snippets
     self._catcher = player.Player() # The one who tries to catch the Exceptions :D
     self._cursor = cursor.Cursor() #my cursor :D
-    #self._bug_manager = bugs.BugManager()
-    #self._snip_manager = snippets.SnippetManager()
-    #self._except_manager = exceptions.ExceptiesManager()
-    self._go_manager = go_manager.GoManager() 
+    self._go_manager = go_manager.GoManager()
     self.mouse_pos = (0, 0)
     self._w, self._h = pygame.display.get_surface().get_size()
     self._next_bug_count = 0 # type: int
@@ -35,9 +32,6 @@ class Game(state_manager.State):
     self._catcher.render(self._screen, self.mouse_pos, self._w, "catcher", color.RED2, self._fps)
     self._cursor.render(self._screen, self.mouse_pos, color.LIGHTSEAGREEN)
     self._go_manager.render(self._screen)
-    #self._bug_manager.render(self._screen) #render bugs
-    #self._except_manager.render(self._screen, self._delta)
-    #self._snip_manager.render(self._screen, self._delta) #render snippets
     pygame.display.update()
 
   def input(self) -> None:
@@ -63,11 +57,6 @@ class Game(state_manager.State):
       #for every bug comes an exception
       self._go_manager.add_object(exceptions.Excepties(color.BISQUE1))
       self._next_bug_count = random.randint(1500, 3500)
-    #self._bug_manager.inject_snippets(self._snip_manager._snips)
-    #self._except_list = self._except_manager.get_exceptions_list()
-    #self._catcher.update(self._except_list)
-
-    # pyame.time.Clock.tick  ---This method should be called once per frame. It will compute how many milliseconds have passed since the previous call.
 
   def leave(self) -> None:
     pass

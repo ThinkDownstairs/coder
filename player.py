@@ -7,7 +7,7 @@ class Player(object):
     def __init__(self) -> None:
         self._rect = None
         self._textsurface = None
-        self._myfont = None 
+        self._myfont = None
 
     def render(self, screen, mouse_pos, height, axis, p_color, fps):
         if axis == "progger": # blue shape
@@ -19,7 +19,7 @@ class Player(object):
         screen.blit(self._textsurface, (0, 0))
         # if width is zero rectangle can be filled
         pygame.draw.rect(screen, p_color, self._rect, 0)
-        
+
     def is_collide(self, ex: pygame.Rect):
         pass
         #if (self._rect is not None) and (ex is not None):
