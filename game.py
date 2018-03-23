@@ -60,7 +60,7 @@ class Game(state_manager.State):
     self._delta = delta
     self._fps = fps
     self._next_bug_count -= delta
-    self._go_manager.update(delta, self._player)
+    self._go_manager.update(delta, self._player, self._stati)
     if self._next_bug_count < 0:
       self._go_manager.add_object(bugs.Bugs(random.randint(30, 600), random.randint(30, 600)))
       #for every bug comes an exception

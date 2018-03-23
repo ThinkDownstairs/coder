@@ -87,7 +87,7 @@ class Player(animation.Animation):
 
 class Bug(animation.Animation):
     def __init__(self, bug_type: Surfaces):
-        super().__init__(bug_type.get_surface(), 3, 12, False)
+        super().__init__(bug_type.get_surface(), 3, 8, False)
 
 class TryExcept(animation.Animation):
     def __init__(self):
@@ -95,7 +95,7 @@ class TryExcept(animation.Animation):
 
 class CatchException(animation.Animation):
     def __init__(self):
-        super().__init__(Surfaces.CATCH_EXCEPTION.get_surface(), 8, 20, True)
+        super().__init__(Surfaces.CATCH_EXCEPTION.get_surface(), 8, 8, True)
 
 class Snippet(animation.Animation):
     def __init__(self, snippet_type: Surfaces):

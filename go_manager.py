@@ -6,6 +6,7 @@ import exceptions
 import bugs
 import collision
 
+import status
 import game_objects
 from typing import List
 
@@ -24,7 +25,7 @@ class GoManager(object):
         for go in self._go_list:
             go.render(target)
 
-    def update(self, delta: int, player_: player.Player):
+    def update(self, delta: int, player_: player.Player, status_: status.Stati):
         for go in self._go_list:
             go.update(delta)
 
@@ -43,6 +44,7 @@ class GoManager(object):
                 if collision.collide(s_surface, s_x, s_y, b.surface, *b.pos):
                     s.delete()
                     b.delete()
+                    status_.inc_point()
 
         # takes only those go to the list which are go._delete_me == true
         self._go_list = [go for go in self._go_list if not go._delete_me]
