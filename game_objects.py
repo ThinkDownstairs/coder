@@ -23,3 +23,4 @@ class GameObject(object):
     surface = property(lambda s: s._get_surface())
     pos = property(lambda s: (s._x, s._y))
     delete_me = property(lambda s: s._delete_me)
+

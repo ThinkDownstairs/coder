@@ -8,8 +8,8 @@ import bugs
 import random
 import snippets
 import exceptions
-import go_manager
 import menu
+import glob
 
 
 class Game(state_manager.State):
@@ -18,7 +18,7 @@ class Game(state_manager.State):
     pygame.font.init() # init fonts, do i have to do it here?
     self._player = player.Player() # The one who shoots code snippets
     self._cursor = cursor.Cursor() #my cursor :D
-    self._go_manager = go_manager.GoManager()
+    self._go_manager = glob.get_manager()
     self.mouse_pos = (0, 0)
     self._w, self._h = pygame.display.get_surface().get_size()
     self._next_bug_count = 0 # type: int

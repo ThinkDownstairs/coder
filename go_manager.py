@@ -10,6 +10,7 @@ from typing import List
 
 class GoManager(object):
     def __init__(self):
+        super().__init__()
         self._go_list = [] # type: List[GameObjects]
 
     def add_object(self, game_object: game_objects.GameObject):
@@ -44,6 +45,7 @@ class GoManager(object):
 
         # takes only those go to the list which are go._delete_me == true
         self._go_list = [go for go in self._go_list if not go._delete_me]
+
 
 
 if __name__ == '__main__':

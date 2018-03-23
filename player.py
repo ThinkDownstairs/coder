@@ -12,6 +12,7 @@ import collision
 import random
 
 import animations
+import no_game_object
 
 
 class Player(object):
@@ -45,7 +46,11 @@ class Player(object):
 
     def try_catch(self, exceptie: exceptions.Excepties) -> None:
         cw, ch = self._catcher.surface.get_size()
-        if collision.collide(self._catcher.surface, consts.SCREEN_W - cw, self._pos[1] - (ch // 2), exceptie.surface, *exceptie.pos):
+        cx, cy = consts.SCREEN_W - cw, self._pos[1] - (ch // 2)
+        if collision.collide(self._catcher.surface, cx, cy, exceptie.surface, *exceptie.pos):
             exceptie.delete()
+            no_game_object.NoGameObject(animations.CatchException(), cx, cy)
+
 
     catcher = property(lambda s: s._catcher)
+

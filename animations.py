@@ -94,13 +94,8 @@ class TryExcept(animation.Animation):
         super().__init__(Surfaces.TRY_EXCEPT.get_surface(), 1, 1, False)
 
 class CatchException(animation.Animation):
-    def __init__(self, x: int, y: int):
+    def __init__(self):
         super().__init__(Surfaces.CATCH_EXCEPTION.get_surface(), 8, 20, True)
-        self._x = x
-        self._y = y
-
-    def render(self, target, *args):
-        super().render(target, self._x, self._y)
 
 class Snippet(animation.Animation):
     def __init__(self, snippet_type: Surfaces):
