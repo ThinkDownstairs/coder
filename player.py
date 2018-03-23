@@ -4,6 +4,7 @@ from typing import Tuple
 import pygame
 import color
 import consts
+import snippets
 
 
 import random
@@ -22,7 +23,7 @@ class Player(object):
             animations.Surfaces.NANO,
             animations.Surfaces.VIM,
             animations.Surfaces.VSCODE]))
-        self._pos = (0, 0)
+        self._pos = (consts.SCREEN_W // 2, consts.SCREEN_H // 2)
 
     def set_pos(self, pos: Tuple[int, int]) -> None:
         self._pos = pos
@@ -34,5 +35,8 @@ class Player(object):
     def update(self, delta) -> None:
         self._catcher.update(delta)
         self._progger.update(delta)
+
+    def fire(self) -> snippets.Snippet:
+        return snippets.Snippet(color.POWDERBLUE, self._pos[0])
 
     catcher = property(lambda s: s._catcher)

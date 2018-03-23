@@ -11,6 +11,7 @@ import exceptions
 import go_manager
 import menu
 
+
 class Game(state_manager.State):
   def __init__(self) -> None:
     super().__init__()
@@ -50,7 +51,7 @@ class Game(state_manager.State):
       if event.type == pygame.MOUSEBUTTONDOWN:
         l, m, r = pygame.mouse.get_pressed()
         if l == 1:
-          self._go_manager.add_object(snippets.Snippet(color.POWDERBLUE, self.mouse_pos[0]))
+            self._go_manager.add_object(self._player.fire())
 
   def update(self, delta: int, fps: float) -> None:
     self._delta = delta
