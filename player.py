@@ -5,6 +5,8 @@ import pygame
 import color
 import consts
 import snippets
+import exceptions
+import collision
 
 
 import random
@@ -40,5 +42,10 @@ class Player(object):
 
     def fire(self) -> snippets.Snippet:
         return snippets.Snippet(color.POWDERBLUE, self._pos[0])
+
+    def try_catch(self, exceptie: exceptions.Excepties) -> None:
+        cw, ch = self._catcher.surface.get_size()
+        if collision.collide(self._catcher.surface, consts.SCREEN_W - cw, self._pos[1] - (ch // 2), exceptie.surface, *exceptie.pos):
+            exceptie.delete()
 
     catcher = property(lambda s: s._catcher)

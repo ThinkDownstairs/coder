@@ -10,14 +10,14 @@ class Snippet(game_objects.GameObject):
         super().__init__()
         self._rect = None # type: pygame.Rect
         self._textsurface = None # type: pygame.Surface
-        self._myfont = None 
+        self._myfont = None
         self._x = mouse_pos_x
-        self._y = 600
+        self._y = consts.SCREEN_H - 50
         self._col = color
         self._is_killed = False # type: bool
 
 
-    def render(self, screen):    
+    def render(self, screen):
         pygame.draw.rect(screen, self._col, self._rect, 0)
 
     def update(self, delta) -> bool:

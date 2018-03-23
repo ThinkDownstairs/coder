@@ -31,9 +31,10 @@ class GoManager(object):
         # TODO : lukas !!!! player auf animationnen umgebaut,.. hier collision detection machen!! auf sprite, nicht rect!!
         # collision detection
         #catcher = player_.catcher.
-        #for ex in excepties:
-        #    if ex._rect.colliderect(catcher._rect):
-        #        ex._delete_me = True
+        for ex in excepties:
+            player_.try_catch(ex)
+            #if ex._rect.colliderect(catcher._rect):
+            #    ex._delete_me = True
 
         for s in snips:
             for b in bugs_:
