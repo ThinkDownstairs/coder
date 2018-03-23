@@ -17,3 +17,10 @@ EXCEPTIE_H = 30
 EXCEPTIE_W = 30
 EXCEPTIE_SPEED = .1
 
+# Points / Level
+L1 = 15
+L2 = 100
+L3 = 750
+L4 = 3500
+L5 = 10000
+
