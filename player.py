@@ -29,8 +29,10 @@ class Player(object):
         self._pos = pos
 
     def render(self, target: pygame.Surface) -> None:
-        self._catcher.render(target, consts.SCREEN_W - self._catcher.surface.get_width(), self._pos[1])
-        self._progger.render(target, self._pos[0], consts.SCREEN_H - self._progger.surface.get_height())
+        cw, ch = self._catcher.surface.get_size()
+        pw, ph = self._progger.surface.get_size()
+        self._catcher.render(target, consts.SCREEN_W - cw , self._pos[1] - (ch // 2))
+        self._progger.render(target, self._pos[0] - (pw // 2), consts.SCREEN_H - ph)
 
     def update(self, delta) -> None:
         self._catcher.update(delta)
