@@ -10,6 +10,7 @@ import snippets
 import exceptions
 import go_manager
 import menu
+import status
 
 
 class Game(state_manager.State):
@@ -19,6 +20,7 @@ class Game(state_manager.State):
     self._player = player.Player() # The one who shoots code snippets
     self._cursor = cursor.Cursor() #my cursor :D
     self._go_manager = go_manager.GoManager()
+    self._stati = status.Stati()
     self.mouse_pos = (0, 0)
     self._w, self._h = pygame.display.get_surface().get_size()
     self._next_bug_count = 0 # type: int
@@ -32,8 +34,9 @@ class Game(state_manager.State):
     self._player.render(self.screen)
     self._cursor.render(self._screen, self.mouse_pos, color.LIGHTSEAGREEN)
     self._go_manager.render(self._screen)
+    self._stati.render(self._screen)
 
-    myfont = pygame.font.SysFont('Comic Sans MS', 30)
+    myfont = pygame.font.SysFont('Comic Sans MS', 16)
     textsurface = myfont.render(str(self.mouse_pos) + " fps: " + str(int(self._fps)), False, color.BLUEVIOLET)  # self._clock.get_fps()
     self.screen.blit(textsurface, (0, 0))
 
