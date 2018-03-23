@@ -4,6 +4,7 @@ import player
 import snippets
 import exceptions
 import bugs
+import collision
 
 import game_objects
 from typing import List
@@ -32,19 +33,16 @@ class GoManager(object):
         excepties = [go for go in self._go_list if isinstance(go, exceptions.Excepties)]
         bugs_ = [go for go in self._go_list if isinstance(go, bugs.Bugs)]
 
-        # TODO : lukas !!!! player auf animationnen umgebaut,.. hier collision detection machen!! auf sprite, nicht rect!!
-        # collision detection
-        #catcher = player_.catcher.
         for ex in excepties:
             player_.try_catch(ex)
-            #if ex._rect.colliderect(catcher._rect):
-            #    ex._delete_me = True
 
         for s in snips:
+            s_surface = s.surface
+            s_x, s_y = s.pos
             for b in bugs_:
-                if s._rect.colliderect(b._rect):
-                    s._delete_me = True
-                    b._delete_me = True
+                if collision.collide(s_surface, s_x, s_y, b.surface, *b.pos):
+                    s.delete()
+                    b.delete()
 
         # takes only those go to the list which are go._delete_me == true
         self._go_list = [go for go in self._go_list if not go._delete_me]

@@ -15,6 +15,7 @@ class Snippet(game_objects.GameObject):
         self._y = consts.SCREEN_H - 50
         self._col = color
         self._is_killed = False # type: bool
+        self._dummy = pygame.Surface((5, 30))
 
 
     def render(self, screen):
@@ -24,3 +25,6 @@ class Snippet(game_objects.GameObject):
         self._y -= delta
         self._rect = pygame.Rect(self._x, self._y, consts.SNIPPET_W, consts.SNIPPET_H)
         #return (bool(self._y < 0) or self._is_kill
+
+    def _get_surface(self) -> pygame.Surface:
+        return self._dummy
