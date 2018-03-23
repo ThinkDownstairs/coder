@@ -1,0 +1,2556 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   sodipodi:docname="logo.svg"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)">
+  <defs
+     id="defs2">
+    <filter
+       inkscape:label="Light Contour"
+       inkscape:menu="Image Paint and Draw"
+       inkscape:menu-tooltip="Uses vertical specular light to draw lines"
+       style="color-interpolation-filters:sRGB;"
+       id="filter8237">
+      <feGaussianBlur
+         in="SourceGraphic"
+         stdDeviation="1.5"
+         result="result3"
+         id="feGaussianBlur8211" />
+      <feComponentTransfer
+         result="result1"
+         in="result3"
+         id="feComponentTransfer8219">
+        <feFuncR
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncR8213" />
+        <feFuncG
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncG8215" />
+        <feFuncB
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncB8217" />
+      </feComponentTransfer>
+      <feGaussianBlur
+         result="result5"
+         stdDeviation="0.01"
+         id="feGaussianBlur8221" />
+      <feBlend
+         in2="result5"
+         result="result6"
+         mode="lighten"
+         in="result5"
+         id="feBlend8223" />
+      <feColorMatrix
+         in="result6"
+         type="luminanceToAlpha"
+         result="result2"
+         id="feColorMatrix8225" />
+      <feSpecularLighting
+         surfaceScale="5"
+         result="result9"
+         specularExponent="20"
+         in="result2"
+         specularConstant="1"
+         id="feSpecularLighting8229">
+        <feDistantLight
+           azimuth="180"
+           elevation="90"
+           id="feDistantLight8227" />
+      </feSpecularLighting>
+      <feComposite
+         in2="result6"
+         operator="arithmetic"
+         in="result9"
+         k1="0.4"
+         k3="0.7"
+         result="result3"
+         id="feComposite8231" />
+      <feBlend
+         in2="result1"
+         in="result3"
+         mode="normal"
+         result="result8"
+         id="feBlend8233" />
+      <feComposite
+         in2="SourceGraphic"
+         in="result8"
+         operator="in"
+         result="result7"
+         id="feComposite8235" />
+    </filter>
+    <filter
+       inkscape:label="Light Contour"
+       inkscape:menu="Image Paint and Draw"
+       inkscape:menu-tooltip="Uses vertical specular light to draw lines"
+       style="color-interpolation-filters:sRGB;"
+       id="filter8265">
+      <feGaussianBlur
+         in="SourceGraphic"
+         stdDeviation="1.5"
+         result="result3"
+         id="feGaussianBlur8239" />
+      <feComponentTransfer
+         result="result1"
+         in="result3"
+         id="feComponentTransfer8247">
+        <feFuncR
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncR8241" />
+        <feFuncG
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncG8243" />
+        <feFuncB
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncB8245" />
+      </feComponentTransfer>
+      <feGaussianBlur
+         result="result5"
+         stdDeviation="0.01"
+         id="feGaussianBlur8249" />
+      <feBlend
+         in2="result5"
+         result="result6"
+         mode="lighten"
+         in="result5"
+         id="feBlend8251" />
+      <feColorMatrix
+         in="result6"
+         type="luminanceToAlpha"
+         result="result2"
+         id="feColorMatrix8253" />
+      <feSpecularLighting
+         surfaceScale="5"
+         result="result9"
+         specularExponent="20"
+         in="result2"
+         specularConstant="1"
+         id="feSpecularLighting8257">
+        <feDistantLight
+           azimuth="180"
+           elevation="90"
+           id="feDistantLight8255" />
+      </feSpecularLighting>
+      <feComposite
+         in2="result6"
+         operator="arithmetic"
+         in="result9"
+         k1="0.4"
+         k3="0.7"
+         result="result3"
+         id="feComposite8259" />
+      <feBlend
+         in2="result1"
+         in="result3"
+         mode="normal"
+         result="result8"
+         id="feBlend8261" />
+      <feComposite
+         in2="SourceGraphic"
+         in="result8"
+         operator="in"
+         result="result7"
+         id="feComposite8263" />
+    </filter>
+    <filter
+       inkscape:label="Light Contour"
+       inkscape:menu="Image Paint and Draw"
+       inkscape:menu-tooltip="Uses vertical specular light to draw lines"
+       style="color-interpolation-filters:sRGB;"
+       id="filter8293">
+      <feGaussianBlur
+         in="SourceGraphic"
+         stdDeviation="1.5"
+         result="result3"
+         id="feGaussianBlur8267" />
+      <feComponentTransfer
+         result="result1"
+         in="result3"
+         id="feComponentTransfer8275">
+        <feFuncR
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncR8269" />
+        <feFuncG
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncG8271" />
+        <feFuncB
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncB8273" />
+      </feComponentTransfer>
+      <feGaussianBlur
+         result="result5"
+         stdDeviation="0.01"
+         id="feGaussianBlur8277" />
+      <feBlend
+         in2="result5"
+         result="result6"
+         mode="lighten"
+         in="result5"
+         id="feBlend8279" />
+      <feColorMatrix
+         in="result6"
+         type="luminanceToAlpha"
+         result="result2"
+         id="feColorMatrix8281" />
+      <feSpecularLighting
+         surfaceScale="5"
+         result="result9"
+         specularExponent="20"
+         in="result2"
+         specularConstant="1"
+         id="feSpecularLighting8285">
+        <feDistantLight
+           azimuth="180"
+           elevation="90"
+           id="feDistantLight8283" />
+      </feSpecularLighting>
+      <feComposite
+         in2="result6"
+         operator="arithmetic"
+         in="result9"
+         k1="0.4"
+         k3="0.7"
+         result="result3"
+         id="feComposite8287" />
+      <feBlend
+         in2="result1"
+         in="result3"
+         mode="normal"
+         result="result8"
+         id="feBlend8289" />
+      <feComposite
+         in2="SourceGraphic"
+         in="result8"
+         operator="in"
+         result="result7"
+         id="feComposite8291" />
+    </filter>
+    <filter
+       inkscape:label="Light Contour"
+       inkscape:menu="Image Paint and Draw"
+       inkscape:menu-tooltip="Uses vertical specular light to draw lines"
+       style="color-interpolation-filters:sRGB;"
+       id="filter8321">
+      <feGaussianBlur
+         in="SourceGraphic"
+         stdDeviation="1.5"
+         result="result3"
+         id="feGaussianBlur8295" />
+      <feComponentTransfer
+         result="result1"
+         in="result3"
+         id="feComponentTransfer8303">
+        <feFuncR
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncR8297" />
+        <feFuncG
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncG8299" />
+        <feFuncB
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncB8301" />
+      </feComponentTransfer>
+      <feGaussianBlur
+         result="result5"
+         stdDeviation="0.01"
+         id="feGaussianBlur8305" />
+      <feBlend
+         in2="result5"
+         result="result6"
+         mode="lighten"
+         in="result5"
+         id="feBlend8307" />
+      <feColorMatrix
+         in="result6"
+         type="luminanceToAlpha"
+         result="result2"
+         id="feColorMatrix8309" />
+      <feSpecularLighting
+         surfaceScale="5"
+         result="result9"
+         specularExponent="20"
+         in="result2"
+         specularConstant="1"
+         id="feSpecularLighting8313">
+        <feDistantLight
+           azimuth="180"
+           elevation="90"
+           id="feDistantLight8311" />
+      </feSpecularLighting>
+      <feComposite
+         in2="result6"
+         operator="arithmetic"
+         in="result9"
+         k1="0.4"
+         k3="0.7"
+         result="result3"
+         id="feComposite8315" />
+      <feBlend
+         in2="result1"
+         in="result3"
+         mode="normal"
+         result="result8"
+         id="feBlend8317" />
+      <feComposite
+         in2="SourceGraphic"
+         in="result8"
+         operator="in"
+         result="result7"
+         id="feComposite8319" />
+    </filter>
+    <filter
+       inkscape:label="Light Contour"
+       inkscape:menu="Image Paint and Draw"
+       inkscape:menu-tooltip="Uses vertical specular light to draw lines"
+       style="color-interpolation-filters:sRGB;"
+       id="filter8349">
+      <feGaussianBlur
+         in="SourceGraphic"
+         stdDeviation="1.5"
+         result="result3"
+         id="feGaussianBlur8323" />
+      <feComponentTransfer
+         result="result1"
+         in="result3"
+         id="feComponentTransfer8331">
+        <feFuncR
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncR8325" />
+        <feFuncG
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncG8327" />
+        <feFuncB
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncB8329" />
+      </feComponentTransfer>
+      <feGaussianBlur
+         result="result5"
+         stdDeviation="0.01"
+         id="feGaussianBlur8333" />
+      <feBlend
+         in2="result5"
+         result="result6"
+         mode="lighten"
+         in="result5"
+         id="feBlend8335" />
+      <feColorMatrix
+         in="result6"
+         type="luminanceToAlpha"
+         result="result2"
+         id="feColorMatrix8337" />
+      <feSpecularLighting
+         surfaceScale="5"
+         result="result9"
+         specularExponent="20"
+         in="result2"
+         specularConstant="1"
+         id="feSpecularLighting8341">
+        <feDistantLight
+           azimuth="180"
+           elevation="90"
+           id="feDistantLight8339" />
+      </feSpecularLighting>
+      <feComposite
+         in2="result6"
+         operator="arithmetic"
+         in="result9"
+         k1="0.4"
+         k3="0.7"
+         result="result3"
+         id="feComposite8343" />
+      <feBlend
+         in2="result1"
+         in="result3"
+         mode="normal"
+         result="result8"
+         id="feBlend8345" />
+      <feComposite
+         in2="SourceGraphic"
+         in="result8"
+         operator="in"
+         result="result7"
+         id="feComposite8347" />
+    </filter>
+    <filter
+       inkscape:label="Light Contour"
+       inkscape:menu="Image Paint and Draw"
+       inkscape:menu-tooltip="Uses vertical specular light to draw lines"
+       style="color-interpolation-filters:sRGB;"
+       id="filter8377">
+      <feGaussianBlur
+         in="SourceGraphic"
+         stdDeviation="1.5"
+         result="result3"
+         id="feGaussianBlur8351" />
+      <feComponentTransfer
+         result="result1"
+         in="result3"
+         id="feComponentTransfer8359">
+        <feFuncR
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncR8353" />
+        <feFuncG
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncG8355" />
+        <feFuncB
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncB8357" />
+      </feComponentTransfer>
+      <feGaussianBlur
+         result="result5"
+         stdDeviation="0.01"
+         id="feGaussianBlur8361" />
+      <feBlend
+         in2="result5"
+         result="result6"
+         mode="lighten"
+         in="result5"
+         id="feBlend8363" />
+      <feColorMatrix
+         in="result6"
+         type="luminanceToAlpha"
+         result="result2"
+         id="feColorMatrix8365" />
+      <feSpecularLighting
+         surfaceScale="5"
+         result="result9"
+         specularExponent="20"
+         in="result2"
+         specularConstant="1"
+         id="feSpecularLighting8369">
+        <feDistantLight
+           azimuth="180"
+           elevation="90"
+           id="feDistantLight8367" />
+      </feSpecularLighting>
+      <feComposite
+         in2="result6"
+         operator="arithmetic"
+         in="result9"
+         k1="0.4"
+         k3="0.7"
+         result="result3"
+         id="feComposite8371" />
+      <feBlend
+         in2="result1"
+         in="result3"
+         mode="normal"
+         result="result8"
+         id="feBlend8373" />
+      <feComposite
+         in2="SourceGraphic"
+         in="result8"
+         operator="in"
+         result="result7"
+         id="feComposite8375" />
+    </filter>
+    <filter
+       inkscape:label="Light Contour"
+       inkscape:menu="Image Paint and Draw"
+       inkscape:menu-tooltip="Uses vertical specular light to draw lines"
+       style="color-interpolation-filters:sRGB;"
+       id="filter8405">
+      <feGaussianBlur
+         in="SourceGraphic"
+         stdDeviation="1.5"
+         result="result3"
+         id="feGaussianBlur8379" />
+      <feComponentTransfer
+         result="result1"
+         in="result3"
+         id="feComponentTransfer8387">
+        <feFuncR
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncR8381" />
+        <feFuncG
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncG8383" />
+        <feFuncB
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncB8385" />
+      </feComponentTransfer>
+      <feGaussianBlur
+         result="result5"
+         stdDeviation="0.01"
+         id="feGaussianBlur8389" />
+      <feBlend
+         in2="result5"
+         result="result6"
+         mode="lighten"
+         in="result5"
+         id="feBlend8391" />
+      <feColorMatrix
+         in="result6"
+         type="luminanceToAlpha"
+         result="result2"
+         id="feColorMatrix8393" />
+      <feSpecularLighting
+         surfaceScale="5"
+         result="result9"
+         specularExponent="20"
+         in="result2"
+         specularConstant="1"
+         id="feSpecularLighting8397">
+        <feDistantLight
+           azimuth="180"
+           elevation="90"
+           id="feDistantLight8395" />
+      </feSpecularLighting>
+      <feComposite
+         in2="result6"
+         operator="arithmetic"
+         in="result9"
+         k1="0.4"
+         k3="0.7"
+         result="result3"
+         id="feComposite8399" />
+      <feBlend
+         in2="result1"
+         in="result3"
+         mode="normal"
+         result="result8"
+         id="feBlend8401" />
+      <feComposite
+         in2="SourceGraphic"
+         in="result8"
+         operator="in"
+         result="result7"
+         id="feComposite8403" />
+    </filter>
+    <filter
+       inkscape:label="Light Contour"
+       inkscape:menu="Image Paint and Draw"
+       inkscape:menu-tooltip="Uses vertical specular light to draw lines"
+       style="color-interpolation-filters:sRGB;"
+       id="filter8433">
+      <feGaussianBlur
+         in="SourceGraphic"
+         stdDeviation="1.5"
+         result="result3"
+         id="feGaussianBlur8407" />
+      <feComponentTransfer
+         result="result1"
+         in="result3"
+         id="feComponentTransfer8415">
+        <feFuncR
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncR8409" />
+        <feFuncG
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncG8411" />
+        <feFuncB
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncB8413" />
+      </feComponentTransfer>
+      <feGaussianBlur
+         result="result5"
+         stdDeviation="0.01"
+         id="feGaussianBlur8417" />
+      <feBlend
+         in2="result5"
+         result="result6"
+         mode="lighten"
+         in="result5"
+         id="feBlend8419" />
+      <feColorMatrix
+         in="result6"
+         type="luminanceToAlpha"
+         result="result2"
+         id="feColorMatrix8421" />
+      <feSpecularLighting
+         surfaceScale="5"
+         result="result9"
+         specularExponent="20"
+         in="result2"
+         specularConstant="1"
+         id="feSpecularLighting8425">
+        <feDistantLight
+           azimuth="180"
+           elevation="90"
+           id="feDistantLight8423" />
+      </feSpecularLighting>
+      <feComposite
+         in2="result6"
+         operator="arithmetic"
+         in="result9"
+         k1="0.4"
+         k3="0.7"
+         result="result3"
+         id="feComposite8427" />
+      <feBlend
+         in2="result1"
+         in="result3"
+         mode="normal"
+         result="result8"
+         id="feBlend8429" />
+      <feComposite
+         in2="SourceGraphic"
+         in="result8"
+         operator="in"
+         result="result7"
+         id="feComposite8431" />
+    </filter>
+    <filter
+       inkscape:label="Light Contour"
+       inkscape:menu="Image Paint and Draw"
+       inkscape:menu-tooltip="Uses vertical specular light to draw lines"
+       style="color-interpolation-filters:sRGB;"
+       id="filter8461">
+      <feGaussianBlur
+         in="SourceGraphic"
+         stdDeviation="1.5"
+         result="result3"
+         id="feGaussianBlur8435" />
+      <feComponentTransfer
+         result="result1"
+         in="result3"
+         id="feComponentTransfer8443">
+        <feFuncR
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncR8437" />
+        <feFuncG
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncG8439" />
+        <feFuncB
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncB8441" />
+      </feComponentTransfer>
+      <feGaussianBlur
+         result="result5"
+         stdDeviation="0.01"
+         id="feGaussianBlur8445" />
+      <feBlend
+         in2="result5"
+         result="result6"
+         mode="lighten"
+         in="result5"
+         id="feBlend8447" />
+      <feColorMatrix
+         in="result6"
+         type="luminanceToAlpha"
+         result="result2"
+         id="feColorMatrix8449" />
+      <feSpecularLighting
+         surfaceScale="5"
+         result="result9"
+         specularExponent="20"
+         in="result2"
+         specularConstant="1"
+         id="feSpecularLighting8453">
+        <feDistantLight
+           azimuth="180"
+           elevation="90"
+           id="feDistantLight8451" />
+      </feSpecularLighting>
+      <feComposite
+         in2="result6"
+         operator="arithmetic"
+         in="result9"
+         k1="0.4"
+         k3="0.7"
+         result="result3"
+         id="feComposite8455" />
+      <feBlend
+         in2="result1"
+         in="result3"
+         mode="normal"
+         result="result8"
+         id="feBlend8457" />
+      <feComposite
+         in2="SourceGraphic"
+         in="result8"
+         operator="in"
+         result="result7"
+         id="feComposite8459" />
+    </filter>
+    <filter
+       inkscape:label="Light Contour"
+       inkscape:menu="Image Paint and Draw"
+       inkscape:menu-tooltip="Uses vertical specular light to draw lines"
+       style="color-interpolation-filters:sRGB;"
+       id="filter8489">
+      <feGaussianBlur
+         in="SourceGraphic"
+         stdDeviation="1.5"
+         result="result3"
+         id="feGaussianBlur8463" />
+      <feComponentTransfer
+         result="result1"
+         in="result3"
+         id="feComponentTransfer8471">
+        <feFuncR
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncR8465" />
+        <feFuncG
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncG8467" />
+        <feFuncB
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncB8469" />
+      </feComponentTransfer>
+      <feGaussianBlur
+         result="result5"
+         stdDeviation="0.01"
+         id="feGaussianBlur8473" />
+      <feBlend
+         in2="result5"
+         result="result6"
+         mode="lighten"
+         in="result5"
+         id="feBlend8475" />
+      <feColorMatrix
+         in="result6"
+         type="luminanceToAlpha"
+         result="result2"
+         id="feColorMatrix8477" />
+      <feSpecularLighting
+         surfaceScale="5"
+         result="result9"
+         specularExponent="20"
+         in="result2"
+         specularConstant="1"
+         id="feSpecularLighting8481">
+        <feDistantLight
+           azimuth="180"
+           elevation="90"
+           id="feDistantLight8479" />
+      </feSpecularLighting>
+      <feComposite
+         in2="result6"
+         operator="arithmetic"
+         in="result9"
+         k1="0.4"
+         k3="0.7"
+         result="result3"
+         id="feComposite8483" />
+      <feBlend
+         in2="result1"
+         in="result3"
+         mode="normal"
+         result="result8"
+         id="feBlend8485" />
+      <feComposite
+         in2="SourceGraphic"
+         in="result8"
+         operator="in"
+         result="result7"
+         id="feComposite8487" />
+    </filter>
+    <filter
+       inkscape:label="Light Contour"
+       inkscape:menu="Image Paint and Draw"
+       inkscape:menu-tooltip="Uses vertical specular light to draw lines"
+       style="color-interpolation-filters:sRGB;"
+       id="filter8517">
+      <feGaussianBlur
+         in="SourceGraphic"
+         stdDeviation="1.5"
+         result="result3"
+         id="feGaussianBlur8491" />
+      <feComponentTransfer
+         result="result1"
+         in="result3"
+         id="feComponentTransfer8499">
+        <feFuncR
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncR8493" />
+        <feFuncG
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncG8495" />
+        <feFuncB
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncB8497" />
+      </feComponentTransfer>
+      <feGaussianBlur
+         result="result5"
+         stdDeviation="0.01"
+         id="feGaussianBlur8501" />
+      <feBlend
+         in2="result5"
+         result="result6"
+         mode="lighten"
+         in="result5"
+         id="feBlend8503" />
+      <feColorMatrix
+         in="result6"
+         type="luminanceToAlpha"
+         result="result2"
+         id="feColorMatrix8505" />
+      <feSpecularLighting
+         surfaceScale="5"
+         result="result9"
+         specularExponent="20"
+         in="result2"
+         specularConstant="1"
+         id="feSpecularLighting8509">
+        <feDistantLight
+           azimuth="180"
+           elevation="90"
+           id="feDistantLight8507" />
+      </feSpecularLighting>
+      <feComposite
+         in2="result6"
+         operator="arithmetic"
+         in="result9"
+         k1="0.4"
+         k3="0.7"
+         result="result3"
+         id="feComposite8511" />
+      <feBlend
+         in2="result1"
+         in="result3"
+         mode="normal"
+         result="result8"
+         id="feBlend8513" />
+      <feComposite
+         in2="SourceGraphic"
+         in="result8"
+         operator="in"
+         result="result7"
+         id="feComposite8515" />
+    </filter>
+    <filter
+       inkscape:label="Light Contour"
+       inkscape:menu="Image Paint and Draw"
+       inkscape:menu-tooltip="Uses vertical specular light to draw lines"
+       style="color-interpolation-filters:sRGB;"
+       id="filter8545">
+      <feGaussianBlur
+         in="SourceGraphic"
+         stdDeviation="1.5"
+         result="result3"
+         id="feGaussianBlur8519" />
+      <feComponentTransfer
+         result="result1"
+         in="result3"
+         id="feComponentTransfer8527">
+        <feFuncR
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncR8521" />
+        <feFuncG
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncG8523" />
+        <feFuncB
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncB8525" />
+      </feComponentTransfer>
+      <feGaussianBlur
+         result="result5"
+         stdDeviation="0.01"
+         id="feGaussianBlur8529" />
+      <feBlend
+         in2="result5"
+         result="result6"
+         mode="lighten"
+         in="result5"
+         id="feBlend8531" />
+      <feColorMatrix
+         in="result6"
+         type="luminanceToAlpha"
+         result="result2"
+         id="feColorMatrix8533" />
+      <feSpecularLighting
+         surfaceScale="5"
+         result="result9"
+         specularExponent="20"
+         in="result2"
+         specularConstant="1"
+         id="feSpecularLighting8537">
+        <feDistantLight
+           azimuth="180"
+           elevation="90"
+           id="feDistantLight8535" />
+      </feSpecularLighting>
+      <feComposite
+         in2="result6"
+         operator="arithmetic"
+         in="result9"
+         k1="0.4"
+         k3="0.7"
+         result="result3"
+         id="feComposite8539" />
+      <feBlend
+         in2="result1"
+         in="result3"
+         mode="normal"
+         result="result8"
+         id="feBlend8541" />
+      <feComposite
+         in2="SourceGraphic"
+         in="result8"
+         operator="in"
+         result="result7"
+         id="feComposite8543" />
+    </filter>
+    <filter
+       inkscape:label="Light Contour"
+       inkscape:menu="Image Paint and Draw"
+       inkscape:menu-tooltip="Uses vertical specular light to draw lines"
+       style="color-interpolation-filters:sRGB;"
+       id="filter8573">
+      <feGaussianBlur
+         in="SourceGraphic"
+         stdDeviation="1.5"
+         result="result3"
+         id="feGaussianBlur8547" />
+      <feComponentTransfer
+         result="result1"
+         in="result3"
+         id="feComponentTransfer8555">
+        <feFuncR
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncR8549" />
+        <feFuncG
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncG8551" />
+        <feFuncB
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncB8553" />
+      </feComponentTransfer>
+      <feGaussianBlur
+         result="result5"
+         stdDeviation="0.01"
+         id="feGaussianBlur8557" />
+      <feBlend
+         in2="result5"
+         result="result6"
+         mode="lighten"
+         in="result5"
+         id="feBlend8559" />
+      <feColorMatrix
+         in="result6"
+         type="luminanceToAlpha"
+         result="result2"
+         id="feColorMatrix8561" />
+      <feSpecularLighting
+         surfaceScale="5"
+         result="result9"
+         specularExponent="20"
+         in="result2"
+         specularConstant="1"
+         id="feSpecularLighting8565">
+        <feDistantLight
+           azimuth="180"
+           elevation="90"
+           id="feDistantLight8563" />
+      </feSpecularLighting>
+      <feComposite
+         in2="result6"
+         operator="arithmetic"
+         in="result9"
+         k1="0.4"
+         k3="0.7"
+         result="result3"
+         id="feComposite8567" />
+      <feBlend
+         in2="result1"
+         in="result3"
+         mode="normal"
+         result="result8"
+         id="feBlend8569" />
+      <feComposite
+         in2="SourceGraphic"
+         in="result8"
+         operator="in"
+         result="result7"
+         id="feComposite8571" />
+    </filter>
+    <filter
+       inkscape:label="Light Contour"
+       inkscape:menu="Image Paint and Draw"
+       inkscape:menu-tooltip="Uses vertical specular light to draw lines"
+       style="color-interpolation-filters:sRGB;"
+       id="filter8601">
+      <feGaussianBlur
+         in="SourceGraphic"
+         stdDeviation="1.5"
+         result="result3"
+         id="feGaussianBlur8575" />
+      <feComponentTransfer
+         result="result1"
+         in="result3"
+         id="feComponentTransfer8583">
+        <feFuncR
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncR8577" />
+        <feFuncG
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncG8579" />
+        <feFuncB
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncB8581" />
+      </feComponentTransfer>
+      <feGaussianBlur
+         result="result5"
+         stdDeviation="0.01"
+         id="feGaussianBlur8585" />
+      <feBlend
+         in2="result5"
+         result="result6"
+         mode="lighten"
+         in="result5"
+         id="feBlend8587" />
+      <feColorMatrix
+         in="result6"
+         type="luminanceToAlpha"
+         result="result2"
+         id="feColorMatrix8589" />
+      <feSpecularLighting
+         surfaceScale="5"
+         result="result9"
+         specularExponent="20"
+         in="result2"
+         specularConstant="1"
+         id="feSpecularLighting8593">
+        <feDistantLight
+           azimuth="180"
+           elevation="90"
+           id="feDistantLight8591" />
+      </feSpecularLighting>
+      <feComposite
+         in2="result6"
+         operator="arithmetic"
+         in="result9"
+         k1="0.4"
+         k3="0.7"
+         result="result3"
+         id="feComposite8595" />
+      <feBlend
+         in2="result1"
+         in="result3"
+         mode="normal"
+         result="result8"
+         id="feBlend8597" />
+      <feComposite
+         in2="SourceGraphic"
+         in="result8"
+         operator="in"
+         result="result7"
+         id="feComposite8599" />
+    </filter>
+    <filter
+       inkscape:label="Light Contour"
+       inkscape:menu="Image Paint and Draw"
+       inkscape:menu-tooltip="Uses vertical specular light to draw lines"
+       style="color-interpolation-filters:sRGB;"
+       id="filter8629">
+      <feGaussianBlur
+         in="SourceGraphic"
+         stdDeviation="1.5"
+         result="result3"
+         id="feGaussianBlur8603" />
+      <feComponentTransfer
+         result="result1"
+         in="result3"
+         id="feComponentTransfer8611">
+        <feFuncR
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncR8605" />
+        <feFuncG
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncG8607" />
+        <feFuncB
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncB8609" />
+      </feComponentTransfer>
+      <feGaussianBlur
+         result="result5"
+         stdDeviation="0.01"
+         id="feGaussianBlur8613" />
+      <feBlend
+         in2="result5"
+         result="result6"
+         mode="lighten"
+         in="result5"
+         id="feBlend8615" />
+      <feColorMatrix
+         in="result6"
+         type="luminanceToAlpha"
+         result="result2"
+         id="feColorMatrix8617" />
+      <feSpecularLighting
+         surfaceScale="5"
+         result="result9"
+         specularExponent="20"
+         in="result2"
+         specularConstant="1"
+         id="feSpecularLighting8621">
+        <feDistantLight
+           azimuth="180"
+           elevation="90"
+           id="feDistantLight8619" />
+      </feSpecularLighting>
+      <feComposite
+         in2="result6"
+         operator="arithmetic"
+         in="result9"
+         k1="0.4"
+         k3="0.7"
+         result="result3"
+         id="feComposite8623" />
+      <feBlend
+         in2="result1"
+         in="result3"
+         mode="normal"
+         result="result8"
+         id="feBlend8625" />
+      <feComposite
+         in2="SourceGraphic"
+         in="result8"
+         operator="in"
+         result="result7"
+         id="feComposite8627" />
+    </filter>
+    <filter
+       inkscape:label="Light Contour"
+       inkscape:menu="Image Paint and Draw"
+       inkscape:menu-tooltip="Uses vertical specular light to draw lines"
+       style="color-interpolation-filters:sRGB;"
+       id="filter8657">
+      <feGaussianBlur
+         in="SourceGraphic"
+         stdDeviation="1.5"
+         result="result3"
+         id="feGaussianBlur8631" />
+      <feComponentTransfer
+         result="result1"
+         in="result3"
+         id="feComponentTransfer8639">
+        <feFuncR
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncR8633" />
+        <feFuncG
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncG8635" />
+        <feFuncB
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncB8637" />
+      </feComponentTransfer>
+      <feGaussianBlur
+         result="result5"
+         stdDeviation="0.01"
+         id="feGaussianBlur8641" />
+      <feBlend
+         in2="result5"
+         result="result6"
+         mode="lighten"
+         in="result5"
+         id="feBlend8643" />
+      <feColorMatrix
+         in="result6"
+         type="luminanceToAlpha"
+         result="result2"
+         id="feColorMatrix8645" />
+      <feSpecularLighting
+         surfaceScale="5"
+         result="result9"
+         specularExponent="20"
+         in="result2"
+         specularConstant="1"
+         id="feSpecularLighting8649">
+        <feDistantLight
+           azimuth="180"
+           elevation="90"
+           id="feDistantLight8647" />
+      </feSpecularLighting>
+      <feComposite
+         in2="result6"
+         operator="arithmetic"
+         in="result9"
+         k1="0.4"
+         k3="0.7"
+         result="result3"
+         id="feComposite8651" />
+      <feBlend
+         in2="result1"
+         in="result3"
+         mode="normal"
+         result="result8"
+         id="feBlend8653" />
+      <feComposite
+         in2="SourceGraphic"
+         in="result8"
+         operator="in"
+         result="result7"
+         id="feComposite8655" />
+    </filter>
+    <filter
+       inkscape:label="Light Contour"
+       inkscape:menu="Image Paint and Draw"
+       inkscape:menu-tooltip="Uses vertical specular light to draw lines"
+       style="color-interpolation-filters:sRGB;"
+       id="filter8685">
+      <feGaussianBlur
+         in="SourceGraphic"
+         stdDeviation="1.5"
+         result="result3"
+         id="feGaussianBlur8659" />
+      <feComponentTransfer
+         result="result1"
+         in="result3"
+         id="feComponentTransfer8667">
+        <feFuncR
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncR8661" />
+        <feFuncG
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncG8663" />
+        <feFuncB
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncB8665" />
+      </feComponentTransfer>
+      <feGaussianBlur
+         result="result5"
+         stdDeviation="0.01"
+         id="feGaussianBlur8669" />
+      <feBlend
+         in2="result5"
+         result="result6"
+         mode="lighten"
+         in="result5"
+         id="feBlend8671" />
+      <feColorMatrix
+         in="result6"
+         type="luminanceToAlpha"
+         result="result2"
+         id="feColorMatrix8673" />
+      <feSpecularLighting
+         surfaceScale="5"
+         result="result9"
+         specularExponent="20"
+         in="result2"
+         specularConstant="1"
+         id="feSpecularLighting8677">
+        <feDistantLight
+           azimuth="180"
+           elevation="90"
+           id="feDistantLight8675" />
+      </feSpecularLighting>
+      <feComposite
+         in2="result6"
+         operator="arithmetic"
+         in="result9"
+         k1="0.4"
+         k3="0.7"
+         result="result3"
+         id="feComposite8679" />
+      <feBlend
+         in2="result1"
+         in="result3"
+         mode="normal"
+         result="result8"
+         id="feBlend8681" />
+      <feComposite
+         in2="SourceGraphic"
+         in="result8"
+         operator="in"
+         result="result7"
+         id="feComposite8683" />
+    </filter>
+    <filter
+       inkscape:label="Light Contour"
+       inkscape:menu="Image Paint and Draw"
+       inkscape:menu-tooltip="Uses vertical specular light to draw lines"
+       style="color-interpolation-filters:sRGB;"
+       id="filter8713">
+      <feGaussianBlur
+         in="SourceGraphic"
+         stdDeviation="1.5"
+         result="result3"
+         id="feGaussianBlur8687" />
+      <feComponentTransfer
+         result="result1"
+         in="result3"
+         id="feComponentTransfer8695">
+        <feFuncR
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncR8689" />
+        <feFuncG
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncG8691" />
+        <feFuncB
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncB8693" />
+      </feComponentTransfer>
+      <feGaussianBlur
+         result="result5"
+         stdDeviation="0.01"
+         id="feGaussianBlur8697" />
+      <feBlend
+         in2="result5"
+         result="result6"
+         mode="lighten"
+         in="result5"
+         id="feBlend8699" />
+      <feColorMatrix
+         in="result6"
+         type="luminanceToAlpha"
+         result="result2"
+         id="feColorMatrix8701" />
+      <feSpecularLighting
+         surfaceScale="5"
+         result="result9"
+         specularExponent="20"
+         in="result2"
+         specularConstant="1"
+         id="feSpecularLighting8705">
+        <feDistantLight
+           azimuth="180"
+           elevation="90"
+           id="feDistantLight8703" />
+      </feSpecularLighting>
+      <feComposite
+         in2="result6"
+         operator="arithmetic"
+         in="result9"
+         k1="0.4"
+         k3="0.7"
+         result="result3"
+         id="feComposite8707" />
+      <feBlend
+         in2="result1"
+         in="result3"
+         mode="normal"
+         result="result8"
+         id="feBlend8709" />
+      <feComposite
+         in2="SourceGraphic"
+         in="result8"
+         operator="in"
+         result="result7"
+         id="feComposite8711" />
+    </filter>
+    <filter
+       inkscape:label="Light Contour"
+       inkscape:menu="Image Paint and Draw"
+       inkscape:menu-tooltip="Uses vertical specular light to draw lines"
+       style="color-interpolation-filters:sRGB;"
+       id="filter8741">
+      <feGaussianBlur
+         in="SourceGraphic"
+         stdDeviation="1.5"
+         result="result3"
+         id="feGaussianBlur8715" />
+      <feComponentTransfer
+         result="result1"
+         in="result3"
+         id="feComponentTransfer8723">
+        <feFuncR
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncR8717" />
+        <feFuncG
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncG8719" />
+        <feFuncB
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncB8721" />
+      </feComponentTransfer>
+      <feGaussianBlur
+         result="result5"
+         stdDeviation="0.01"
+         id="feGaussianBlur8725" />
+      <feBlend
+         in2="result5"
+         result="result6"
+         mode="lighten"
+         in="result5"
+         id="feBlend8727" />
+      <feColorMatrix
+         in="result6"
+         type="luminanceToAlpha"
+         result="result2"
+         id="feColorMatrix8729" />
+      <feSpecularLighting
+         surfaceScale="5"
+         result="result9"
+         specularExponent="20"
+         in="result2"
+         specularConstant="1"
+         id="feSpecularLighting8733">
+        <feDistantLight
+           azimuth="180"
+           elevation="90"
+           id="feDistantLight8731" />
+      </feSpecularLighting>
+      <feComposite
+         in2="result6"
+         operator="arithmetic"
+         in="result9"
+         k1="0.4"
+         k3="0.7"
+         result="result3"
+         id="feComposite8735" />
+      <feBlend
+         in2="result1"
+         in="result3"
+         mode="normal"
+         result="result8"
+         id="feBlend8737" />
+      <feComposite
+         in2="SourceGraphic"
+         in="result8"
+         operator="in"
+         result="result7"
+         id="feComposite8739" />
+    </filter>
+    <filter
+       inkscape:label="Light Contour"
+       inkscape:menu="Image Paint and Draw"
+       inkscape:menu-tooltip="Uses vertical specular light to draw lines"
+       style="color-interpolation-filters:sRGB;"
+       id="filter8769">
+      <feGaussianBlur
+         in="SourceGraphic"
+         stdDeviation="1.5"
+         result="result3"
+         id="feGaussianBlur8743" />
+      <feComponentTransfer
+         result="result1"
+         in="result3"
+         id="feComponentTransfer8751">
+        <feFuncR
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncR8745" />
+        <feFuncG
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncG8747" />
+        <feFuncB
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncB8749" />
+      </feComponentTransfer>
+      <feGaussianBlur
+         result="result5"
+         stdDeviation="0.01"
+         id="feGaussianBlur8753" />
+      <feBlend
+         in2="result5"
+         result="result6"
+         mode="lighten"
+         in="result5"
+         id="feBlend8755" />
+      <feColorMatrix
+         in="result6"
+         type="luminanceToAlpha"
+         result="result2"
+         id="feColorMatrix8757" />
+      <feSpecularLighting
+         surfaceScale="5"
+         result="result9"
+         specularExponent="20"
+         in="result2"
+         specularConstant="1"
+         id="feSpecularLighting8761">
+        <feDistantLight
+           azimuth="180"
+           elevation="90"
+           id="feDistantLight8759" />
+      </feSpecularLighting>
+      <feComposite
+         in2="result6"
+         operator="arithmetic"
+         in="result9"
+         k1="0.4"
+         k3="0.7"
+         result="result3"
+         id="feComposite8763" />
+      <feBlend
+         in2="result1"
+         in="result3"
+         mode="normal"
+         result="result8"
+         id="feBlend8765" />
+      <feComposite
+         in2="SourceGraphic"
+         in="result8"
+         operator="in"
+         result="result7"
+         id="feComposite8767" />
+    </filter>
+    <filter
+       inkscape:label="Light Contour"
+       inkscape:menu="Image Paint and Draw"
+       inkscape:menu-tooltip="Uses vertical specular light to draw lines"
+       style="color-interpolation-filters:sRGB;"
+       id="filter8797">
+      <feGaussianBlur
+         in="SourceGraphic"
+         stdDeviation="1.5"
+         result="result3"
+         id="feGaussianBlur8771" />
+      <feComponentTransfer
+         result="result1"
+         in="result3"
+         id="feComponentTransfer8779">
+        <feFuncR
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncR8773" />
+        <feFuncG
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncG8775" />
+        <feFuncB
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncB8777" />
+      </feComponentTransfer>
+      <feGaussianBlur
+         result="result5"
+         stdDeviation="0.01"
+         id="feGaussianBlur8781" />
+      <feBlend
+         in2="result5"
+         result="result6"
+         mode="lighten"
+         in="result5"
+         id="feBlend8783" />
+      <feColorMatrix
+         in="result6"
+         type="luminanceToAlpha"
+         result="result2"
+         id="feColorMatrix8785" />
+      <feSpecularLighting
+         surfaceScale="5"
+         result="result9"
+         specularExponent="20"
+         in="result2"
+         specularConstant="1"
+         id="feSpecularLighting8789">
+        <feDistantLight
+           azimuth="180"
+           elevation="90"
+           id="feDistantLight8787" />
+      </feSpecularLighting>
+      <feComposite
+         in2="result6"
+         operator="arithmetic"
+         in="result9"
+         k1="0.4"
+         k3="0.7"
+         result="result3"
+         id="feComposite8791" />
+      <feBlend
+         in2="result1"
+         in="result3"
+         mode="normal"
+         result="result8"
+         id="feBlend8793" />
+      <feComposite
+         in2="SourceGraphic"
+         in="result8"
+         operator="in"
+         result="result7"
+         id="feComposite8795" />
+    </filter>
+    <filter
+       inkscape:label="Light Contour"
+       inkscape:menu="Image Paint and Draw"
+       inkscape:menu-tooltip="Uses vertical specular light to draw lines"
+       style="color-interpolation-filters:sRGB;"
+       id="filter8825">
+      <feGaussianBlur
+         in="SourceGraphic"
+         stdDeviation="1.5"
+         result="result3"
+         id="feGaussianBlur8799" />
+      <feComponentTransfer
+         result="result1"
+         in="result3"
+         id="feComponentTransfer8807">
+        <feFuncR
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncR8801" />
+        <feFuncG
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncG8803" />
+        <feFuncB
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncB8805" />
+      </feComponentTransfer>
+      <feGaussianBlur
+         result="result5"
+         stdDeviation="0.01"
+         id="feGaussianBlur8809" />
+      <feBlend
+         in2="result5"
+         result="result6"
+         mode="lighten"
+         in="result5"
+         id="feBlend8811" />
+      <feColorMatrix
+         in="result6"
+         type="luminanceToAlpha"
+         result="result2"
+         id="feColorMatrix8813" />
+      <feSpecularLighting
+         surfaceScale="5"
+         result="result9"
+         specularExponent="20"
+         in="result2"
+         specularConstant="1"
+         id="feSpecularLighting8817">
+        <feDistantLight
+           azimuth="180"
+           elevation="90"
+           id="feDistantLight8815" />
+      </feSpecularLighting>
+      <feComposite
+         in2="result6"
+         operator="arithmetic"
+         in="result9"
+         k1="0.4"
+         k3="0.7"
+         result="result3"
+         id="feComposite8819" />
+      <feBlend
+         in2="result1"
+         in="result3"
+         mode="normal"
+         result="result8"
+         id="feBlend8821" />
+      <feComposite
+         in2="SourceGraphic"
+         in="result8"
+         operator="in"
+         result="result7"
+         id="feComposite8823" />
+    </filter>
+    <filter
+       inkscape:label="Light Contour"
+       inkscape:menu="Image Paint and Draw"
+       inkscape:menu-tooltip="Uses vertical specular light to draw lines"
+       style="color-interpolation-filters:sRGB;"
+       id="filter8853">
+      <feGaussianBlur
+         in="SourceGraphic"
+         stdDeviation="1.5"
+         result="result3"
+         id="feGaussianBlur8827" />
+      <feComponentTransfer
+         result="result1"
+         in="result3"
+         id="feComponentTransfer8835">
+        <feFuncR
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncR8829" />
+        <feFuncG
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncG8831" />
+        <feFuncB
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncB8833" />
+      </feComponentTransfer>
+      <feGaussianBlur
+         result="result5"
+         stdDeviation="0.01"
+         id="feGaussianBlur8837" />
+      <feBlend
+         in2="result5"
+         result="result6"
+         mode="lighten"
+         in="result5"
+         id="feBlend8839" />
+      <feColorMatrix
+         in="result6"
+         type="luminanceToAlpha"
+         result="result2"
+         id="feColorMatrix8841" />
+      <feSpecularLighting
+         surfaceScale="5"
+         result="result9"
+         specularExponent="20"
+         in="result2"
+         specularConstant="1"
+         id="feSpecularLighting8845">
+        <feDistantLight
+           azimuth="180"
+           elevation="90"
+           id="feDistantLight8843" />
+      </feSpecularLighting>
+      <feComposite
+         in2="result6"
+         operator="arithmetic"
+         in="result9"
+         k1="0.4"
+         k3="0.7"
+         result="result3"
+         id="feComposite8847" />
+      <feBlend
+         in2="result1"
+         in="result3"
+         mode="normal"
+         result="result8"
+         id="feBlend8849" />
+      <feComposite
+         in2="SourceGraphic"
+         in="result8"
+         operator="in"
+         result="result7"
+         id="feComposite8851" />
+    </filter>
+    <filter
+       inkscape:label="Light Contour"
+       inkscape:menu="Image Paint and Draw"
+       inkscape:menu-tooltip="Uses vertical specular light to draw lines"
+       style="color-interpolation-filters:sRGB;"
+       id="filter8881">
+      <feGaussianBlur
+         in="SourceGraphic"
+         stdDeviation="1.5"
+         result="result3"
+         id="feGaussianBlur8855" />
+      <feComponentTransfer
+         result="result1"
+         in="result3"
+         id="feComponentTransfer8863">
+        <feFuncR
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncR8857" />
+        <feFuncG
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncG8859" />
+        <feFuncB
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncB8861" />
+      </feComponentTransfer>
+      <feGaussianBlur
+         result="result5"
+         stdDeviation="0.01"
+         id="feGaussianBlur8865" />
+      <feBlend
+         in2="result5"
+         result="result6"
+         mode="lighten"
+         in="result5"
+         id="feBlend8867" />
+      <feColorMatrix
+         in="result6"
+         type="luminanceToAlpha"
+         result="result2"
+         id="feColorMatrix8869" />
+      <feSpecularLighting
+         surfaceScale="5"
+         result="result9"
+         specularExponent="20"
+         in="result2"
+         specularConstant="1"
+         id="feSpecularLighting8873">
+        <feDistantLight
+           azimuth="180"
+           elevation="90"
+           id="feDistantLight8871" />
+      </feSpecularLighting>
+      <feComposite
+         in2="result6"
+         operator="arithmetic"
+         in="result9"
+         k1="0.4"
+         k3="0.7"
+         result="result3"
+         id="feComposite8875" />
+      <feBlend
+         in2="result1"
+         in="result3"
+         mode="normal"
+         result="result8"
+         id="feBlend8877" />
+      <feComposite
+         in2="SourceGraphic"
+         in="result8"
+         operator="in"
+         result="result7"
+         id="feComposite8879" />
+    </filter>
+    <filter
+       inkscape:label="Light Contour"
+       inkscape:menu="Image Paint and Draw"
+       inkscape:menu-tooltip="Uses vertical specular light to draw lines"
+       style="color-interpolation-filters:sRGB;"
+       id="filter8909">
+      <feGaussianBlur
+         in="SourceGraphic"
+         stdDeviation="1.5"
+         result="result3"
+         id="feGaussianBlur8883" />
+      <feComponentTransfer
+         result="result1"
+         in="result3"
+         id="feComponentTransfer8891">
+        <feFuncR
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncR8885" />
+        <feFuncG
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncG8887" />
+        <feFuncB
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncB8889" />
+      </feComponentTransfer>
+      <feGaussianBlur
+         result="result5"
+         stdDeviation="0.01"
+         id="feGaussianBlur8893" />
+      <feBlend
+         in2="result5"
+         result="result6"
+         mode="lighten"
+         in="result5"
+         id="feBlend8895" />
+      <feColorMatrix
+         in="result6"
+         type="luminanceToAlpha"
+         result="result2"
+         id="feColorMatrix8897" />
+      <feSpecularLighting
+         surfaceScale="5"
+         result="result9"
+         specularExponent="20"
+         in="result2"
+         specularConstant="1"
+         id="feSpecularLighting8901">
+        <feDistantLight
+           azimuth="180"
+           elevation="90"
+           id="feDistantLight8899" />
+      </feSpecularLighting>
+      <feComposite
+         in2="result6"
+         operator="arithmetic"
+         in="result9"
+         k1="0.4"
+         k3="0.7"
+         result="result3"
+         id="feComposite8903" />
+      <feBlend
+         in2="result1"
+         in="result3"
+         mode="normal"
+         result="result8"
+         id="feBlend8905" />
+      <feComposite
+         in2="SourceGraphic"
+         in="result8"
+         operator="in"
+         result="result7"
+         id="feComposite8907" />
+    </filter>
+    <filter
+       inkscape:label="Light Contour"
+       inkscape:menu="Image Paint and Draw"
+       inkscape:menu-tooltip="Uses vertical specular light to draw lines"
+       style="color-interpolation-filters:sRGB;"
+       id="filter8937">
+      <feGaussianBlur
+         in="SourceGraphic"
+         stdDeviation="1.5"
+         result="result3"
+         id="feGaussianBlur8911" />
+      <feComponentTransfer
+         result="result1"
+         in="result3"
+         id="feComponentTransfer8919">
+        <feFuncR
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncR8913" />
+        <feFuncG
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncG8915" />
+        <feFuncB
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncB8917" />
+      </feComponentTransfer>
+      <feGaussianBlur
+         result="result5"
+         stdDeviation="0.01"
+         id="feGaussianBlur8921" />
+      <feBlend
+         in2="result5"
+         result="result6"
+         mode="lighten"
+         in="result5"
+         id="feBlend8923" />
+      <feColorMatrix
+         in="result6"
+         type="luminanceToAlpha"
+         result="result2"
+         id="feColorMatrix8925" />
+      <feSpecularLighting
+         surfaceScale="5"
+         result="result9"
+         specularExponent="20"
+         in="result2"
+         specularConstant="1"
+         id="feSpecularLighting8929">
+        <feDistantLight
+           azimuth="180"
+           elevation="90"
+           id="feDistantLight8927" />
+      </feSpecularLighting>
+      <feComposite
+         in2="result6"
+         operator="arithmetic"
+         in="result9"
+         k1="0.4"
+         k3="0.7"
+         result="result3"
+         id="feComposite8931" />
+      <feBlend
+         in2="result1"
+         in="result3"
+         mode="normal"
+         result="result8"
+         id="feBlend8933" />
+      <feComposite
+         in2="SourceGraphic"
+         in="result8"
+         operator="in"
+         result="result7"
+         id="feComposite8935" />
+    </filter>
+    <filter
+       inkscape:label="Light Contour"
+       inkscape:menu="Image Paint and Draw"
+       inkscape:menu-tooltip="Uses vertical specular light to draw lines"
+       style="color-interpolation-filters:sRGB;"
+       id="filter8965">
+      <feGaussianBlur
+         in="SourceGraphic"
+         stdDeviation="1.5"
+         result="result3"
+         id="feGaussianBlur8939" />
+      <feComponentTransfer
+         result="result1"
+         in="result3"
+         id="feComponentTransfer8947">
+        <feFuncR
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncR8941" />
+        <feFuncG
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncG8943" />
+        <feFuncB
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncB8945" />
+      </feComponentTransfer>
+      <feGaussianBlur
+         result="result5"
+         stdDeviation="0.01"
+         id="feGaussianBlur8949" />
+      <feBlend
+         in2="result5"
+         result="result6"
+         mode="lighten"
+         in="result5"
+         id="feBlend8951" />
+      <feColorMatrix
+         in="result6"
+         type="luminanceToAlpha"
+         result="result2"
+         id="feColorMatrix8953" />
+      <feSpecularLighting
+         surfaceScale="5"
+         result="result9"
+         specularExponent="20"
+         in="result2"
+         specularConstant="1"
+         id="feSpecularLighting8957">
+        <feDistantLight
+           azimuth="180"
+           elevation="90"
+           id="feDistantLight8955" />
+      </feSpecularLighting>
+      <feComposite
+         in2="result6"
+         operator="arithmetic"
+         in="result9"
+         k1="0.4"
+         k3="0.7"
+         result="result3"
+         id="feComposite8959" />
+      <feBlend
+         in2="result1"
+         in="result3"
+         mode="normal"
+         result="result8"
+         id="feBlend8961" />
+      <feComposite
+         in2="SourceGraphic"
+         in="result8"
+         operator="in"
+         result="result7"
+         id="feComposite8963" />
+    </filter>
+    <filter
+       inkscape:label="Light Contour"
+       inkscape:menu="Image Paint and Draw"
+       inkscape:menu-tooltip="Uses vertical specular light to draw lines"
+       style="color-interpolation-filters:sRGB;"
+       id="filter8993">
+      <feGaussianBlur
+         in="SourceGraphic"
+         stdDeviation="1.5"
+         result="result3"
+         id="feGaussianBlur8967" />
+      <feComponentTransfer
+         result="result1"
+         in="result3"
+         id="feComponentTransfer8975">
+        <feFuncR
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncR8969" />
+        <feFuncG
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncG8971" />
+        <feFuncB
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncB8973" />
+      </feComponentTransfer>
+      <feGaussianBlur
+         result="result5"
+         stdDeviation="0.01"
+         id="feGaussianBlur8977" />
+      <feBlend
+         in2="result5"
+         result="result6"
+         mode="lighten"
+         in="result5"
+         id="feBlend8979" />
+      <feColorMatrix
+         in="result6"
+         type="luminanceToAlpha"
+         result="result2"
+         id="feColorMatrix8981" />
+      <feSpecularLighting
+         surfaceScale="5"
+         result="result9"
+         specularExponent="20"
+         in="result2"
+         specularConstant="1"
+         id="feSpecularLighting8985">
+        <feDistantLight
+           azimuth="180"
+           elevation="90"
+           id="feDistantLight8983" />
+      </feSpecularLighting>
+      <feComposite
+         in2="result6"
+         operator="arithmetic"
+         in="result9"
+         k1="0.4"
+         k3="0.7"
+         result="result3"
+         id="feComposite8987" />
+      <feBlend
+         in2="result1"
+         in="result3"
+         mode="normal"
+         result="result8"
+         id="feBlend8989" />
+      <feComposite
+         in2="SourceGraphic"
+         in="result8"
+         operator="in"
+         result="result7"
+         id="feComposite8991" />
+    </filter>
+    <filter
+       inkscape:label="Light Contour"
+       inkscape:menu="Image Paint and Draw"
+       inkscape:menu-tooltip="Uses vertical specular light to draw lines"
+       style="color-interpolation-filters:sRGB;"
+       id="filter9021">
+      <feGaussianBlur
+         in="SourceGraphic"
+         stdDeviation="1.5"
+         result="result3"
+         id="feGaussianBlur8995" />
+      <feComponentTransfer
+         result="result1"
+         in="result3"
+         id="feComponentTransfer9003">
+        <feFuncR
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncR8997" />
+        <feFuncG
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncG8999" />
+        <feFuncB
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncB9001" />
+      </feComponentTransfer>
+      <feGaussianBlur
+         result="result5"
+         stdDeviation="0.01"
+         id="feGaussianBlur9005" />
+      <feBlend
+         in2="result5"
+         result="result6"
+         mode="lighten"
+         in="result5"
+         id="feBlend9007" />
+      <feColorMatrix
+         in="result6"
+         type="luminanceToAlpha"
+         result="result2"
+         id="feColorMatrix9009" />
+      <feSpecularLighting
+         surfaceScale="5"
+         result="result9"
+         specularExponent="20"
+         in="result2"
+         specularConstant="1"
+         id="feSpecularLighting9013">
+        <feDistantLight
+           azimuth="180"
+           elevation="90"
+           id="feDistantLight9011" />
+      </feSpecularLighting>
+      <feComposite
+         in2="result6"
+         operator="arithmetic"
+         in="result9"
+         k1="0.4"
+         k3="0.7"
+         result="result3"
+         id="feComposite9015" />
+      <feBlend
+         in2="result1"
+         in="result3"
+         mode="normal"
+         result="result8"
+         id="feBlend9017" />
+      <feComposite
+         in2="SourceGraphic"
+         in="result8"
+         operator="in"
+         result="result7"
+         id="feComposite9019" />
+    </filter>
+    <filter
+       inkscape:label="Light Contour"
+       inkscape:menu="Image Paint and Draw"
+       inkscape:menu-tooltip="Uses vertical specular light to draw lines"
+       style="color-interpolation-filters:sRGB;"
+       id="filter9049">
+      <feGaussianBlur
+         in="SourceGraphic"
+         stdDeviation="1.5"
+         result="result3"
+         id="feGaussianBlur9023" />
+      <feComponentTransfer
+         result="result1"
+         in="result3"
+         id="feComponentTransfer9031">
+        <feFuncR
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncR9025" />
+        <feFuncG
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncG9027" />
+        <feFuncB
+           type="discrete"
+           tableValues="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1"
+           id="feFuncB9029" />
+      </feComponentTransfer>
+      <feGaussianBlur
+         result="result5"
+         stdDeviation="0.01"
+         id="feGaussianBlur9033" />
+      <feBlend
+         in2="result5"
+         result="result6"
+         mode="lighten"
+         in="result5"
+         id="feBlend9035" />
+      <feColorMatrix
+         in="result6"
+         type="luminanceToAlpha"
+         result="result2"
+         id="feColorMatrix9037" />
+      <feSpecularLighting
+         surfaceScale="5"
+         result="result9"
+         specularExponent="20"
+         in="result2"
+         specularConstant="1"
+         id="feSpecularLighting9041">
+        <feDistantLight
+           azimuth="180"
+           elevation="90"
+           id="feDistantLight9039" />
+      </feSpecularLighting>
+      <feComposite
+         in2="result6"
+         operator="arithmetic"
+         in="result9"
+         k1="0.4"
+         k3="0.7"
+         result="result3"
+         id="feComposite9043" />
+      <feBlend
+         in2="result1"
+         in="result3"
+         mode="normal"
+         result="result8"
+         id="feBlend9045" />
+      <feComposite
+         in2="SourceGraphic"
+         in="result8"
+         operator="in"
+         result="result7"
+         id="feComposite9047" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.979899"
+     inkscape:cx="444.88617"
+     inkscape:cy="682.59007"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer2"
+     showgrid="false"
+     inkscape:snap-grids="true"
+     inkscape:snap-to-guides="true"
+     inkscape:window-width="1858"
+     inkscape:window-height="1178"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid10" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="T"
+     inkscape:groupmode="layer"
+     id="layer1"
+     style="display:inline">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.28863633px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter9049)"
+       d="m 93.307663,73.279958 h 5.541818 l 8.312729,-5.772727 h -5.54182 z"
+       id="path12"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.28863633px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter9021)"
+       d="m 98.849481,73.279958 v 5.772727 l 8.312729,-5.772727 v -5.772727"
+       id="path16"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.28863633px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter8993)"
+       d="m 98.849481,79.052685 h 5.541819 l 8.31272,-5.772727 h -5.54181"
+       id="path18"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.28863633px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter8965)"
+       d="m 104.3913,79.052685 v 5.772726 h 5.54182"
+       id="path20"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.28863633px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter8937)"
+       d="m 104.3913,84.825411 8.31272,-5.772726 v -5.772727"
+       id="path22"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.28863633px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter8909)"
+       d="m 109.93312,84.825411 8.31272,-5.772726"
+       id="path24"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.28863633px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter8881)"
+       d="m 112.70402,79.052685 h 5.54182"
+       id="path26"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.28863633px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter8853)"
+       d="m 109.93312,84.825411 v 5.772727"
+       id="path28"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.28863633px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter8825)"
+       d="m 109.93312,90.598138 8.31272,-5.772727 v -5.772726"
+       id="path30"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.28863633px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter8797)"
+       d="m 93.307663,73.279958 v 17.31818 h 5.541818 V 105.02995 H 104.3913 V 90.598138 h 5.54182"
+       id="path32"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.28863633px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter8769)"
+       d="m 104.3913,105.02995 8.31272,-5.772715 V 88.639534"
+       id="path34"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccc" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:1.25;font-family:monospace;-inkscape-font-specification:monospace;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332;filter:url(#filter8741)"
+       x="70.625092"
+       y="115.25119"
+       id="text4656-2"><tspan
+         sodipodi:role="line"
+         id="tspan4654-8"
+         x="70.625092"
+         y="115.25119"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:monospace;-inkscape-font-specification:'monospace Bold';fill:#000000;stroke-width:0.26458332">THINK DOWNSTAIRS</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="D"
+     style="display:inline">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.2800326;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter8713)"
+       d="M 132.00197,104.95123 V 71.400151 c 12.07713,0.03481 20.53888,4.111142 21.47269,16.775538 -1.68715,13.947471 -6.37027,18.268281 -21.47269,16.775541 z"
+       id="path36"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.2800326;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter8685)"
+       d="M 137.37014,96.563451 V 79.78792 c 6.03857,0.01741 10.20262,1.921935 10.73634,8.387767 -0.70992,6.572821 -3.18513,9.134133 -10.73634,8.387764 z"
+       id="path36-9"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.27959231px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter8657)"
+       d="m 132.00197,71.400148 -8.05226,-5.591847 v 33.551095 l 8.05226,5.591834"
+       id="path57"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.27959231px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter8629)"
+       d="m 123.94971,65.808301 h 5.36817 c 12.13089,0.484487 23.29327,8.093935 24.15678,22.367385"
+       id="path93"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccc" />
+    <path
+       style="fill:#ff00ff;stroke-width:0.50587165;stroke-miterlimit:4;stroke-dasharray:none;filter:url(#filter8601)"
+       d="M 374.24839,369.11792 V 341.8438 h -10.35406 -10.35407 v -32.07235 -32.07234 h 9.59645 9.59645 l -5.5e-4,10.98541 -5.5e-4,10.98541 10.60715,-0.15462 10.60716,-0.15462 v 10.88749 10.88749 h 10.35406 10.35406 v 10.35406 10.35407 h -10.35406 -10.35406 v 27.27412 27.27412 h -9.84899 -9.84899 z"
+       id="path4614"
+       inkscape:connector-curvature="0"
+       transform="scale(0.26458333)" />
+    <path
+       style="fill:#00ff00;stroke-width:0.50587165;stroke-miterlimit:4;stroke-dasharray:none;filter:url(#filter8573)"
+       d="m 395.46159,369.39597 v -26.03694 h 10.01386 10.01385 l 4.75963,-3.28312 4.75963,-3.28311 0.13251,18.78992 c 0.10307,14.61325 -0.009,18.92469 -0.50507,19.39624 -0.35068,0.33347 -5.63785,4.06706 -11.74927,8.29687 -6.11143,4.22981 -12.53221,8.69553 -14.26841,9.92383 l -3.15673,2.23326 z"
+       id="path4616"
+       inkscape:connector-curvature="0"
+       transform="scale(0.26458333)" />
+    <path
+       style="fill:#00ff00;stroke-width:0.50587165;stroke-miterlimit:4;stroke-dasharray:none;filter:url(#filter8545)"
+       d="m 416.28521,330.93361 0.13705,-9.9623 10.85914,-7.55268 c 5.97253,-4.15397 12.62059,-8.78143 14.77348,-10.28324 l 3.91434,-2.73058 -0.0135,9.98662 -0.0135,9.98663 -14.20947,9.84898 c -7.81521,5.41695 -14.51889,10.03346 -14.89706,10.25893 -0.57248,0.34131 -0.66464,-1.25772 -0.55053,-9.55236 z"
+       id="path4618"
+       inkscape:connector-curvature="0"
+       transform="scale(0.26458333)" />
+    <path
+       style="fill:#00ff00;stroke-width:0.50587165;stroke-miterlimit:4;stroke-dasharray:none;filter:url(#filter8517)"
+       d="m 395.46159,308.86973 v -9.74056 L 409.73,289.25371 c 7.84762,-5.43151 14.55251,-10.0394 14.89975,-10.23976 0.49593,-0.28617 0.63134,1.74501 0.63134,9.47012 v 9.83442 l -14.62062,10.1459 c -8.04134,5.58024 -14.74623,10.1459 -14.89975,10.1459 -0.15352,0 -0.27913,-4.38325 -0.27913,-9.74056 z"
+       id="path4620"
+       inkscape:connector-curvature="0"
+       transform="scale(0.26458333)" />
+    <path
+       style="fill:#00ff00;stroke-width:0.50587165;stroke-miterlimit:4;stroke-dasharray:none;filter:url(#filter8489)"
+       d="m 374.2561,287.45321 0.008,-10.00664 14.19884,-9.84898 c 7.80936,-5.41695 14.51563,-10.03346 14.90282,-10.25893 0.59384,-0.3458 0.68253,1.14719 0.56692,9.54319 l -0.13705,9.95312 -12.6269,8.77497 c -6.9448,4.82623 -13.59287,9.46683 -14.77349,10.31244 l -2.14657,1.53747 z"
+       id="path4622"
+       inkscape:connector-curvature="0"
+       transform="scale(0.26458333)" />
+    <path
+       style="fill:#00ffff;stroke-width:0.50587165;stroke-miterlimit:4;stroke-dasharray:none;filter:url(#filter8461)"
+       d="m 398.26477,319.14154 c 0.2639,-0.2634 6.7187,-4.80909 14.34399,-10.10153 l 13.86416,-9.62262 h 9.10778 9.10778 l -1.75874,1.1963 c -0.96731,0.65797 -7.53159,5.20365 -14.5873,10.10153 l -12.82856,8.90522 h -8.86447 c -5.58733,0 -8.68708,-0.17705 -8.38464,-0.4789 z"
+       id="path4624"
+       inkscape:connector-curvature="0"
+       transform="scale(0.26458333)" />
+    <path
+       style="fill:#00ffff;stroke-width:0.50587165;stroke-miterlimit:4;stroke-dasharray:none;filter:url(#filter8433)"
+       d="m 376.9448,297.56278 c 0.18666,-0.18666 6.64532,-4.72877 14.35258,-10.09358 l 14.0132,-9.75419 9.04928,-0.008 c 4.97711,-0.004 8.95459,0.0794 8.83884,0.1861 -0.11575,0.10672 -6.63077,4.65241 -14.47784,10.10152 l -14.26738,9.90748 h -8.92404 c -4.90821,0 -8.7713,-0.15272 -8.58464,-0.33938 z"
+       id="path4626"
+       inkscape:connector-curvature="0"
+       transform="scale(0.26458333)" />
+    <path
+       style="fill:#00ffff;stroke-width:0.50587165;stroke-miterlimit:4;stroke-dasharray:none;filter:url(#filter8405)"
+       d="m 355.83836,275.76203 c 0.2639,-0.23202 6.78145,-4.78297 14.48343,-10.11323 l 14.0036,-9.69138 8.87808,0.13798 8.87807,0.13797 -14.37345,9.97526 -14.37346,9.97525 h -8.98805 c -4.94342,0 -8.77212,-0.18983 -8.50822,-0.42185 z"
+       id="path4628"
+       inkscape:connector-curvature="0"
+       transform="scale(0.26458333)" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter8377)"
+       d="m 142.58829,80.645315 c 0.89208,2.551043 2.75327,8.063914 -4.94448,10.022609"
+       id="path4632"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:#ff00ff;stroke-width:0.13384521;stroke-miterlimit:4;stroke-dasharray:none;filter:url(#filter8349)"
+       d="m 133.96538,104.93038 c -0.3675,-0.0277 -0.92375,-0.0844 -1.23612,-0.12602 l -0.56795,-0.0756 V 88.146287 71.563857 l 1.90429,0.09144 c 11.74703,0.564083 17.85781,5.456211 19.07774,15.273147 0.12645,1.017526 0.11581,1.472562 -0.0624,2.672693 -1.44595,9.734807 -4.52216,13.806473 -11.39687,15.084903 -1.13337,0.21076 -6.08501,0.36751 -7.71864,0.24434 z m 8.95353,-8.404533 c 2.96044,-0.822907 4.49778,-2.903053 5.20109,-7.037507 0.23522,-1.382746 0.17084,-2.293093 -0.27191,-3.845041 -0.75193,-2.635745 -2.72843,-4.618103 -5.39691,-5.412899 -1.0677,-0.318013 -3.11627,-0.606951 -4.30972,-0.607859 l -1.03567,-7.93e-4 v 8.543747 8.543748 l 0.3675,0.06392 c 0.84093,0.146261 4.65243,-0.02684 5.44562,-0.247325 z"
+       id="path4634"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#00ff00;stroke-width:0.13384521;stroke-miterlimit:4;stroke-dasharray:none;filter:url(#filter8321)"
+       d="m 127.9184,101.85976 -3.77518,-2.61969 V 82.733806 66.227539 l 0.3675,0.237739 c 0.77181,0.499293 6.92368,4.777835 7.08317,4.926243 0.13295,0.123714 0.16056,3.55832 0.13363,16.621931 l -0.0339,16.465998 z"
+       id="path4636"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#00ffff;stroke-width:0.13384521;stroke-miterlimit:4;stroke-dasharray:none;filter:url(#filter8293)"
+       d="m 149.06611,76.631115 c -3.26444,-3.332271 -8.13222,-5.063771 -15.13324,-5.382991 l -1.90339,-0.08679 -3.63595,-2.522976 c -1.99976,-1.387639 -3.66893,-2.558026 -3.70926,-2.60086 -0.0403,-0.04284 1.43007,-0.04645 3.26754,-0.008 3.566,0.07454 5.30383,0.288459 7.78053,0.957726 2.89439,0.782134 5.91487,2.17851 8.18883,3.785716 1.77514,1.254646 4.26347,3.773495 5.40707,5.47338 0.50638,0.75271 0.8951,1.392764 0.86382,1.422344 -0.0313,0.02958 -0.53796,-0.437298 -1.12595,-1.03751 z"
+       id="path4638"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#00ffff;stroke-width:0.13384521;stroke-miterlimit:4;stroke-dasharray:none;filter:url(#filter8265)"
+       d="m 137.67374,96.379876 c -0.12591,-0.05732 -0.16704,-0.766315 -0.16704,-2.879129 0,-1.765015 0.0477,-2.773593 0.12883,-2.72346 0.1862,0.115081 2.09084,-0.550092 2.90161,-1.013351 2.34358,-1.339083 3.39855,-3.500223 3.00958,-6.165186 -0.0886,-0.607116 -0.27565,-1.479696 -0.41562,-1.939065 -0.13998,-0.45937 -0.22372,-0.835218 -0.18608,-0.835218 0.27582,0 1.99807,1.064114 2.49884,1.543936 1.65965,1.590233 2.66232,4.43761 2.34573,6.661436 -0.47599,3.343545 -1.70122,5.598914 -3.55028,6.535264 -1.27059,0.643416 -1.99559,0.786381 -4.26037,0.840102 -1.17598,0.0279 -2.21332,0.01651 -2.3052,-0.02532 z"
+       id="path4640"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:1.25;font-family:monospace;-inkscape-font-specification:monospace;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332;filter:url(#filter8237)"
+       x="71.227325"
+       y="115.9249"
+       id="text4656"><tspan
+         sodipodi:role="line"
+         id="tspan4654"
+         x="71.227325"
+         y="115.9249"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:monospace;-inkscape-font-specification:'monospace Bold';stroke-width:0.26458332"><tspan
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:monospace;-inkscape-font-specification:'monospace Bold';fill:#ff00ff"
+   id="tspan4658">T</tspan><tspan
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:monospace;-inkscape-font-specification:'monospace Bold';fill:#00ff00"
+   id="tspan4660">H</tspan><tspan
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:monospace;-inkscape-font-specification:'monospace Bold';fill:#00ffff"
+   id="tspan4662">I</tspan><tspan
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:monospace;-inkscape-font-specification:'monospace Bold';fill:#ff00ff"
+   id="tspan4664">N</tspan><tspan
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:monospace;-inkscape-font-specification:'monospace Bold';fill:#00ff00"
+   id="tspan4666">K</tspan> <tspan
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:monospace;-inkscape-font-specification:'monospace Bold';fill:#00ffff"
+   id="tspan4668">D</tspan><tspan
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:monospace;-inkscape-font-specification:'monospace Bold';fill:#ff00ff"
+   id="tspan4670">O</tspan><tspan
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:monospace;-inkscape-font-specification:'monospace Bold';fill:#00ff00"
+   id="tspan4672">W</tspan><tspan
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:monospace;-inkscape-font-specification:'monospace Bold';fill:#00ffff"
+   id="tspan4674">N</tspan><tspan
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:monospace;-inkscape-font-specification:'monospace Bold';fill:#ff00ff"
+   id="tspan4676">S</tspan><tspan
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:monospace;-inkscape-font-specification:'monospace Bold';fill:#00ff00"
+   id="tspan4678">T</tspan><tspan
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:monospace;-inkscape-font-specification:'monospace Bold';fill:#00ffff"
+   id="tspan4680">A</tspan><tspan
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:monospace;-inkscape-font-specification:'monospace Bold';fill:#ff00ff"
+   id="tspan4682">I</tspan><tspan
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:monospace;-inkscape-font-specification:'monospace Bold';fill:#00ff00"
+   id="tspan4684">R</tspan><tspan
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:monospace;-inkscape-font-specification:'monospace Bold';fill:#00ffff"
+   id="tspan4686">S</tspan></tspan></text>
+  </g>
+</svg>
