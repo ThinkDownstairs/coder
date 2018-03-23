@@ -16,8 +16,8 @@ class Quit(state_manager.State):
     def update(self, delta: int, fps: float) -> None:
         pass
 
-    def leave(self) -> None:
+    def leave(self, next_: state_manager.StateType) -> None:
         pass
 
-    def enter(self) -> None:
+    def enter(self, prev_: state_manager.StateType) -> None:
         self.state_manager.terminate_main_loop()

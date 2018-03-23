@@ -16,6 +16,9 @@ class GoManager(object):
     def add_object(self, game_object: game_objects.GameObject):
         self._go_list.append(game_object)
 
+    def clear_objects(self):
+        self._go_list = []
+
     def render(self, target: pygame.Surface):
         for go in self._go_list:
             go.render(target)

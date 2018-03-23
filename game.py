@@ -17,10 +17,10 @@ class Game(state_manager.State):
   def __init__(self) -> None:
     super().__init__()
     pygame.font.init() # init fonts, do i have to do it here?
-    self._player = player.Player() # The one who shoots code snippets
     self._cursor = cursor.Cursor() #my cursor :D
     self._go_manager = glob.get_manager()
     self._stati = status.Stati()
+    self._player = player.Player(self._stati) # The one who shoots code snippets
     self.mouse_pos = (0, 0)
     self._w, self._h = pygame.display.get_surface().get_size()
     self._next_bug_count = 0 # type: int
@@ -64,12 +64,15 @@ class Game(state_manager.State):
     if self._next_bug_count < 0:
       self._go_manager.add_object(bugs.Bugs(color.PURPLE2, random.randint(30, 600), random.randint(30, 600)))
       #for every bug comes an exception
-      self._go_manager.add_object(exceptions.Excepties(color.BISQUE1))
+      self._go_manager.add_object(exceptions.Excepties(self._stati))
       self._next_bug_count = random.randint(1500, 3500)
+    if self._stati.health <= 0:
+        self.state_manager.change_state(menu.Menu) ## TODO : game over state  and/or highscore
 
-  def leave(self) -> None:
+  def leave(self, next_: state_manager.StateType) -> None:
     pass
 
-  def enter(self) -> None:
-    pass
+  def enter(self, prev_: state_manager.StateType) -> None:
+      if prev_ == menu.Menu:
+        self._go_manager.clear_objects()
 

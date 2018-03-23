@@ -21,10 +21,10 @@ class State(object):
   def update(self, delta: int, fps: float) -> None:
     pass
 
-  def leave(self) -> None:
+  def leave(self, next_) -> None:
     pass
 
-  def enter(self) -> None:
+  def enter(self, prev_) -> None:
     pass
 
   state_manager = property(lambda s: s._state_manager)
@@ -67,9 +67,10 @@ class StateManager(object):
       self._delta = self._clock.tick(250) # Here i get the ms 
       if self._next is not None:
         if self._current is not None:
-          self._current.leave()
+          self._current.leave(type(self._next))
+        prev_ = type(self._current)
         self._current = self._next
-        self._current.enter()
+        self._current.enter(prev_)
         self._next = None
       self._current.input()
       self._current.update(self._delta, self._fps)

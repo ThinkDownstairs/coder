@@ -61,10 +61,10 @@ class About(state_manager.State):
             self.state_manager.change_state(menu.Menu)
         self._background.update(delta)
 
-    def leave(self) -> None:
+    def leave(self, next_: state_manager.StateType) -> None:
         pass
 
-    def enter(self) -> None:
+    def enter(self, prev_: state_manager.StateType) -> None:
         if self._surface is None:
             self._render_surface()
         # always create a new background,

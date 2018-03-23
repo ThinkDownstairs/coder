@@ -7,6 +7,7 @@ import consts
 import snippets
 import exceptions
 import collision
+import status
 
 
 import random
@@ -16,7 +17,7 @@ import no_game_object
 
 
 class Player(object):
-    def __init__(self) -> None:
+    def __init__(self, status_: status.Stati) -> None:
         super().__init__()
         self._catcher = animations.TryExcept()
         self._progger = animations.Player(random.choice([ ## TODO : refactor to let the use decide which editor to use, not random
@@ -26,6 +27,7 @@ class Player(object):
             animations.Surfaces.NANO,
             animations.Surfaces.VIM,
             animations.Surfaces.VSCODE]))
+        self._status = status_
         self._pos = (consts.SCREEN_W // 2, consts.SCREEN_H // 2)
 
     def set_pos(self, pos: Tuple[int, int]) -> None:

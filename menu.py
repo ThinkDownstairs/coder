@@ -107,13 +107,8 @@ class Menu(state_manager.State):
                     self.state_manager.change_state(me.typ)
 
 
-    #def update(self, delta: int, fps: float) -> None:
-        #pass
 
-    #def leave(self) -> None:
-        #pass
-
-    def enter(self) -> None:
+    def enter(self, prev_: state_manager.StateType) -> None:
         self._idx = 0
         if not self._initialized:
             h = sum([me.height + 10 for me in self._menu_entries])

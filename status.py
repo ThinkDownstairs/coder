@@ -14,10 +14,11 @@ class Stati(object):
         textsurface = myfont.render('level: {}, points: {}'.format(str(self._points), str(self._level)), False, color.BLUEVIOLET)  # self._clock.get_fps()
         screen.blit(textsurface, (0, 20))
 
-
-    def update(self):
-        pass
-
-    def addpoint(self, points: int):
+    def inc_point(self, points: int = 1):
         self._points += points
+
+    def dec_health(self, health: int = 1):
+        self._health -= health
+
+    health = property(lambda s: s._health)
 

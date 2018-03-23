@@ -6,9 +6,10 @@ import color
 import animations
 from typing import Tuple, List
 import random
+import status
 
 class Excepties(game_objects.GameObject):
-    def __init__(self, color: Tuple[int, int, int]) -> None:
+    def __init__(self, status_: status.Stati) -> None:
         super().__init__()
         self._animation =  animations.Error(random.choice([
             animations.Surfaces.FLOATINGPOINTERROR,
@@ -21,7 +22,7 @@ class Excepties(game_objects.GameObject):
             animations.Surfaces.RUNTIMEERROR,
             animations.Surfaces.TYPEERROR]))
         self._y = random.randint(10, 500)
-        self._col = color # TODO : nicht mehr benötigt.
+        self._status = status_
 
 
     def render(self, target) -> None:
@@ -32,6 +33,9 @@ class Excepties(game_objects.GameObject):
     def update(self, delta) -> bool:
         self._x += (delta * consts.EXCEPTIE_SPEED)
         self._animation.update(delta)
+        if self._x > consts.SCREEN_W:
+            self.delete()
+            self._status.dec_health()
         #return (bool(self._x < 0) or self._is_catched)
 
     def _get_surface(self) -> pygame.Surface:
