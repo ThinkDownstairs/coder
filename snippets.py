@@ -14,7 +14,6 @@ class Snippet(game_objects.GameObject):
         self._x = mouse_pos_x
         self._y = consts.SCREEN_H - 50
         self._col = color
-        self._is_killed = False # type: bool
         self._dummy = pygame.Surface((5, 30))
 
 
@@ -22,6 +21,8 @@ class Snippet(game_objects.GameObject):
         pygame.draw.rect(screen, self._col, self._rect, 0)
 
     def update(self, delta) -> bool:
+        if self._y < -consts.SNIPPET_H:
+            self.delete()
         self._y -= delta
         self._rect = pygame.Rect(self._x, self._y, consts.SNIPPET_W, consts.SNIPPET_H)
         #return (bool(self._y < 0) or self._is_kill
