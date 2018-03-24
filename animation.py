@@ -32,6 +32,8 @@ class Animation(object):
             if self._idx >= self._count:
                 self._idx %= self._count
                 self._done = self._once
+                if self._done:
+                    self._idx = self._count - 1 # ensure that we stop on the last animation frame
             self._current = self._sprite.subsurface((self._width * self._idx, 0, self._width, self._height))
 
     def render(self, target: pygame.Surface, x: int, y: int) -> None:
