@@ -9,6 +9,7 @@ class Status(object):
     def __init__(self):
         super().__init__()
         self._level = 0 #type: int
+        self._next_level = consts.LEVEL_1_POINTS
         self._points = 0 #type: int
         self._health = 3 # type: int
         self._font = pygame.font.Font('DejaVuSans.ttf', 18)
@@ -34,6 +35,19 @@ class Status(object):
 
     def inc_point(self, points: int = 1):
         self._points += points
+        if self._points >= self._next_level:
+            self._level += 1
+            self._health = 3
+            if self._level == 1:
+                self._next_level = consts.LEVEL_2_POINTS
+            elif self._level == 2:
+                self._next_level = consts.LEVEL_3_POINTS
+            elif self._level == 3:
+                self._next_level = consts.LEVEL_4_POINTS
+            elif self._level == 4:
+                self._next_level = consts.LEVEL_5_POINTS
+            else:
+                self._next_level += consts.LEVEL_5_POINTS
         self._dirty = True
 
     def dec_health(self, health: int = 1):
