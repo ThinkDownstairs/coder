@@ -5,12 +5,13 @@ import color
 import animations
 from typing import List, Tuple
 import random
+import status
 
 class Bugs(game_objects.GameObject):
-    def __init__(self, x: int, y: int) -> None:
+    def __init__(self, status_: status.Status) -> None:
         super().__init__()
-        self._x = x
-        self._y = y
+        self._x = random.randint(10, consts.SCREEN_W - 100)
+        self._y = random.randint(30, consts.SCREEN_H - 100)
         self._animation = animations.Bug(random.choice([
             animations.Surfaces.BUG_RED_1,
             animations.Surfaces.BUG_RED_2,

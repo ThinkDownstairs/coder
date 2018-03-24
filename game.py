@@ -24,9 +24,9 @@ class Game(state_manager.State):
         self.mouse_pos = (0, 0)
         self._w, self._h = pygame.display.get_surface().get_size()
         self._next_bug_count = 0 # type: int
+        self._next_exception_count = 0 # type: int
         self._delta = 0 # type: int
         self._fps = 0 # type: float
-        self._except_list = None # type: List[exceptions.Excepties]
 
 
     def render(self) -> None:
@@ -60,12 +60,17 @@ class Game(state_manager.State):
         self._delta = delta
         self._fps = fps
         self._next_bug_count -= delta
+        self._next_exception_count -= delta
         self._go_manager.update(delta, self._player, self._status)
-        if self._next_bug_count < 0:
-            self._go_manager.add_object(bugs.Bugs(random.randint(30, 600), random.randint(30, 600)))
-            #for every bug comes an exception
+
+        if self._next_bug_count <= 0:
+            self._go_manager.add_object(bugs.Bugs(self._status))
+            self._next_bug_count = random.randint(*consts.MSEC_BETWEEN_BUGS[min(len(consts.MSEC_BETWEEN_BUGS) - 1, self._status.level)])
+
+        if self._next_exception_count <= 0:
             self._go_manager.add_object(exceptions.Excepties(self._status))
-            self._next_bug_count = random.randint(1500, 3500)
+            self._next_exception_count = random.randint(*consts.MSEC_BETWEEN_EXCEPTIONS[min(len(consts.MSEC_BETWEEN_EXCEPTIONS) - 1, self._status.level)])
+
         if self._status.health <= 0:
             self.state_manager.change_state(menu.Menu) ## TODO : game over state  and/or highscore
         self._status.update()
