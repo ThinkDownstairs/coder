@@ -25,7 +25,7 @@ class GoManager(object):
         for go in self._go_list:
             go.render(target)
 
-    def update(self, delta: int, player_: player.Player, status_: status.Stati):
+    def update(self, delta: int, player_: player.Player, status_: status.Status):
         for go in self._go_list:
             go.update(delta)
 

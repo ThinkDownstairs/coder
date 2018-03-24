@@ -9,7 +9,7 @@ import random
 import status
 
 class Excepties(game_objects.GameObject):
-    def __init__(self, status_: status.Stati) -> None:
+    def __init__(self, status_: status.Status) -> None:
         super().__init__()
         self._animation =  animations.Error(random.choice([
             animations.Surfaces.FLOATINGPOINTERROR,

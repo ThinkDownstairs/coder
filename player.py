@@ -17,7 +17,7 @@ import no_game_object
 
 
 class Player(object):
-    def __init__(self, status_: status.Stati) -> None:
+    def __init__(self, status_: status.Status) -> None:
         super().__init__()
         self._catcher = animations.TryExcept()
         self._progger = animations.Player(random.choice([ ## TODO : refactor to let the use decide which editor to use, not random
