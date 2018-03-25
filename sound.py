@@ -32,7 +32,7 @@ class Sound(object):
             _sounds = {e: pygame.mixer.Sound(e.get_filename()) for e in Sounds}
             m = _sounds.get(Sounds.MUSIC)
             if m is not None:
-                m.set_volume(.25)
+                m.set_volume(.35)
         self._sounds = _sounds
 
     def play(self, sound_: Sounds, loop: bool = False):

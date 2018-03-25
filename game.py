@@ -11,6 +11,7 @@ import exceptions
 import menu
 import globals_
 import status
+import sound
 
 
 class Game(state_manager.State):
@@ -19,6 +20,7 @@ class Game(state_manager.State):
         #pygame.font.init() # init fonts, do i have to do it here?
         self._cursor = cursor.Cursor() #my cursor :D
         self._go_manager = globals_.get_manager()
+        self._sound = globals_.get_sound() # type: sound.Sound
         self._status = status.Status()
         self._player = player.Player(self._status) # The one who shoots code snippets
         self.mouse_pos = (0, 0)
@@ -65,6 +67,7 @@ class Game(state_manager.State):
 
         if self._next_bug_count <= 0:
             self._go_manager.add_object(bugs.Bugs(self._status))
+            self._sound.play(sound.Sounds.BUG, False)
             self._next_bug_count = random.randint(*consts.MSEC_BETWEEN_BUGS[min(len(consts.MSEC_BETWEEN_BUGS) - 1, self._status.level)])
 
         if self._next_exception_count <= 0:
@@ -76,9 +79,10 @@ class Game(state_manager.State):
         self._status.update()
 
     def leave(self, next_: state_manager.StateType) -> None:
-        pass
+        self._sound.stop(sound.Sounds.MUSIC)
 
     def enter(self, prev_: state_manager.StateType) -> None:
+        self._sound.play(sound.Sounds.MUSIC, True)
         if prev_ == menu.Menu:
             self._go_manager.clear_objects()
             self._status.reset()

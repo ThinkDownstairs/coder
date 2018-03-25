@@ -9,6 +9,8 @@ import exceptions
 import collision
 import status
 
+import sound
+import globals_
 
 import random
 
@@ -28,6 +30,7 @@ class Player(object):
             animations.Surfaces.VIM,
             animations.Surfaces.VSCODE]))
         self._status = status_
+        self._sound = globals_.get_sound()
         self._pos = (consts.SCREEN_W // 2, consts.SCREEN_H // 2)
 
     def set_pos(self, pos: Tuple[int, int]) -> None:
@@ -44,6 +47,7 @@ class Player(object):
         self._progger.update(delta)
 
     def fire(self) -> snippets.Snippet:
+        self._sound.play(sound.Sounds.FIRE)
         return snippets.Snippet(color.POWDERBLUE, self._pos[0])
 
     def try_catch(self, exceptie: exceptions.Excepties) -> None:
@@ -52,6 +56,7 @@ class Player(object):
         if collision.collide(self._catcher.surface, cx, cy, exceptie.surface, *exceptie.pos):
             exceptie.delete()
             no_game_object.NoGameObject(animations.CatchException(), cx, cy)
+            self._sound.play(sound.Sounds.CATCH)
 
 
     catcher = property(lambda s: s._catcher)
