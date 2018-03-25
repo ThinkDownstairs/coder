@@ -81,7 +81,7 @@ def bugreport(exc_info=None) -> str:
             system_command=prepare(' '.join(sys.argv)))
 
     report_directory = os.path.expanduser('~')
-    report_file = os.path.join(report_directory, 'downstairs-bug.txt')
+    report_file = os.path.join(report_directory, 'coder-bug.txt')
 
     # with 'w' we override,... but i dont want to grow the file uncontrolled,
     # so maybe i rewrite it later to append,.. but then we need some kind of

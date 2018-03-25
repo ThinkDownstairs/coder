@@ -6,6 +6,7 @@ import menu
 import about
 import quit_
 import consts
+import bugreport
 
 if not pygame.font: print ('Warning, fonts disabled')
 if not pygame.mixer: print ('Warning, sound disabled')
@@ -35,18 +36,6 @@ def load_sound(name):
         print ('Cannot load sound:', wav)
     return sound
 
-def main():
-    running = True
-    while running:
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                running = False
-            if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
-                running = False
-            if event.type == pygame.MOUSEBUTTONDOWN:
-                #print event.button
-                print(pygame.mouse.get_pos())
-
 def init():
     pygame.init()
     screen = pygame.display.set_mode((consts.SCREEN_W, consts.SCREEN_H))
@@ -56,15 +45,18 @@ def init():
 
 
 if __name__ == '__main__':
-    sm = state_manager.StateManager(init())
-    m = menu.Menu()
-    m.add(menu.MenuEntry('Start', game.Game))
-    m.add(menu.MenuEntry('About', about.About))
-    m.add(menu.MenuEntry('Quit', quit_.Quit))
-    sm.add_state(m)
-    sm.add_state(game.Game())
-    sm.add_state(about.About())
-    sm.add_state(quit_.Quit())
-    sm.change_state(menu.Menu)
-    sm.main_loop()
+    try:
+        sm = state_manager.StateManager(init())
+        m = menu.Menu()
+        m.add(menu.MenuEntry('Start', game.Game))
+        m.add(menu.MenuEntry('About', about.About))
+        m.add(menu.MenuEntry('Quit', quit_.Quit))
+        sm.add_state(m)
+        sm.add_state(game.Game())
+        sm.add_state(about.About())
+        sm.add_state(quit_.Quit())
+        sm.change_state(menu.Menu)
+        sm.main_loop()
+    except:
+        bugreport.bugreport()
 
