@@ -2,7 +2,7 @@
 import pygame
 import animation
 import game_objects
-import glob
+import globals_
 
 
 class NoGameObject(game_objects.GameObject):
@@ -11,7 +11,7 @@ class NoGameObject(game_objects.GameObject):
         self._x = x
         self._y = y
         self._animation = animation_
-        glob.get_manager().add_object(self)
+        globals_.get_manager().add_object(self)
 
     def render(self, target: pygame.Surface) -> None:
         self._animation.render(target, self._x, self._y)

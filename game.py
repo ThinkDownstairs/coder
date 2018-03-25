@@ -9,7 +9,7 @@ import random
 import snippets
 import exceptions
 import menu
-import glob
+import globals_
 import status
 
 
@@ -18,7 +18,7 @@ class Game(state_manager.State):
         super().__init__()
         pygame.font.init() # init fonts, do i have to do it here?
         self._cursor = cursor.Cursor() #my cursor :D
-        self._go_manager = glob.get_manager()
+        self._go_manager = globals_.get_manager()
         self._status = status.Status()
         self._player = player.Player(self._status) # The one who shoots code snippets
         self.mouse_pos = (0, 0)
