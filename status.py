@@ -16,6 +16,14 @@ class Status(object):
         self._dirty = True
         self._surface = None
 
+    def reset(self):
+        self._level = 0
+        self._next_level = consts.LEVEL_1_POINTS
+        self._points = 0
+        self._health = 3
+        self._dirty = True
+
+
     def update(self):
         if self._dirty:
             level_surface = self._font.render('level: {}'.format(self._level), True, color.BLUEVIOLET, None)

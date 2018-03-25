@@ -16,7 +16,7 @@ import status
 class Game(state_manager.State):
     def __init__(self) -> None:
         super().__init__()
-        pygame.font.init() # init fonts, do i have to do it here?
+        #pygame.font.init() # init fonts, do i have to do it here?
         self._cursor = cursor.Cursor() #my cursor :D
         self._go_manager = globals_.get_manager()
         self._status = status.Status()
@@ -81,4 +81,5 @@ class Game(state_manager.State):
     def enter(self, prev_: state_manager.StateType) -> None:
         if prev_ == menu.Menu:
             self._go_manager.clear_objects()
+            self._status.reset()
 
