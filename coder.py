@@ -7,6 +7,7 @@ import about
 import quit_
 import consts
 import bugreport
+import splash
 
 if not pygame.font: print ('Warning, fonts disabled')
 if not pygame.mixer: print ('Warning, sound disabled')
@@ -52,10 +53,11 @@ if __name__ == '__main__':
         m.add(menu.MenuEntry('About', about.About))
         m.add(menu.MenuEntry('Quit', quit_.Quit))
         sm.add_state(m)
+        sm.add_state(splash.Splash())
         sm.add_state(game.Game())
         sm.add_state(about.About())
         sm.add_state(quit_.Quit())
-        sm.change_state(menu.Menu)
+        sm.change_state(splash.Splash)
         sm.main_loop()
     except:
         bugreport.bugreport()
