@@ -10,18 +10,62 @@ import consts
 SPEED = 0.1
 
 ABOUT = [
-    '-----------',
-    'authors',
+    '~~~~~~~~~~~~',
+    'idea, code, graphics',
+    '',
     'Daniel Nimmervoll',
     'Lukas Singer',
-    '-----------',
+    '~~~~~~~~~~~~',
     '',
+    '',
+    '~~~~~~~~~~~~',
     'sounds',
-    '-----------',
-    '...',
-    '...',
-    '...',
-    '...',
+    '',
+    'OpenGameArt.org',
+    ''
+    'Effects:',
+    'Prinsu-Kun', # dead.wav
+    'qubodup', # insectoralien.flac
+    'Ogrebane', # teleport.wav
+    'Sudocolon', # menu_choise.mp3
+    ''
+    'Song:',
+    'CH-AY-NA by Sprint',
+    '~~~~~~~~~~~~',
+    '',
+    '',
+    '~~~~~~~~~~~~',
+    'tools',
+    '',
+    'vim',
+    'vscode',
+    'gimp',
+    'inkscape',
+    'audacity',
+    'python',
+    'pyinstaller',
+    'pygame',
+    '~~~~~~~~~~~~',
+    '',
+    '',
+    '~~~~~~~~~~~~',
+    'special thanks',
+    '',
+    'Jana F.',
+    'Melanie D.',
+    '~~~~~~~~~~~~',
+    '',
+    '',
+    '~~~~~~~~~~~~',
+    '',
+    'THANKS FOR PLAYING',
+    '',
+    '~~~~~~~~~~~~',
+    '~~~~~~~~~~',
+    '~~~~~~~~',
+    '~~~~~~',
+    '~~~~',
+    '~~',
     '']
 
 
@@ -33,7 +77,7 @@ class About(state_manager.State):
         self._y = None
 
     def _render_surface(self):
-        font = pygame.font.Font('DejaVuSansMono.ttf', 16)
+        font = pygame.font.Font('DejaVuSansMono.ttf', 20)
         top = 0
         line_height = int(font.get_height() * 1.3)
         self._surface = pygame.Surface((consts.SCREEN_W, line_height * (len(ABOUT) + 2)), pygame.SRCALPHA, None)
@@ -57,7 +101,7 @@ class About(state_manager.State):
 
     def update(self, delta: int, fps: float) -> None:
         self._y -= (SPEED * delta)
-        if self._y < -consts.SCREEN_H:
+        if self._y < -self._surface.get_height():
             self.state_manager.change_state(menu.Menu)
         self._background.update(delta)
 
@@ -69,7 +113,7 @@ class About(state_manager.State):
             self._render_surface()
         # always create a new background,
         # so that characters start falling from the top :-)
-        self._background = background.Background(consts.SCREEN_W, consts.SCREEN_H)
+        self._background = background.Matrix(consts.SCREEN_W, consts.SCREEN_H)
         self._y = consts.SCREEN_H + 1
 
 if __name__ == '__main__':

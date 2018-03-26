@@ -28,6 +28,7 @@ class MenuEntry(object):
         self._surface = pygame.Surface((self._w, self._h), pygame.SRCALPHA, None)
         self._surface.blit(surface, (self._w // 2 - surface.get_width() // 2, self._h // 2 - surface.get_height() // 2))
         self._surface_selected = pygame.Surface((self._w, self._h), pygame.SRCALPHA, None)
+        self._surface_selected.fill((0, 0, 0))
         self._surface_selected.blit(surface_selected, (self._w // 2 - surface_selected.get_width() // 2, self._h // 2 - surface_selected.get_height() // 2))
 
     def contains_pos(self, x: int, y: int) -> bool:
@@ -62,8 +63,9 @@ class Menu(state_manager.State):
         self._initialized = False
         self._mouse = (consts.SCREEN_W + 1, consts.SCREEN_H + 1)
         self._idx = 0
-        self._font = pygame.font.Font('DejaVuSans.ttf', 18)
-        self._font_selected = pygame.font.Font('DejaVuSans-Bold.ttf', 18)
+        self._background = None
+        self._font = pygame.font.Font('DejaVuSans.ttf', 24)
+        self._font_selected = pygame.font.Font('DejaVuSans-Bold.ttf', 28)
 
     def add(self, menu_entry: MenuEntry):
         menu_entry.prepare(self._font, self._font_selected)
@@ -74,9 +76,12 @@ class Menu(state_manager.State):
 
     def render(self) -> None:
         self.screen.fill((0, 0, 0))
+        self._background.render(self.screen)
         for i in range(len(self._menu_entries)):
             self._menu_entries[i].render(self.screen, self._idx == i)
-        pygame.draw.rect(self.screen, (255, 255, 255), (*self._mouse, 10, 10))
+        pygame.draw.line(self.screen, (255, 255, 255), (self._mouse[0], self._mouse[1] - 10), (self._mouse[0], self._mouse[1] + 10), 2)
+        pygame.draw.line(self.screen, (255, 255, 255), (self._mouse[0] - 10, self._mouse[1]), (self._mouse[0] + 10, self._mouse[1]), 2)
+        #pygame.draw.rect(self.screen, (255, 255, 255), (*self._mouse, 10, 10))
         pygame.display.flip()
 
     def input(self) -> None:
@@ -102,13 +107,18 @@ class Menu(state_manager.State):
                     if self._menu_entries[i].contains_pos(*self._mouse):
                         self.select(i)
             elif event.type == pygame.MOUSEBUTTONDOWN:
-                me = self._menu_entries[self._idx]
-                if me.contains_pos(*self._mouse):
-                    self.state_manager.change_state(me.typ)
+                l, m, r = pygame.mouse.get_pressed()
+                if l == 1:
+                    me = self._menu_entries[self._idx]
+                    if me.contains_pos(*self._mouse):
+                        self.state_manager.change_state(me.typ)
 
+    def update(self, delta: int, fps: float):
+        self._background.update(delta)
 
 
     def enter(self, prev_: state_manager.StateType) -> None:
+        self._background = background.FloatingEditors(consts.SCREEN_W, consts.SCREEN_H)
         self._idx = 0
         if not self._initialized:
             h = sum([me.height + 10 for me in self._menu_entries])
@@ -119,6 +129,7 @@ class Menu(state_manager.State):
                 self._menu_entries[i].set_pos(consts.SCREEN_W // 2 - self._menu_entries[i].width // 2, t)
                 t += offset
             self._initialized = True
+
 
 if __name__ == '__main__':
     import game

@@ -5,8 +5,52 @@ import pygame
 
 from collections import namedtuple
 import random
+import animations
 
-class Background(object):
+class FloatingEditors(object):
+    class Editor(object):
+        def __init__(self, x, y, velocity, surface) -> None:
+            super().__init__()
+            self.x = int(x)
+            self.y = y
+            self.velocity = velocity
+            self.surface = surface
+
+    def __init__(self, w: int, h: int) -> None:
+        super().__init__()
+        self._items = []
+        self._editors = [
+            animations.Player(animations.Surfaces.ATOM).surface,
+            animations.Player(animations.Surfaces.VIM).surface,
+            animations.Player(animations.Surfaces.EMACS).surface,
+            animations.Player(animations.Surfaces.VSCODE).surface,
+            animations.Player(animations.Surfaces.INTELLIJ).surface,
+            animations.Player(animations.Surfaces.NANO).surface]
+        self._next_editor = 0
+        self._w = w
+        self._h = h
+
+    def update(self, delta: int):
+        for item in self._items:
+            item.y -= (item.velocity * delta)
+        self._next_editor -= delta
+        if self._next_editor <= 0:
+            editor = self._editors[random.randint(0, len(self._editors) - 1)]
+            self._items.append(FloatingEditors.Editor(
+                random.randint(0, self._w - editor.get_width()), self._h - 5,
+                .10 + random.random() * .25,
+                editor))
+            self._next_editor = random.randint(50, 500)
+        self._items = [item for item in self._items if item.y > -100]
+
+
+    def render(self, target: pygame.Surface):
+        for item in self._items:
+            target.blit(item.surface, (item.x, int(item.y)))
+
+
+
+class Matrix(object):
     __slots__ = ('_chars', '_surfaces', '_tick', '_width', '_height', '_max_idx', '_min_new', '_max_new')
 
     class Char(object):
@@ -45,7 +89,7 @@ class Background(object):
         self._tick -= delta
         if self._tick <= 0:
             for i in range(random.randint(self._min_new, self._max_new)):
-                c = Background.Char(random.randint(1, self._width), -10, .15 + (random.random() * .2), self._surfaces[random.randint(0, self._max_idx)])
+                c = Matrix.Char(random.randint(1, self._width), -10, .15 + (random.random() * .2), self._surfaces[random.randint(0, self._max_idx)])
                 self._chars.append(c)
             self._tick = 125
             self._chars = [c for c in self._chars if c.y < self._height]
@@ -66,7 +110,7 @@ if __name__ == '__main__':
     clock = pygame.time.Clock()
     running = True
     delta = 0
-    b = Background(*SIZE)
+    b = Matrix(*SIZE)
     fpss = []
     min_fps = -1000
     while running:
