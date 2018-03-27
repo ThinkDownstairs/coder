@@ -7,7 +7,7 @@ import pygame
 
 import animation
 
-DIRECTORY = 'res/export'
+DIRECTORY = os.path.join('res', 'export')
 
 _surfaces = {}
 class Surfaces(enum.Enum):
@@ -42,6 +42,17 @@ class Surfaces(enum.Enum):
     RUNTIMEERROR = auto()
     TYPEERROR = auto()
 
+    FIBONACCI = auto()
+    FOR_I_IN_RANGE = auto()
+    FOR_ITEM_IN_ITEMS = auto()
+    IMPORT_PYGAME = auto()
+    PRINT_HELLO_WORLD = auto()
+    REVERSE = auto()
+    SQR_LAMBDA = auto()
+    STR_JOIN = auto()
+    XY_POINT = auto()
+    
+
     def get_filename(self):
         if self == Surfaces.VIM: fn = 'vim.png'
         elif self == Surfaces.ATOM: fn = 'atom.png'
@@ -69,6 +80,15 @@ class Surfaces(enum.Enum):
         elif self == Surfaces.RECURSIONERROR: fn = 'recursionerror.png'
         elif self == Surfaces.RUNTIMEERROR: fn = 'runtimeerror.png'
         elif self == Surfaces.TYPEERROR: fn = 'typeerror.png'
+        elif self == Surfaces.FIBONACCI: fn = 'fibonacci.png'
+        elif self == Surfaces.FOR_I_IN_RANGE: fn = 'for-i-in-range.png'
+        elif self == Surfaces.FOR_ITEM_IN_ITEMS: fn = 'for-item-in-items.png'
+        elif self == Surfaces.IMPORT_PYGAME: fn = 'import-pygame.png'
+        elif self == Surfaces.PRINT_HELLO_WORLD: fn = 'print-hello-world.png'
+        elif self == Surfaces.REVERSE: fn = 'reverse.png'
+        elif self == Surfaces.SQR_LAMBDA: fn = 'sqr-lambda.png'
+        elif self == Surfaces.STR_JOIN: fn = 'str-join.png'
+        elif self == Surfaces.XY_POINT: fn = 'xy-point.png'
         else: raise Exception('Unknown Surface Type: {}'.format(str(self)))
         return os.path.join(DIRECTORY, fn)
 

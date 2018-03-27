@@ -37,7 +37,7 @@ class Game(state_manager.State):
     def render(self) -> None:
         self._screen.fill(color.BLACK)
         self._player.render(self.screen)
-        self._cursor.render(self._screen, self.mouse_pos, color.LIGHTSEAGREEN)
+        #self._cursor.render(self._screen, self.mouse_pos, color.LIGHTSEAGREEN)
         self._go_manager.render(self._screen)
         self._status.render(self._screen)
 

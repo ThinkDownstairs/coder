@@ -1,31 +1,38 @@
 import pygame
+import animations
 
 import game_objects
 import consts
 import color
+import random
 from typing import Tuple, List
 
 class Snippet(game_objects.GameObject):
     def __init__(self, color: Tuple[int, int, int], mouse_pos_x: int) -> None:
         super().__init__()
         self._rect = None # type: pygame.Rect
-        self._textsurface = None # type: pygame.Surface
-        self._myfont = None
-        self._x = mouse_pos_x
-        self._y = consts.SCREEN_H - 50
-        self._col = color
-        self._dummy = pygame.Surface((5, 30))
-
+        self._animation = animations.Snippet(random.choice([
+            animations.Surfaces.FIBONACCI,
+            animations.Surfaces.FOR_I_IN_RANGE,
+            animations.Surfaces.FOR_ITEM_IN_ITEMS,
+            animations.Surfaces.IMPORT_PYGAME,
+            animations.Surfaces.PRINT_HELLO_WORLD,
+            animations.Surfaces.REVERSE,
+            animations.Surfaces.SQR_LAMBDA,
+            animations.Surfaces.STR_JOIN,
+            animations.Surfaces.XY_POINT]))
+        self._x = mouse_pos_x - self._animation.surface.get_width() // 2
+        self._y = consts.SCREEN_H
+        self._h = self._animation.surface.get_height()
 
     def render(self, screen):
-        pygame.draw.rect(screen, self._col, self._rect, 0)
+        self._animation.render(screen, self._x, self._y)
 
-    def update(self, delta) -> bool:
-        if self._y < -consts.SNIPPET_H:
+    def update(self, delta) -> None:
+        self._animation.update(delta)
+        if self._y < -self._h:
             self.delete()
-        self._y -= delta
-        self._rect = pygame.Rect(self._x, self._y, consts.SNIPPET_W, consts.SNIPPET_H)
-        #return (bool(self._y < 0) or self._is_kill
+        self._y -= (delta * consts.SNIPPET_SPEED)
 
     def _get_surface(self) -> pygame.Surface:
-        return self._dummy
+        return self._animation.surface

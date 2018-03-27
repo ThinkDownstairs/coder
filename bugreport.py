@@ -110,7 +110,9 @@ def bugreport(exc_info=None) -> str:
         tkinter.Button(root, text='Close', command=lambda: root.quit()).pack(side=tkinter.BOTTOM)
         root.mainloop()
     except:
-        print(report)
+        pass
+
+    print(report)
 
 
     return report_file
