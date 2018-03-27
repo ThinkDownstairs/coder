@@ -49,17 +49,8 @@ def init():
 if __name__ == '__main__':
     try:
         sm = state_manager.StateManager(init())
-        m = menu.Menu()
-        m.add(menu.MenuEntry('Start', game.Game))
-        m.add(menu.MenuEntry('Highscores', highscore.Highscore))
-        m.add(menu.MenuEntry('About', about.About))
-        m.add(menu.MenuEntry('Quit', quit_.Quit))
-        sm.add_state(m)
         sm.add_state(splash.Splash())
-        sm.add_state(highscore.Highscore())
-        sm.add_state(game.Game())
-        sm.add_state(about.About())
-        sm.add_state(quit_.Quit())
+        # initialization of the other states happens in the splash screen
         sm.change_state(splash.Splash)
         sm.main_loop()
     except:
