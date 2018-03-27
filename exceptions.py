@@ -23,6 +23,8 @@ class Excepties(game_objects.GameObject):
             animations.Surfaces.TYPEERROR]))
         self._y = random.randint(10, 500)
         self._status = status_
+        offset, range_ = consts.EXCEPTION_SPEEDS[min(self._status.level, len(consts.EXCEPTION_SPEEDS) - 1)]
+        self._speed = offset + random.random() * range_
 
 
     def render(self, target) -> None:
@@ -31,7 +33,7 @@ class Excepties(game_objects.GameObject):
         #pygame.draw.rect(screen, self._col, self._rect, 0)
 
     def update(self, delta) -> bool:
-        self._x += (delta * consts.EXCEPTIE_SPEED)
+        self._x += (delta * self._speed)
         self._animation.update(delta)
         if self._x > consts.SCREEN_W:
             self.delete()
