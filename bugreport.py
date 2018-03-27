@@ -4,8 +4,22 @@ import platform
 import os
 import datetime
 import traceback
+import tkinter
 
 import build_info
+
+# keep those trailing whites!!
+TEXT = """
+Sorry!
+
+This was unexpected.
+
+    We created a Bugreport under: {bugreport}.    
+
+    It would be great if you could send the bugreport to thinkdownstairs@gmail.com    
+
+Thanks for your Help!
+"""
 
 
 TEMPLATE = """
@@ -89,7 +103,15 @@ def bugreport(exc_info=None) -> str:
     with open(report_file, 'w') as f:
         f.write(report)
 
-    print(report)
+    try:
+        root = tkinter.Tk()
+        root.title('Coder - Unexpected Error')
+        tkinter.Label(root, text=TEXT.format(bugreport=report_file)).pack(side=tkinter.TOP)
+        tkinter.Button(root, text='Close', command=lambda: root.quit()).pack(side=tkinter.BOTTOM)
+        root.mainloop()
+    except:
+        print(report)
+
 
     return report_file
 
