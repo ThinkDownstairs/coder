@@ -1,7 +1,13 @@
 
+import os
+import pickle
+
 import pygame
 import state_manager
 import consts
+import menu
+
+import background
 
 from collections import namedtuple
 
@@ -16,53 +22,94 @@ class Highscore(state_manager.State):
         self._input_str = None if new_entry is None else ''
         self._input_font = pygame.font.Font('DejaVuSansMono.ttf', 24)
         self._input_surface = None
-        self._entry_font = pygame.font.Font('DejaVuSans.ttf', 20)
-        self._new_entry_font = pygame.font.Font('DejaVuSans-Bold.ttf', 20)
+        self._entry_font = pygame.font.Font('DejaVuSansMono.ttf', 20)
+        self._new_entry_font = pygame.font.Font('DejaVuSansMono-Bold.ttf', 20)
         self._entry_surfaces = None
+        self._background = None
+        self._filename = os.path.join(os.path.expanduser('~'), '.coder-game', 'highscore.dat')
+
+    def _load(self):
+        if os.path.exists(self._filename):
+            with open(self._filename, 'rb') as f:
+                self._entries = pickle.load(f)
+
+    def _save(self):
+        d = os.path.dirname(self._filename)
+        if not os.path.exists(d):
+            os.mkdir(d)
+        with open(self._filename, 'wb') as f:
+            pickle.dump(self._entries, f, pickle.HIGHEST_PROTOCOL)
 
     def _render_input(self):
         return self._input_font.render('Your Name: {:12}'.format(self._input_str), True, (255, 255, 255), None)
+
+    def _render_entry_surfaces(self):
+        self._entry_surfaces = [self._entry_font.render('     TIMESTAMP             PLAYER         LEVEL         POINTS', True, (40, 210, 40), None)]
+        for entry in self._entries:
+            if entry == self._new_entry:
+                font = self._new_entry_font
+                color = (0, 255, 0)
+            else:
+                font = self._entry_font
+                color = (40, 210, 40)
+            surface = font.render('{timestamp:%Y-%m-%d %H:%M:%S}     {player:^12}     {level:0>7}     {points:0>12}'.format(
+                timestamp=entry.timestamp,
+                player=entry.player,
+                level=entry.level,
+                points=entry.points),
+                True,
+                color,
+                None)
+            self._entry_surfaces.append(surface)
 
     def _addch(self, ch: str):
         if self._input_str is not None:
             if len(self._input_str) < 12:
                 self._input_str += ch
                 self._input_surface = self._render_input()
-            print(self._input_str)
 
     def _clrch(self):
         if self._input_str is not None:
             if len(self._input_str) > 0:
                 self._input_str = self._input_str[:-1]
                 self._input_surface = self._render_input()
-            print(self._input_str)
 
     def _done(self):
-        new_entry = Entry(self._input_str, self._new_entry.level, self._new_entry.points, self._new_entry.timestamp)
-        len_entries = len(self._entries)
-        for i in range(MAX_ENTRIES):
-            if i < len_entries:
-                entry = self._entries[i]
-                if new_entry.points >= entry.points:
-                    # TODO : add
+        if self._input_str is not None:
+            self._new_entry = Entry(self._input_str, self._new_entry.level, self._new_entry.points, self._new_entry.timestamp)
+            len_entries = len(self._entries)
+            for i in range(MAX_ENTRIES):
+                if i < len_entries:
+                    entry = self._entries[i]
+                    if self._new_entry.points >= entry.points:
+                        self._entries.insert(i, self._new_entry)
+                        self._entry_surfaces = None # i want to rerender them
+                        break
+                else:
+                    self._entries.insert(i, self._new_entry)
+                    self._entry_surfaces = None # i want to rerender them
                     break
-            else:
-                # TODO : just add it here, there are less than MAX_ENTRIES entries
-                break
-        self._input_str = None
+            if len(self._entries) > MAX_ENTRIES:
+                self._entries = self._entries[:MAX_ENTRIES - 1]
+            self._save()
+            self._input_str = None
 
 
     def render(self) -> None:
-        self.screen.fill((0, 0, 0))
+        #self.screen.fill((0, 0, 0))
+        self._background.render(self.screen)
         if self._input_str is not None:
             if self._input_surface is None:
                 self._input_surface = self._render_input()
             self.screen.blit(self._input_surface, (consts.SCREEN_W // 2 - self._input_surface.get_width() // 2, 10))
-        top = 100
-        if self._entry_surfaces is not None:
-            for entry_surface in self._entry_surfaces:
-                self.screen.blit(entry_surface, (10, top))
-                top += (entry_surface.get_height() * 1.3)
+        if self._entry_surfaces is None:
+            self._render_entry_surfaces()
+        top = 120
+        step = 1.8
+        for entry_surface in self._entry_surfaces:
+            self.screen.blit(entry_surface, (10, top))
+            top += (entry_surface.get_height() * step)
+            step = 1.4
         pygame.display.flip()
 
 
@@ -71,28 +118,29 @@ class Highscore(state_manager.State):
             if event.type == pygame.QUIT:
                 self.state_manager.terminate_main_loop()
             if event.type == pygame.KEYDOWN:
+                if self._input_str is None:
+                    self.state_manager.change_state(menu.Menu)
                 if event.key == pygame.K_BACKSPACE:
                     self._clrch()
                 elif event.key == pygame.K_RETURN:
                     self._done()
+                elif event.key == pygame.K_ESCAPE:
+                    self.state_manager.change_state(menu.Menu)
                 else:
                     ch = event.unicode
                     self._addch(ch)
 
 
     def update(self, delta: int, fps: float) -> None:
-        if self._entry_surfaces is None:
-            self._entry_surfaces = []
-            for entry in self._entries:
-                surface = self._entry_font.render('{timestamp:%Y-%m-%d %H:%M:%S} {player:12} {level:6} {points}'.format(
-                    timestamp=entry.timestamp,
-                    player=entry.player,
-                    level=entry.level,
-                    points=entry.points),
-                    True,
-                    (255, 255, 255),
-                    None)
-                self._entry_surfaces.append(surface)
+        self._background.update(delta)
+
+    def enter(self, prev_):
+        self._background = background.Matrix(consts.SCREEN_W, consts.SCREEN_H)
+        self._load()
+        self._render_entry_surfaces()
+
+    def leave(self, next_):
+        self._new_entry = None
 
 if __name__ == '__main__':
     import consts

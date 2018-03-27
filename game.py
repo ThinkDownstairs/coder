@@ -12,6 +12,8 @@ import menu
 import globals_
 import status
 import sound
+import highscore
+import datetime
 
 
 class Game(state_manager.State):
@@ -75,7 +77,9 @@ class Game(state_manager.State):
             self._next_exception_count = random.randint(*consts.MSEC_BETWEEN_EXCEPTIONS[min(len(consts.MSEC_BETWEEN_EXCEPTIONS) - 1, self._status.level)])
 
         if self._status.health <= 0:
-            self.state_manager.change_state(menu.Menu) ## TODO : game over state  and/or highscore
+            highscore_entry = highscore.Entry('', self._status.level, self._status.points, datetime.datetime.now())
+            self.state_manager.add_state(highscore.Highscore(highscore_entry))
+            self.state_manager.change_state(highscore.Highscore)
         self._status.update()
 
     def leave(self, next_: state_manager.StateType) -> None:

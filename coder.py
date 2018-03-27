@@ -8,6 +8,7 @@ import quit_
 import consts
 import bugreport
 import splash
+import highscore
 
 if not pygame.font: print ('Warning, fonts disabled')
 if not pygame.mixer: print ('Warning, sound disabled')
@@ -50,10 +51,12 @@ if __name__ == '__main__':
         sm = state_manager.StateManager(init())
         m = menu.Menu()
         m.add(menu.MenuEntry('Start', game.Game))
+        m.add(menu.MenuEntry('Highscores', highscore.Highscore))
         m.add(menu.MenuEntry('About', about.About))
         m.add(menu.MenuEntry('Quit', quit_.Quit))
         sm.add_state(m)
         sm.add_state(splash.Splash())
+        sm.add_state(highscore.Highscore())
         sm.add_state(game.Game())
         sm.add_state(about.About())
         sm.add_state(quit_.Quit())

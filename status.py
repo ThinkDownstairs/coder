@@ -64,4 +64,5 @@ class Status(object):
 
     health = property(lambda s: s._health)
     level = property(lambda s: s._level)
+    points = property(lambda s: s._points)
 
