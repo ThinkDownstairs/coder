@@ -68,11 +68,12 @@ class Game(state_manager.State):
         self._go_manager.update(delta, self._player, self._status)
 
         if self._next_bug_count <= 0:
+            self._sound.play(sound.Sounds.BUG)
             self._go_manager.add_object(bugs.Bugs(self._status))
-            self._sound.play(sound.Sounds.BUG, False)
             self._next_bug_count = random.randint(*consts.MSEC_BETWEEN_BUGS[min(len(consts.MSEC_BETWEEN_BUGS) - 1, self._status.level)])
 
         if self._next_exception_count <= 0:
+            self._sound.play(sound.Sounds.EXCEPTION)
             self._go_manager.add_object(exceptions.Excepties(self._status))
             self._next_exception_count = random.randint(*consts.MSEC_BETWEEN_EXCEPTIONS[min(len(consts.MSEC_BETWEEN_EXCEPTIONS) - 1, self._status.level)])
 
