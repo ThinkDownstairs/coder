@@ -3,6 +3,7 @@ from collections import namedtuple
 
 import state_manager
 import background
+import sound
 
 import pygame
 import consts
@@ -66,13 +67,16 @@ class Menu(state_manager.State):
         self._background = None
         self._font = pygame.font.Font('DejaVuSans.ttf', 24)
         self._font_selected = pygame.font.Font('DejaVuSans-Bold.ttf', 28)
+        self._sound = sound.Sound()
 
     def add(self, menu_entry: MenuEntry):
         menu_entry.prepare(self._font, self._font_selected)
         self._menu_entries.append(menu_entry)
 
     def select(self, idx: int) -> None:
-        self._idx = idx % len(self._menu_entries)
+        if idx != self._idx:
+            self._idx = idx % len(self._menu_entries)
+            self._sound.play(sound.Sounds.MENU_HOVER)
 
     def render(self) -> None:
         self.screen.fill((0, 0, 0))
@@ -99,6 +103,7 @@ class Menu(state_manager.State):
                     continue
                 if event.key in (pygame.K_RETURN, pygame.K_SPACE):
                     me = self._menu_entries[self._idx]
+                    self._sound.play(sound.Sounds.MENU_SELECT)
                     self.state_manager.change_state(me.typ)
                     continue
             elif event.type == pygame.MOUSEMOTION:
@@ -111,6 +116,7 @@ class Menu(state_manager.State):
                 if l == 1:
                     me = self._menu_entries[self._idx]
                     if me.contains_pos(*self._mouse):
+                        self._sound.play(sound.Sounds.MENU_SELECT)
                         self.state_manager.change_state(me.typ)
 
     def update(self, delta: int, fps: float):
