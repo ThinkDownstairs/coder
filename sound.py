@@ -9,17 +9,23 @@ import pygame
 class Sounds(enum.Enum):
     MUSIC = auto()
     CATCH = auto()
+    EXCEPTION = auto()
     KILL = auto()
     BUG = auto()
     FIRE = auto()
+    MENU_HOVER = auto()
+    MENU_SELECT = auto()
 
     def get_filename(self):
         fn = None
         if self == Sounds.MUSIC: fn = 'CH-AY-NA.ogg'
-        elif self == Sounds.CATCH: fn = 'dead.wav'
-        elif self == Sounds.KILL: fn = 'teleport.wav'#'insectoralien.flac'
-        elif self == Sounds.BUG: fn = 'teleport.wav'
-        elif self == Sounds.FIRE: fn = 'teleport.wav'
+        elif self == Sounds.CATCH: fn = 'catch-exception.ogg'
+        elif self == Sounds.EXCEPTION: fn = 'exception-appears.ogg'
+        elif self == Sounds.KILL: fn = 'kill-bug.ogg'
+        elif self == Sounds.BUG: fn = 'bug-appears.ogg'
+        elif self == Sounds.FIRE: fn = 'fire.ogg'
+        elif self == Sounds.MENU_HOVER: fn = 'menu-hover.ogg'
+        elif self == Sounds.MENU_SELECT: fn = 'menu-select.ogg'
         else: raise Exception('Unknown Sound: {}'.format(str(self)))
         return os.path.join('res', 'sounds', fn)
 
