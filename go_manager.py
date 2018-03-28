@@ -49,7 +49,7 @@ class GoManager(object):
                             self._sound.play(sound.Sounds.KILL)
                             s.delete()
                             b.delete()
-                            status_.inc_point()
+                            status_.inc_point(b.points)
                             break
 
         # takes only those go to the list which are go._delete_me == true
