@@ -39,7 +39,7 @@ class Bugs(game_objects.GameObject):
         self._minus_points = self._plus_points * max(1, lvl // 3)
 
         direction = random.random() * 3.14159 * 2
-        speed = (.001 * lvl) + (random.random() * (.0025 * lvl))
+        speed = (.001 * (1 + lvl)) + (random.random() * (.0025 * (1 + lvl)))
         self._dy = math.sin(direction) * speed
         self._dx = math.cos(direction) * speed
 
@@ -77,7 +77,7 @@ class Bugs(game_objects.GameObject):
         elif lvl < 3:
             r = random.random()
             if r < .333:
-                return random.random(LEVEL_1_BUGS)
+                return random.choice(LEVEL_1_BUGS)
             elif r < .666:
                 return random.choice(LEVEL_2_BUGS)
             else:
@@ -85,7 +85,7 @@ class Bugs(game_objects.GameObject):
         elif lvl < 4:
             r = random.random()
             if r < .25:
-                return random.random(LEVEL_1_BUGS)
+                return random.choice(LEVEL_1_BUGS)
             elif r < .5:
                 return random.choice(LEVEL_2_BUGS)
             elif r < .75:
@@ -95,7 +95,7 @@ class Bugs(game_objects.GameObject):
         elif lvl < 5:
             r = random.random()
             if r < .2:
-                return random.random(LEVEL_1_BUGS)
+                return random.choice(LEVEL_1_BUGS)
             elif r < .4:
                 return random.choice(LEVEL_2_BUGS)
             elif r < .6:
@@ -105,7 +105,7 @@ class Bugs(game_objects.GameObject):
         else:
             r = random.random()
             if r < .15:
-                return random.random(LEVEL_1_BUGS)
+                return random.choice(LEVEL_1_BUGS)
             elif r < .3:
                 return random.choice(LEVEL_2_BUGS)
             elif r < .45:

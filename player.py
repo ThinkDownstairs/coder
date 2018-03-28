@@ -48,7 +48,7 @@ class Player(object):
 
     def fire(self) -> snippets.Snippet:
         self._sound.play(sound.Sounds.FIRE)
-        return snippets.Snippet(color.POWDERBLUE, self._pos[0])
+        return snippets.Snippet(self._status, self._pos[0])
 
     def try_catch(self, exceptie: exceptions.Excepties) -> None:
         cw, ch = self._catcher.surface.get_size()
