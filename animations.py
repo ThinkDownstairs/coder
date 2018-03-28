@@ -51,7 +51,7 @@ class Surfaces(enum.Enum):
     SQR_LAMBDA = auto()
     STR_JOIN = auto()
     XY_POINT = auto()
-    
+
 
     def get_filename(self):
         if self == Surfaces.VIM: fn = 'vim.png'
@@ -103,7 +103,7 @@ class Surfaces(enum.Enum):
 
 class Player(animation.Animation):
     def __init__(self, player_type: Surfaces):
-        super().__init__(player_type.get_surface(), 1, 1, False)
+        super().__init__(player_type.get_surface(), 1, 1, True)
 
 class Bug(animation.Animation):
     def __init__(self, bug_type: Surfaces):
@@ -111,7 +111,7 @@ class Bug(animation.Animation):
 
 class TryExcept(animation.Animation):
     def __init__(self):
-        super().__init__(Surfaces.TRY_EXCEPT.get_surface(), 1, 1, False)
+        super().__init__(Surfaces.TRY_EXCEPT.get_surface(), 1, 1, True)
 
 class CatchException(animation.Animation):
     def __init__(self):
@@ -119,11 +119,11 @@ class CatchException(animation.Animation):
 
 class Snippet(animation.Animation):
     def __init__(self, snippet_type: Surfaces):
-        super().__init__(snippet_type.get_surface(), 1, 1, False)
+        super().__init__(snippet_type.get_surface(), 1, 1, True)
 
 class Error(animation.Animation):
     def __init__(self, error_type: Surfaces):
-        super().__init__(error_type.get_surface(), 1, 1, False)
+        super().__init__(error_type.get_surface(), 1, 1, True)
 
 
 
