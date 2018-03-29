@@ -30,8 +30,6 @@ class Surfaces(enum.Enum):
     TRY_EXCEPT = auto()
     CATCH_EXCEPTION = auto()
 
-    FOR_LOOP = auto()
-
     FLOATINGPOINTERROR = auto()
     INDEXERROR = auto()
     KEYERROR = auto()
@@ -52,6 +50,11 @@ class Surfaces(enum.Enum):
     STR_JOIN = auto()
     XY_POINT = auto()
 
+    COFFEE = auto()
+    COFFEE_BROKEN = auto()
+
+    EXPLOSION = auto()
+
 
     def get_filename(self):
         if self == Surfaces.VIM: fn = 'vim.png'
@@ -70,7 +73,6 @@ class Surfaces(enum.Enum):
         elif self == Surfaces.BUG_GRAY_2: fn = 'bug-gray-2.png'
         elif self == Surfaces.TRY_EXCEPT: fn = 'try-except.png'
         elif self == Surfaces.CATCH_EXCEPTION: fn = 'catch-exception.png'
-        elif self == Surfaces.FOR_LOOP: fn = 'for-loop.png'
         elif self == Surfaces.FLOATINGPOINTERROR: fn = 'floatingpointerror.png'
         elif self == Surfaces.INDEXERROR: fn = 'indexerror.png'
         elif self == Surfaces.KEYERROR: fn = 'keyerror.png'
@@ -89,6 +91,9 @@ class Surfaces(enum.Enum):
         elif self == Surfaces.SQR_LAMBDA: fn = 'sqr-lambda.png'
         elif self == Surfaces.STR_JOIN: fn = 'str-join.png'
         elif self == Surfaces.XY_POINT: fn = 'xy-point.png'
+        elif self == Surfaces.COFFEE: fn = 'coffee.png'
+        elif self == Surfaces.COFFEE_BROKEN: fn = 'coffee-broken.png'
+        elif self == Surfaces.EXPLOSION: fn = 'explosion.png'
         else: raise Exception('Unknown Surface Type: {}'.format(str(self)))
         return os.path.join(DIRECTORY, fn)
 
