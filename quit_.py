@@ -2,13 +2,14 @@
 import state_manager
 import pygame
 import os
+import locations
 
 class Quit(state_manager.State):
     def __init__(self) -> None:
         super().__init__()
         self._tick = 3000
         self._skip = False
-        self._surface = pygame.image.load(os.path.join('res', 'export', 'quit.png')).convert_alpha()
+        self._surface = pygame.image.load(locations.image('quit.png')).convert_alpha()
 
 
     def render(self) -> None:

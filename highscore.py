@@ -9,6 +9,7 @@ import menu
 import quit_
 
 import background
+import locations
 
 from collections import namedtuple
 
@@ -30,7 +31,7 @@ class Highscore(state_manager.State):
         self._new_entry_font = pygame.font.Font('DejaVuSansMono-Bold.ttf', 20)
         self._entry_surfaces = None
         self._background = None
-        self._filename = os.path.join(os.path.expanduser('~'), '.coder-game', 'highscore.dat')
+        self._filename = locations.user('highscore.dat')
 
     def _load(self):
         if os.path.exists(self._filename):
@@ -44,9 +45,6 @@ class Highscore(state_manager.State):
                     raise Exception('Unknown Highscore Data Version')
 
     def _save(self):
-        d = os.path.dirname(self._filename)
-        if not os.path.exists(d):
-            os.mkdir(d)
         with open(self._filename, 'wb') as f:
             data = {
                 'version': 1,

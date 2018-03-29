@@ -8,6 +8,8 @@ import tkinter
 
 import build_info
 
+import locations
+
 # keep those trailing whites!!
 TEXT = """
 Sorry!
@@ -56,7 +58,7 @@ INDENT = '\n' + ' ' * 20
 def bugreport(exc_info=None) -> str:
     typ, value, frames = exc_info if exc_info is not None else sys.exc_info()
     trace = []
-    path_to_strip = os.path.dirname(__file__)
+    path_to_strip = locations.get_root()
     strip_path = lambda s: s[len(path_to_strip) + 1:] if s.startswith(path_to_strip) else s
     for frame in traceback.extract_tb(frames, 32):
         fn = strip_path(frame[0])
@@ -64,7 +66,7 @@ def bugreport(exc_info=None) -> str:
         fu = frame[2]
         tx = frame[3]
         t = '{}:{}  {}  {}'.format(fn, ln, fu, tx)
-        trace.append(t)
+        trace.insert(0, t)
 
     def prepare(value):
         iterable = None
@@ -94,8 +96,7 @@ def bugreport(exc_info=None) -> str:
             system_system=prepare(system),
             system_command=prepare(' '.join(sys.argv)))
 
-    report_directory = os.path.expanduser('~')
-    report_file = os.path.join(report_directory, 'coder-bug.txt')
+    report_file = locations.user('bugreport.txt')
 
     # with 'w' we override,... but i dont want to grow the file uncontrolled,
     # so maybe i rewrite it later to append,.. but then we need some kind of
@@ -112,7 +113,8 @@ def bugreport(exc_info=None) -> str:
     except:
         pass
 
-    print(report)
+    if not getattr(sys, 'frozen', False):
+        print(report)
 
 
     return report_file

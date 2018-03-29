@@ -6,8 +6,8 @@ import os
 import pygame
 
 import animation
+import locations
 
-DIRECTORY = os.path.join('res', 'export')
 
 _surfaces = {}
 class Surfaces(enum.Enum):
@@ -95,7 +95,7 @@ class Surfaces(enum.Enum):
         elif self == Surfaces.COFFEE_BROKEN: fn = 'coffee-broken.png'
         elif self == Surfaces.EXPLOSION: fn = 'bug-explode.png'
         else: raise Exception('Unknown Surface Type: {}'.format(str(self)))
-        return os.path.join(DIRECTORY, fn)
+        return locations.image(fn)
 
     def get_surface(self):
         global _surfaces

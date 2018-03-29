@@ -5,6 +5,7 @@ import enum
 from enum import auto
 
 import pygame
+import locations
 
 class Sounds(enum.Enum):
     MUSIC = auto()
@@ -27,7 +28,7 @@ class Sounds(enum.Enum):
         elif self == Sounds.MENU_HOVER: fn = 'menu-hover.ogg'
         elif self == Sounds.MENU_SELECT: fn = 'menu-select.ogg'
         else: raise Exception('Unknown Sound: {}'.format(str(self)))
-        return os.path.join('res', 'sounds', fn)
+        return locations.sound(fn)
 
 _sounds = None
 class Sound(object):

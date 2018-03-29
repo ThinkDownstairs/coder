@@ -9,6 +9,7 @@ import game
 import quit_
 import about
 import consts
+import locations
 
 import pygame
 
@@ -21,7 +22,7 @@ class Splash(state_manager.State):
         self._tick = 2500
         self._idx = 0
         self._splashs_loaded = False
-        self._surfaces = [pygame.image.load(os.path.join('res', 'export', 'metagamejam-splash.png')).convert_alpha()]
+        self._surfaces = [pygame.image.load(locations.image('metagamejam-splash.png')).convert_alpha()]
 
 
 
@@ -48,8 +49,8 @@ class Splash(state_manager.State):
         if self._was_rendered:
             if not self._splashs_loaded:
                 self._surfaces += [
-                    pygame.image.load(os.path.join('res', 'export', 'coder-splash.png')).convert_alpha(),
-                    pygame.image.load(os.path.join('res', 'export', 'thinkdownstairs-splash.png')).convert_alpha()]
+                    pygame.image.load(locations.image('coder-splash.png')).convert_alpha(),
+                    pygame.image.load(locations.image('thinkdownstairs-splash.png')).convert_alpha()]
                 self._splashs_loaded = True
                 return
             if self._initialized:
