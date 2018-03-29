@@ -67,7 +67,7 @@ class Status(object):
 
 
     def inc_point(self, points: int = 1):
-        self._points += points
+        self._points = max(0, self._points + points) # do not allow negative points
         if self._points >= self._next_level:
             self._level += 1
             self._health = min(START_MAX_HEALTH + self._level // 3, ABSOLUT_MAX_HEALTH)
