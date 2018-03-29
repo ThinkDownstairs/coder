@@ -132,7 +132,7 @@ class Error(animation.Animation):
 
 class Coffee(animation.Animation):
     def __init__(self):
-        super().__init__(Surfaces.COFFEE.get_surface(), 5, 4, False)
+        super().__init__(Surfaces.COFFEE.get_surface(), 5, 6, False)
 
 class CoffeeBroken(animation.Animation):
     def __init__(self):

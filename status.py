@@ -32,8 +32,8 @@ class Status(object):
 
 
     def update(self, delta: int):
-        variation_from = int(delta * .75)
-        variation_to = int(delta * 1.25)
+        variation_from = int(delta * .5)
+        variation_to = int(delta * 2)
         for coffee in self._coffees:
             coffee.update(random.randint(variation_from, variation_to))
         self._broken_coffee.update(delta)
