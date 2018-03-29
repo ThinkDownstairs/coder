@@ -130,6 +130,17 @@ class Error(animation.Animation):
     def __init__(self, error_type: Surfaces):
         super().__init__(error_type.get_surface(), 1, 1, True)
 
+class Coffee(animation.Animation):
+    def __init__(self):
+        super().__init__(Surfaces.COFFEE.get_surface(), 5, 4, False)
+
+class CoffeeBroken(animation.Animation):
+    def __init__(self):
+        super().__init__(Surfaces.COFFEE_BROKEN.get_surface(), 1, 1, True)
+
+class Explosion(animation.Animation):
+    def __init__(self):
+        super().__init__(Surfaces.EXPLOSION.get_surface(), 5, 8, True)
 
 
 
