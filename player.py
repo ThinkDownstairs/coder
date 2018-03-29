@@ -19,28 +19,34 @@ import no_game_object
 
 
 class Player(object):
-    def __init__(self, status_: status.Status) -> None:
+    def __init__(self, status_: status.Status, editor: animations.Surfaces = None) -> None:
         super().__init__()
         self._catcher = animations.TryExcept()
-        self._progger = animations.Player(random.choice([ ## TODO : refactor to let the use decide which editor to use, not random
-            animations.Surfaces.ATOM,
-            animations.Surfaces.EMACS,
-            animations.Surfaces.INTELLIJ,
-            animations.Surfaces.NANO,
-            animations.Surfaces.VIM,
-            animations.Surfaces.VSCODE]))
+        if editor is None:
+            self._progger = animations.Player(random.choice([
+                animations.Surfaces.ATOM,
+                animations.Surfaces.EMACS,
+                animations.Surfaces.INTELLIJ,
+                animations.Surfaces.NANO,
+                animations.Surfaces.VIM,
+                animations.Surfaces.VSCODE]))
+        else:
+            self._progger = animations.Player(editor)
         self._status = status_
         self._sound = globals_.get_sound()
         self._pos = (consts.SCREEN_W // 2, consts.SCREEN_H // 2)
 
-    def reset(self):
-        self._progger = animations.Player(random.choice([ ## TODO : refactor to let the use decide which editor to use, not random
-            animations.Surfaces.ATOM,
-            animations.Surfaces.EMACS,
-            animations.Surfaces.INTELLIJ,
-            animations.Surfaces.NANO,
-            animations.Surfaces.VIM,
-            animations.Surfaces.VSCODE]))
+    def reset(self, editor: animations.Surfaces = None):
+        if editor is None:
+            self._progger = animations.Player(random.choice([
+                animations.Surfaces.ATOM,
+                animations.Surfaces.EMACS,
+                animations.Surfaces.INTELLIJ,
+                animations.Surfaces.NANO,
+                animations.Surfaces.VIM,
+                animations.Surfaces.VSCODE]))
+        else:
+            self._progger = animations.Player(editor)
         self._pos = (consts.SCREEN_W // 2, consts.SCREEN_H // 2)
 
     def set_pos(self, pos: Tuple[int, int]) -> None:
@@ -65,7 +71,7 @@ class Player(object):
         cx, cy = consts.SCREEN_W - cw, self._pos[1] - (ch // 2)
         if collision.collide(self._catcher.surface, cx, cy, exceptie.surface, *exceptie.pos):
             exceptie.delete()
-            no_game_object.NoGameObject(animations.CatchException(), cx, cy)
+            no_game_object.NoGameObject(animations.CatchException(), cx, cy - 10)
             self._sound.play(sound.Sounds.CATCH)
 
 

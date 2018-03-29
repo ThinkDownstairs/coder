@@ -33,7 +33,7 @@ class Snippet(game_objects.GameObject):
         self._animation.update(delta)
         if self._y < -self._h:
             self.delete()
-            self._status.inc_point(self._status.level * 3)
+            self._status.inc_point(int(((self._status.level + 1) * 2)**2) * -1)
         self._y -= (delta * consts.SNIPPET_SPEED)
 
     def _get_surface(self) -> pygame.Surface:

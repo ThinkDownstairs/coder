@@ -60,7 +60,7 @@ if __name__ == '__main__':
     clock = pygame.time.Clock()
     running = True
     delta = 0
-    a = Animation(load_image(fn), cnt, 12)
+    a = Animation(load_image(fn), cnt, 5)
     while running:
         # INPUT
         for e in pygame.event.get():

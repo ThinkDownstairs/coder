@@ -2,20 +2,22 @@
 
 import pygame
 
-def collide(s1: pygame.Surface, x1: int, y1: int, s2: pygame.Surface, x2: int, y2: int) -> bool:
-    w1, h1 = s1.get_size()
-    #r1, b1 = x1 + w1, y1 + h1
-    w2, h2 = s2.get_size()
-    #r2, b2 = x2 + w2, y2 + h2
-    r1 = pygame.Rect(x1, y1, w1, h1)
-    r2 = pygame.Rect(x2, y2, w2, h2)
-    #if r1.colliderect(r2):
-    cr = r1.clip(r2)
-    if cr.width > 0:
-        # TODO : check for pixel collision
-        #for x in range(cr.width):
-        #    for y in range(cr.height):
-        #        if s1.get_at((x - x1, y - y1)).a > 0 and s2.get_at((x - x2, y - y2)).a > 0:
-        #            return True
-        return True
+def collide(s1: pygame.Surface, x1: float, y1: float, s2: pygame.Surface, x2: float, y2: float) -> bool:
+    l1, t1 = int(x1), int(y1)
+    l2, t2 = int(x2), int(y2)
+    w, h = s1.get_size()
+    r1, b1 = l1 + w, t1 + h
+    w, h = s2.get_size()
+    r2, b2 = l2 + w, t2 + h
+    if ((l2 < l1 < r2) and (t2 < t1 < b2)) or \
+       ((l2 < r1 < r2) and (t2 < b1 < b2)) or \
+       ((l1 < l2 < r1) and (t1 < t2 < b1)) or \
+       ((l1 < r2 < r1) and (t1 < b2 < b1)):
+           # the tho surfaces overlap
+           for x in range(max(l1, l2), min(r1, r2)):
+               for y in range(max(t1, t2), min(b1, b2)):
+                   # check if there is an overlapping visible pixle
+                   if (s1.get_at((x - l1, y - t1)).a > 1) and (s2.get_at((x - l2, y - t2)).a > 1):
+                       return True
     return False
+
