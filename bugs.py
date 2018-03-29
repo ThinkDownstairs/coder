@@ -27,8 +27,8 @@ BUG_POINTS = {
 class Bugs(game_objects.GameObject):
     def __init__(self, status_: status.Status) -> None:
         super().__init__()
-        self._x = random.randint(10, consts.SCREEN_W - 100) * 1.0
-        self._y = random.randint(30, consts.SCREEN_H - 100) * 1.0
+        self._x = random.randint(40, consts.SCREEN_W - 160) * 1.0
+        self._y = random.randint(40, consts.SCREEN_H - 160) * 1.0
         self._status = status_
 
         lvl = status_.level

@@ -21,8 +21,9 @@ class Excepties(game_objects.GameObject):
             animations.Surfaces.RECURSIONERROR,
             animations.Surfaces.RUNTIMEERROR,
             animations.Surfaces.TYPEERROR]))
-        self._y = random.randint(10, 500)
+        self._y = random.randint(30, consts.SCREEN_H - 140)
         self._status = status_
+        self._width = self._animation.surface.get_width()
         offset, range_ = consts.EXCEPTION_SPEEDS[min(self._status.level, len(consts.EXCEPTION_SPEEDS) - 1)]
         self._speed = offset + random.random() * range_
 
@@ -35,7 +36,7 @@ class Excepties(game_objects.GameObject):
     def update(self, delta) -> bool:
         self._x += (delta * self._speed)
         self._animation.update(delta)
-        if self._x > consts.SCREEN_W:
+        if (self._x + self._width) > consts.SCREEN_W:
             self.delete()
             self._status.dec_health()
         #return (bool(self._x < 0) or self._is_catched)
