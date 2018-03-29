@@ -92,4 +92,5 @@ class Game(state_manager.State):
         if prev_ == menu.Menu:
             self._go_manager.clear_objects()
             self._status.reset()
+            self._player.reset()
 

@@ -33,6 +33,16 @@ class Player(object):
         self._sound = globals_.get_sound()
         self._pos = (consts.SCREEN_W // 2, consts.SCREEN_H // 2)
 
+    def reset(self):
+        self._progger = animations.Player(random.choice([ ## TODO : refactor to let the use decide which editor to use, not random
+            animations.Surfaces.ATOM,
+            animations.Surfaces.EMACS,
+            animations.Surfaces.INTELLIJ,
+            animations.Surfaces.NANO,
+            animations.Surfaces.VIM,
+            animations.Surfaces.VSCODE]))
+        self._pos = (consts.SCREEN_W // 2, consts.SCREEN_H // 2)
+
     def set_pos(self, pos: Tuple[int, int]) -> None:
         self._pos = pos
 
