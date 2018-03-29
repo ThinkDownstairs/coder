@@ -1,23 +1,39 @@
 
 import state_manager
+import pygame
+import os
 
 class Quit(state_manager.State):
     def __init__(self) -> None:
         super().__init__()
+        self._tick = 3000
+        self._skip = False
+        self._surface = pygame.image.load(os.path.join('res', 'export', 'quit.png')).convert_alpha()
 
 
     def render(self) -> None:
-        pass
+        self.screen.blit(self._surface, (0, 0))
+        pygame.display.flip()
 
     def input(self) -> None:
-        pass
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                self._skip = True
+            elif event.type == pygame.KEYDOWN:
+                self._skip = True
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                l, m, r = pygame.mouse.get_pressed()
+                if l == 1:
+                    self._skip = True
 
 
     def update(self, delta: int, fps: float) -> None:
-        pass
+        self._tick -= delta
+        if self._skip or self._tick <= 0:
+            self.state_manager.terminate_main_loop()
 
     def leave(self, next_: state_manager.StateType) -> None:
         pass
 
     def enter(self, prev_: state_manager.StateType) -> None:
-        self.state_manager.terminate_main_loop()
+        self._tick = 3000

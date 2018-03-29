@@ -6,6 +6,7 @@ import menu
 
 import pygame
 import consts
+import quit_
 
 SPEED = 0.1
 
@@ -103,7 +104,7 @@ class About(state_manager.State):
     def input(self) -> None:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                self.state_manager.terminate_main_loop()
+                self.state_manager.change_state(quit_.Quit)
             elif event.type == pygame.KEYDOWN:
                 self.state_manager.change_state(menu.Menu)
 

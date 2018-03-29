@@ -14,6 +14,7 @@ import status
 import sound
 import highscore
 import datetime
+import quit_
 
 
 class Game(state_manager.State):
@@ -49,13 +50,13 @@ class Game(state_manager.State):
     def input(self) -> None:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                self.state_manager.terminate_main_loop()
-            if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
+                self.state_manager.change_state(quit_.Quit)
+            elif event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
                 self.state_manager.change_state(menu.Menu)
-            if event.type == pygame.MOUSEMOTION:
+            elif event.type == pygame.MOUSEMOTION:
                 self.mouse_pos = event.pos
                 self._player.set_pos(self.mouse_pos)
-            if event.type == pygame.MOUSEBUTTONDOWN:
+            elif event.type == pygame.MOUSEBUTTONDOWN:
                 l, m, r = pygame.mouse.get_pressed()
                 if l == 1:
                     self._go_manager.add_object(self._player.fire())

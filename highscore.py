@@ -6,6 +6,7 @@ import pygame
 import state_manager
 import consts
 import menu
+import quit_
 
 import background
 
@@ -18,10 +19,13 @@ class Highscore(state_manager.State):
     def __init__(self, new_entry: Entry = None) -> None:
         super().__init__()
         self._entries = []
+        self._count = 0
         self._new_entry = new_entry
         self._input_str = None if new_entry is None else ''
         self._input_font = pygame.font.Font('DejaVuSansMono.ttf', 24)
         self._input_surface = None
+        self._count_surface = None
+        self._new_points_surface = None
         self._entry_font = pygame.font.Font('DejaVuSansMono.ttf', 20)
         self._new_entry_font = pygame.font.Font('DejaVuSansMono-Bold.ttf', 20)
         self._entry_surfaces = None
@@ -31,17 +35,34 @@ class Highscore(state_manager.State):
     def _load(self):
         if os.path.exists(self._filename):
             with open(self._filename, 'rb') as f:
-                self._entries = pickle.load(f)
+                data = pickle.load(f)
+                v = data.get('version', 0)
+                if v == 1:
+                    self._entries = data.get('entries', [])
+                    self._count = data.get('count', 0)
+                else:
+                    raise Exception('Unknown Highscore Data Version')
 
     def _save(self):
         d = os.path.dirname(self._filename)
         if not os.path.exists(d):
             os.mkdir(d)
         with open(self._filename, 'wb') as f:
-            pickle.dump(self._entries, f, pickle.HIGHEST_PROTOCOL)
+            data = {
+                'version': 1,
+                'entries': self._entries,
+                'count': self._count}
+            pickle.dump(data, f, pickle.HIGHEST_PROTOCOL)
 
     def _render_input(self):
-        return self._input_font.render('Your Name: {:12}'.format(self._input_str), True, (255, 255, 255), None)
+        return self._input_font.render('Your Name: {:_<12}'.format(self._input_str), True, (255, 255, 255), None)
+
+    def _render_new_points(self):
+        return self._input_font.render('Level: {}    Points: {}'.format(self._new_entry.level, self._new_entry.points), True, (255, 255, 255), None)
+
+    def _render_played_games(self):
+        return self._entry_font.render('Played Games: {}'.format(self._count), True, (40, 210, 40), None)
+
 
     def _render_entry_surfaces(self):
         self._entry_surfaces = [self._entry_font.render('     TIMESTAMP             PLAYER         LEVEL         POINTS', True, (40, 210, 40), None)]
@@ -90,7 +111,7 @@ class Highscore(state_manager.State):
                     self._entry_surfaces = None # i want to rerender them
                     break
             if len(self._entries) > MAX_ENTRIES:
-                self._entries = self._entries[:MAX_ENTRIES - 1]
+                self._entries = self._entries[:MAX_ENTRIES]
             self._save()
             self._input_str = None
 
@@ -102,21 +123,27 @@ class Highscore(state_manager.State):
             if self._input_surface is None:
                 self._input_surface = self._render_input()
             self.screen.blit(self._input_surface, (consts.SCREEN_W // 2 - self._input_surface.get_width() // 2, 10))
+            if self._new_points_surface is None:
+                self._new_points_surface = self._render_new_points()
+            self.screen.blit(self._new_points_surface, (consts.SCREEN_W // 2 - self._new_points_surface.get_width() // 2, 10 + self._new_points_surface.get_height() + 10))
         if self._entry_surfaces is None:
             self._render_entry_surfaces()
-        top = 120
+        top = 140
         step = 1.8
         for entry_surface in self._entry_surfaces:
             self.screen.blit(entry_surface, (10, top))
             top += (entry_surface.get_height() * step)
             step = 1.4
+        if self._count_surface is None:
+            self._count_surface = self._render_played_games()
+        self.screen.blit(self._count_surface, (10, top + 10))
         pygame.display.flip()
 
 
     def input(self) -> None:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                self.state_manager.terminate_main_loop()
+                self.state_manager.change_state(quit_.Quit)
             if event.type == pygame.KEYDOWN:
                 if self._input_str is None:
                     self.state_manager.change_state(menu.Menu)
@@ -135,9 +162,12 @@ class Highscore(state_manager.State):
         self._background.update(delta)
 
     def enter(self, prev_):
-        self._background = background.Matrix(consts.SCREEN_W, consts.SCREEN_H)
         self._load()
+        self._background = background.Matrix(consts.SCREEN_W, consts.SCREEN_H)
         self._render_entry_surfaces()
+        if self._input_str is not None:
+            self._count += 1
+        self._count_surface = self._render_played_games()
 
     def leave(self, next_):
         self._new_entry = None

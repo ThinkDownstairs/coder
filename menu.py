@@ -4,6 +4,7 @@ from collections import namedtuple
 import state_manager
 import background
 import sound
+import quit_
 
 import pygame
 import consts
@@ -65,8 +66,8 @@ class Menu(state_manager.State):
         self._mouse = (consts.SCREEN_W + 1, consts.SCREEN_H + 1)
         self._idx = 0
         self._background = None
-        self._font = pygame.font.Font('DejaVuSans.ttf', 24)
-        self._font_selected = pygame.font.Font('DejaVuSans-Bold.ttf', 28)
+        self._font = pygame.font.Font('DejaVuSansMono.ttf', 24)
+        self._font_selected = pygame.font.Font('DejaVuSansMono-Bold.ttf', 28)
         self._sound = sound.Sound()
 
     def add(self, menu_entry: MenuEntry):
@@ -91,7 +92,7 @@ class Menu(state_manager.State):
     def input(self) -> None:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                self.state_manager.terminate_main_loop()
+                self.state_manager.change_state(quit_.Quit)
             elif event.type == pygame.KEYDOWN:
                 i = 0
                 if event.key in (pygame.K_UP, pygame.K_LEFT):

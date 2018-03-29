@@ -18,12 +18,15 @@ class Splash(state_manager.State):
         self._initialized = False
         self._was_rendered = False
         self._skip = False
-        self._count = 2500
-        self._surface = pygame.image.load(os.path.join('res', 'export', 'metagamejam.png')).convert_alpha()
+        self._tick = 2500
+        self._idx = 0
+        self._splashs_loaded = False
+        self._surfaces = [pygame.image.load(os.path.join('res', 'export', 'metagamejam-splash.png')).convert_alpha()]
+
 
 
     def render(self) -> None:
-        self.screen.blit(self._surface, (0, 0))
+        self.screen.blit(self._surfaces[min(len(self._surfaces) - 1, self._idx)], (0, 0))
         pygame.display.flip()
         self._was_rendered = True
 
@@ -34,22 +37,40 @@ class Splash(state_manager.State):
                 self.state_manager.terminate_main_loop()
             elif event.type == pygame.KEYDOWN:
                 self._skip = True
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                l, m, r = pygame.mouse.get_pressed()
+                if l == 1:
+                    self._skip = True
+
 
 
     def update(self, delta: int, fps: float) -> None:
         if self._was_rendered:
+            if not self._splashs_loaded:
+                self._surfaces += [
+                    pygame.image.load(os.path.join('res', 'export', 'coder-splash.png')).convert_alpha(),
+                    pygame.image.load(os.path.join('res', 'export', 'thinkdownstairs-splash.png')).convert_alpha()]
+                self._splashs_loaded = True
+                return
             if self._initialized:
                 if self._skip:
-                    self.state_manager.change_state(menu.Menu)
+                    self._skip = False
+                    self._idx += 1
+                    self._tick = 2500
+                    if self._idx >= len(self._surfaces):
+                        self.state_manager.change_state(menu.Menu)
                     return
-                self._count -= delta
-                if self._count <= 0:
-                    self.state_manager.change_state(menu.Menu)
+                self._tick -= delta
+                if self._tick <= 0:
+                    self._idx += 1
+                    self._tick = 2500
+                    if self._idx >= len(self._surfaces):
+                        self.state_manager.change_state(menu.Menu)
                     return
             else:
                 m = menu.Menu()
                 m.add(menu.MenuEntry('Start', game.Game))
-                m.add(menu.MenuEntry('Highscores', highscore.Highscore))
+                m.add(menu.MenuEntry('Highscore', highscore.Highscore))
                 m.add(menu.MenuEntry('About', about.About))
                 m.add(menu.MenuEntry('Quit', quit_.Quit))
                 self.state_manager.add_state(m)
