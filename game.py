@@ -81,7 +81,8 @@ class Game(state_manager.State):
             highscore_entry = highscore.Entry('', self._status.level, self._status.points, datetime.datetime.now())
             self.state_manager.add_state(highscore.Highscore(highscore_entry))
             self.state_manager.change_state(highscore.Highscore)
-        self._status.update()
+
+        self._status.update(delta)
 
     def leave(self, next_: state_manager.StateType) -> None:
         self._sound.stop(sound.Sounds.MUSIC)
