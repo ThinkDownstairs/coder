@@ -5,6 +5,8 @@ import snippets
 import exceptions
 import bugs
 import collision
+import no_game_object
+import animations
 
 import globals_
 import sound
@@ -49,6 +51,7 @@ class GoManager(object):
                             self._sound.play(sound.Sounds.KILL)
                             s.delete()
                             b.delete()
+                            no_game_object.NoGameObject(animations.Explosion(), *b.pos)
                             status_.inc_point(b.points)
                             break
 

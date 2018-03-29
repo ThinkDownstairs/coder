@@ -93,7 +93,7 @@ class Surfaces(enum.Enum):
         elif self == Surfaces.XY_POINT: fn = 'xy-point.png'
         elif self == Surfaces.COFFEE: fn = 'coffee.png'
         elif self == Surfaces.COFFEE_BROKEN: fn = 'coffee-broken.png'
-        elif self == Surfaces.EXPLOSION: fn = 'explosion.png'
+        elif self == Surfaces.EXPLOSION: fn = 'bug-explode.png'
         else: raise Exception('Unknown Surface Type: {}'.format(str(self)))
         return os.path.join(DIRECTORY, fn)
 
