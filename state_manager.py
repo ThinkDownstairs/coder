@@ -64,7 +64,7 @@ class StateManager(object):
     self._running = True
     while self._running:
       self._fps = self._clock.get_fps()
-      self._delta = self._clock.tick(250) # Here i get the ms 
+      self._delta = self._clock.tick(60)
       if self._next is not None:
         if self._current is not None:
           self._current.leave(type(self._next))
