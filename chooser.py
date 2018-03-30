@@ -14,6 +14,14 @@ STEP = 20
 WIDTH = 90
 HEIGHT = 90
 
+ATOM_TEXT = """ """
+EMACS_TEXT = """ """
+INTELLIJ_TEXT = """ """
+NANO_TEXT = """ """
+VIM_TEXT = """ """
+VSCODE_TEXT = """ """
+RANDOM_TEXT = """ """
+
 
 chosen_editor = None
 
@@ -22,6 +30,15 @@ class Chooser(state_manager.State):
         super().__init__()
         self._idx = 0
         self._mouse = (consts.SCREEN_W + 1, consts.SCREEN_H + 1)
+        font = pygame.font.Font('DejaVuSansMono.ttf', 20)
+        self._texts = [
+            font.render(ATOM_TEXT, True, (255, 255, 255), None),
+            font.render(EMACS_TEXT, True, (255, 255, 255), None),
+            font.render(INTELLIJ_TEXT, True, (255, 255, 255), None),
+            font.render(NANO_TEXT, True, (255, 255, 255), None),
+            font.render(VIM_TEXT, True, (255, 255, 255), None),
+            font.render(VSCODE_TEXT, True, (255, 255, 255), None),
+            font.render(RANDOM_TEXT, True, (255, 255, 255), None)]
         self._animations = [
             animations.Player(animations.Surfaces.ATOM),
             animations.Player(animations.Surfaces.EMACS),
@@ -59,6 +76,7 @@ class Chooser(state_manager.State):
             if i == self._idx:
                 pygame.draw.rect(self.screen, (255, 255, 255), (left - 2, top - 2, w + 4, h + 4), 3)
             left += (w + step)
+        self.screen.blit(self._texts[self._idx], (LEFT, TOP + HEIGHT + (3 * STEP)))
         pygame.draw.line(self.screen, (255, 255, 255), (self._mouse[0], self._mouse[1] - 10), (self._mouse[0], self._mouse[1] + 10), 2)
         pygame.draw.line(self.screen, (255, 255, 255), (self._mouse[0] - 10, self._mouse[1]), (self._mouse[0] + 10, self._mouse[1]), 2)
         pygame.display.flip()
@@ -82,6 +100,8 @@ class Chooser(state_manager.State):
                         chosen_editor = self._animations[self._idx]
                     else:
                         chosen_editor = None
+                    self.state_manager.change_state(menu.Menu)
+                elif event.key == pygame.K_ESCAPE:
                     self.state_manager.change_state(menu.Menu)
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 l, m, r = pygame.mouse.get_pressed()
