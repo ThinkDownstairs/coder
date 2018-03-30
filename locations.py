@@ -13,11 +13,10 @@ def get_root():
     return _root
 
 def sound(filename: str):
-    return os.path.join(get_root(), 'res', 'sounds', filename)
+    return os.path.join(get_root(), 'sounds', filename)
 
 def image(filename: str):
-    # todo: change to 'image'
-    return os.path.join(get_root(), 'res', 'export', filename)
+    return os.path.join(get_root(), 'images', filename)
 
 def user(filename: str):
     directory = os.path.join(os.path.expanduser('~'), '.thinkdownstairs', 'coder')
