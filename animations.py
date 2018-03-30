@@ -1,6 +1,13 @@
 
 import enum
-from enum import auto
+try:
+    from enum import auto
+except:
+    _my_auto_id = 0
+    def auto():
+        i = _my_auto_id
+        _my_auto_id += 1
+        return i
 import os
 
 import pygame
