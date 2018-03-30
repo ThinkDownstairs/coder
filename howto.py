@@ -4,15 +4,20 @@ import os
 import locations
 import menu
 import color
+import background
+import consts
 
 class HowTo(state_manager.State):
     def __init__(self) -> None:
         super().__init__()
         self._skip = False
         self._surface = pygame.image.load(locations.image('howto-splash.png')).convert_alpha()
+        self._background = background.FloatingEditors(consts.SCREEN_W, consts.SCREEN_H)
 
 
     def render(self) -> None:
+        self.screen.fill(color.GRAY12)
+        self._background.render(self.screen)
         self.screen.blit(self._surface, (0, 0))
         pygame.display.flip()
 
@@ -29,6 +34,7 @@ class HowTo(state_manager.State):
 
 
     def update(self, delta: int, fps: float) -> None:
+        self._background.update(delta)
         if self._skip:
             self.state_manager.change_state(menu.Menu)
 
@@ -36,4 +42,4 @@ class HowTo(state_manager.State):
         self._skip = False
 
     def enter(self, prev_: state_manager.StateType) -> None:
-        self.screen.fill(color.GRAY12)
+        pass
