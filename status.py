@@ -56,14 +56,14 @@ class Status(object):
         if self._surface is not None:
             target.blit(self._surface, (0, 20))
         offset = 60
-        start = self._surface.get_width() + 20
+        start = consts.SCREEN_W - 60
         count = 0
         for coffee in self._coffees:
             count += 1
             if count > self._health:
-                self._broken_coffee.render(target, start + (offset * count), 20)
+                self._broken_coffee.render(target, start - (offset * count), 20)
             else:
-                coffee.render(target, start + (offset * count), 20)
+                coffee.render(target, start - (offset * count), 20)
 
 
     def inc_point(self, points: int = 1):

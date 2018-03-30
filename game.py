@@ -42,8 +42,8 @@ class Game(state_manager.State):
         self._go_manager.render(self._screen)
         self._status.render(self._screen)
 
-        textsurface = self._fps_font.render(str(self.mouse_pos) + " fps: " + str(int(self._fps)), False, color.BLUEVIOLET)  # self._clock.get_fps()
-        self.screen.blit(textsurface, (0, 0))
+        #textsurface = self._fps_font.render(str(self.mouse_pos) + " fps: " + str(int(self._fps)), False, color.BLUEVIOLET)  # self._clock.get_fps()
+        #self.screen.blit(textsurface, (0, 0))
 
         pygame.display.update()
 

@@ -3,13 +3,13 @@ import pygame
 import os
 import locations
 import menu
+import color
 
 class HowTo(state_manager.State):
     def __init__(self) -> None:
         super().__init__()
-        self._tick = 3000
         self._skip = False
-        self._surface = pygame.image.load(locations.image('quit.png')).convert_alpha()
+        self._surface = pygame.image.load(locations.image('howto-splash.png')).convert_alpha()
 
 
     def render(self) -> None:
@@ -29,12 +29,11 @@ class HowTo(state_manager.State):
 
 
     def update(self, delta: int, fps: float) -> None:
-        self._tick -= delta
-        if self._skip or self._tick <= 0:
+        if self._skip:
             self.state_manager.change_state(menu.Menu)
 
     def leave(self, next_: state_manager.StateType) -> None:
-        pass
+        self._skip = False
 
     def enter(self, prev_: state_manager.StateType) -> None:
-        self._tick = 3000
+        self.screen.fill(color.GRAY12)
