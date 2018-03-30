@@ -33,6 +33,11 @@ BIN-DIR=bin
 # the temp dir (f.e. for creating the docs or creating the executable)
 TMP-DIR=tmp
 
+IMAGES-SRC=images/*.png
+IMAGES-DEST=images
+SOUNDS-SRC=sounds/*.ogg
+SOUNDS-DEST=sounds
+
 # the build info file
 BUILD-INFO-FILE=build_info.py
 
@@ -48,6 +53,7 @@ DEACTIVATE-VIRTUALENV=deactivate
 
 # flags for the "compiler" for the game
 PY-CC-FLAGS=--clean --onefile --strip --log-level=WARN --specpath $(TMP-DIR)
+PY-CC-ADD-DATA=--add-data '$(IMAGES-SRC):$(IMAGES-DEST)' --add-data '$(SOUNDS-SRC):$(SOUNDS-DEST)'
 
 
 ###########
@@ -63,7 +69,7 @@ default:
 	( \
 	  $(ACTIVATE-VIRTUALENV) ; \
 	  $(BUILD-INFO-CC) --output=$(BUILD-INFO-FILE) ; \
-	  $(PY-CC) $(PY-CC-FLAGS) --workpath=$(TMP-DIR) --distpath=. --name $(NAME) $(SRC-FILE) ; \
+	  $(PY-CC) $(PY-CC-FLAGS) $(PY-CC-ADD-DATA) --distpath=$(BIN-DIR) --name $(NAME) $(SRC-FILE) ; \
 	  $(DEACTIVATE-VIRTUALENV) ; \
 	)
 
