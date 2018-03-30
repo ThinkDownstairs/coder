@@ -31,7 +31,7 @@ class Player(object):
                 animations.Surfaces.VIM,
                 animations.Surfaces.VSCODE]))
         else:
-            self._progger = animations.Player(editor)
+            self._progger = editor
         self._status = status_
         self._sound = globals_.get_sound()
         self._pos = (consts.SCREEN_W // 2, consts.SCREEN_H // 2)
@@ -46,7 +46,7 @@ class Player(object):
                 animations.Surfaces.VIM,
                 animations.Surfaces.VSCODE]))
         else:
-            self._progger = animations.Player(editor)
+            self._progger = editor
         self._pos = (consts.SCREEN_W // 2, consts.SCREEN_H // 2)
 
     def set_pos(self, pos: Tuple[int, int]) -> None:

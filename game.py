@@ -15,6 +15,7 @@ import sound
 import highscore
 import datetime
 import quit_
+import chooser
 
 
 class Game(state_manager.State):
@@ -25,7 +26,7 @@ class Game(state_manager.State):
         self._go_manager = globals_.get_manager()
         self._sound = globals_.get_sound() # type: sound.Sound
         self._status = status.Status()
-        self._player = player.Player(self._status) # The one who shoots code snippets
+        self._player = player.Player(self._status, chooser.chosen_editor)
         self.mouse_pos = (0, 0)
         self._w, self._h = pygame.display.get_surface().get_size()
         self._next_bug_count = 0 # type: int
@@ -93,5 +94,5 @@ class Game(state_manager.State):
         if prev_ == menu.Menu:
             self._go_manager.clear_objects()
             self._status.reset()
-            self._player.reset()
+            self._player.reset(chooser.chosen_editor)
 
