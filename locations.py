@@ -24,3 +24,5 @@ def user(filename: str):
         os.makedirs(directory)
     return os.path.join(directory, filename)
 
+def font(filename: str):
+    return os.path.join(get_root(), 'fonts', filename)

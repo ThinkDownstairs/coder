@@ -35,8 +35,12 @@ TMP-DIR=tmp
 
 IMAGES-SRC=images/*.png
 IMAGES-DEST=images
+
 SOUNDS-SRC=sounds/*.ogg
 SOUNDS-DEST=sounds
+
+FONTS-SRC=fonts/*.ttf
+FONTS-DEST=fonts
 
 # the build info file
 BUILD-INFO-FILE=build_info.py
@@ -52,8 +56,8 @@ ACTIVATE-VIRTUALENV=. $(VIRTUALENV)/bin/activate
 DEACTIVATE-VIRTUALENV=deactivate
 
 # flags for the "compiler" for the game
-PY-CC-FLAGS=--clean --onefile --strip --log-level=WARN --specpath $(TMP-DIR)
-PY-CC-ADD-DATA=--add-data '$(IMAGES-SRC):$(IMAGES-DEST)' --add-data '$(SOUNDS-SRC):$(SOUNDS-DEST)'
+PY-CC-FLAGS=--clean --onefile --strip --log-level=WARN
+PY-CC-ADD-DATA=--add-data '$(IMAGES-SRC):$(IMAGES-DEST)' --add-data '$(SOUNDS-SRC):$(SOUNDS-DEST)' --add-data '$(FONTS-SRC):$(FONTS-DEST)'
 
 
 ###########

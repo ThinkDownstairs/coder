@@ -5,6 +5,7 @@ import consts
 import color
 import random
 import animations
+import locations
 
 SPACING = 5
 START_MAX_HEALTH = 3
@@ -17,7 +18,7 @@ class Status(object):
         self._next_level = consts.LEVEL_1_POINTS
         self._points = 0 #type: int
         self._health = 3 # type: int
-        self._font = pygame.font.Font('DejaVuSansMono.ttf', 18)
+        self._font = pygame.font.Font(locations.font('DejaVuSansMono.ttf'), 18)
         self._dirty = True
         self._surface = None
         self._coffees = [animations.Coffee() for _ in range(START_MAX_HEALTH)]

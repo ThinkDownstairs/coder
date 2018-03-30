@@ -3,6 +3,7 @@ from typing import List
 
 import pygame
 import color
+import locations
 
 from collections import namedtuple
 import random
@@ -77,7 +78,7 @@ class Matrix(object):
 
     def _init_surfaces(self):
         CHARS = '#+!{}[]&%$?' + ''.join(map(chr, range(ord('a'), ord('z')))) + ''.join(map(chr, range(ord('A'), ord('Z'))))
-        font = pygame.font.Font('DejaVuSansMono.ttf', 12)
+        font = pygame.font.Font(locations.font('DejaVuSansMono.ttf'), 12)
         surface = font.render(CHARS, True, (70, 150, 25), None).convert_alpha()
         width = surface.get_width() // len(CHARS)
         height = surface.get_height()

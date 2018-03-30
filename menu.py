@@ -6,6 +6,7 @@ import background
 import sound
 import quit_
 import howto
+import locations
 
 import pygame
 import consts
@@ -67,8 +68,8 @@ class Menu(state_manager.State):
         self._mouse = (consts.SCREEN_W + 1, consts.SCREEN_H + 1)
         self._idx = 0
         self._background = None
-        self._font = pygame.font.Font('DejaVuSansMono.ttf', 24)
-        self._font_selected = pygame.font.Font('DejaVuSansMono-Bold.ttf', 28)
+        self._font = pygame.font.Font(locations.font('DejaVuSansMono.ttf'), 24)
+        self._font_selected = pygame.font.Font(locations.font('DejaVuSansMono-Bold.ttf'), 28)
         self._sound = sound.Sound()
 
     def add(self, menu_entry: MenuEntry):

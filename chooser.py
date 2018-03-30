@@ -6,6 +6,7 @@ import animations
 import quit_
 import menu
 import consts
+import locations
 
 
 LEFT = 25
@@ -120,7 +121,7 @@ class Chooser(state_manager.State):
         super().__init__()
         self._idx = 0
         self._mouse = (consts.SCREEN_W + 1, consts.SCREEN_H + 1)
-        self._font = pygame.font.Font('DejaVuSansMono.ttf', 16)
+        self._font = pygame.font.Font(locations.font('DejaVuSansMono.ttf'), 16)
         self._texts = [
             self._text(ATOM_TEXT),
             self._text(EMACS_TEXT),

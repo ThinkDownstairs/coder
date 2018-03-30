@@ -23,12 +23,12 @@ class Highscore(state_manager.State):
         self._count = 0
         self._new_entry = new_entry
         self._input_str = None if new_entry is None else ''
-        self._input_font = pygame.font.Font('DejaVuSansMono.ttf', 24)
+        self._input_font = pygame.font.Font(locations.font('DejaVuSansMono.ttf'), 24)
         self._input_surface = None
         self._count_surface = None
         self._new_points_surface = None
-        self._entry_font = pygame.font.Font('DejaVuSansMono.ttf', 20)
-        self._new_entry_font = pygame.font.Font('DejaVuSansMono-Bold.ttf', 20)
+        self._entry_font = pygame.font.Font(locations.font('DejaVuSansMono.ttf'), 20)
+        self._new_entry_font = pygame.font.Font(locations.font('DejaVuSansMono-Bold.ttf'), 20)
         self._entry_surfaces = None
         self._background = None
         self._filename = locations.user('highscore.dat')

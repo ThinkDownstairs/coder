@@ -3,3 +3,4 @@ venv/
 build_info.py
 coder
 tmp/
+coder.spec

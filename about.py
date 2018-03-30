@@ -1,6 +1,7 @@
 
 import state_manager
 import background
+import locations
 
 import menu
 
@@ -88,7 +89,7 @@ class About(state_manager.State):
         self._y = None
 
     def _render_surface(self):
-        font = pygame.font.Font('DejaVuSansMono.ttf', 20)
+        font = pygame.font.Font(locations.font('DejaVuSansMono.ttf'), 20)
         top = 0
         line_height = int(font.get_height() * 1.3)
         self._surface = pygame.Surface((consts.SCREEN_W, line_height * (len(ABOUT) + 2)), pygame.SRCALPHA, None)

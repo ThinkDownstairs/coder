@@ -16,6 +16,7 @@ import highscore
 import datetime
 import quit_
 import chooser
+import locations
 
 
 class Game(state_manager.State):
@@ -33,7 +34,7 @@ class Game(state_manager.State):
         self._next_exception_count = 0 # type: int
         self._delta = 0 # type: int
         self._fps = 0 # type: float
-        self._fps_font = pygame.font.Font('DejaVuSansMono.ttf', 16)
+        self._fps_font = pygame.font.Font(locations.font('DejaVuSansMono.ttf'), 16)
 
 
     def render(self) -> None:
