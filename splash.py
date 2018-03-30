@@ -11,6 +11,7 @@ import quit_
 import about
 import consts
 import locations
+import chooser
 
 import pygame
 
@@ -71,13 +72,15 @@ class Splash(state_manager.State):
                     return
             else:
                 m = menu.Menu()
-                m.add(menu.MenuEntry('Start', game.Game))
                 m.add(menu.MenuEntry('HowTo', howto.HowTo))
+                m.add(menu.MenuEntry('Editors', chooser.Chooser))
+                m.add(menu.MenuEntry('Start', game.Game))
                 m.add(menu.MenuEntry('Highscore', highscore.Highscore))
                 m.add(menu.MenuEntry('About', about.About))
                 m.add(menu.MenuEntry('Quit', quit_.Quit))
                 self.state_manager.add_state(m)
                 self.state_manager.add_state(howto.HowTo())
+                self.state_manager.add_state(chooser.Chooser())
                 self.state_manager.add_state(highscore.Highscore())
                 self.state_manager.add_state(game.Game())
                 self.state_manager.add_state(about.About())

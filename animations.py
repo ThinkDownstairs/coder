@@ -4,6 +4,7 @@ from enum import auto
 import os
 
 import pygame
+import random
 
 import animation
 import locations
@@ -17,6 +18,7 @@ class Surfaces(enum.Enum):
     INTELLIJ = auto()
     NANO = auto()
     VSCODE = auto()
+    RANDOM = auto()
 
     BUG_RED_1 = auto()
     BUG_RED_2 = auto()
@@ -63,6 +65,7 @@ class Surfaces(enum.Enum):
         elif self == Surfaces.INTELLIJ: fn = 'intellij.png'
         elif self == Surfaces.NANO: fn = 'nano.png'
         elif self == Surfaces.VSCODE: fn = 'vscode.png'
+        elif self == Surfaces.RANDOM: fn = 'random-editor.png'
         elif self == Surfaces.BUG_RED_1: fn = 'bug-red-1.png'
         elif self == Surfaces.BUG_RED_2: fn = 'bug-red-2.png'
         elif self == Surfaces.BUG_GREEN_1: fn = 'bug-green-1.png'
@@ -109,6 +112,12 @@ class Surfaces(enum.Enum):
 class Player(animation.Animation):
     def __init__(self, player_type: Surfaces):
         super().__init__(player_type.get_surface(), 1, 1, True)
+
+class RandomEditor(animation.Animation):
+    def __init__(self):
+        super().__init__(Surfaces.RANDOM.get_surface(), 6, 6, False)
+
+
 
 class Bug(animation.Animation):
     def __init__(self, bug_type: Surfaces):
