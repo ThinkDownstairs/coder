@@ -2,15 +2,7 @@
 import os
 
 import enum
-try:
-    from enum import auto
-except:
-    _my_auto_id = 0
-    def auto():
-        global
-        i = _my_auto_id
-        _my_auto_id += 1
-        return i
+from enum import auto
 
 import pygame
 import locations

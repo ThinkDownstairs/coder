@@ -13,13 +13,13 @@ SPEED = 0.1
 
 ABOUT = [
     '',
-    r'    ____          _            ',
-    r'   / ___|___   __| | ___ _ __  ',
-    r"  | |   / _ \ / _` |/ _ \ '__| ",
-    r'  | |__| (_) | (_| |  __/ |    ',
-    r'   \____\___/ \__,_|\___|_|    ',
+    r'   ____          _            ',
+    r'  / ___|___   __| | ___ _ __  ',
+    r" | |   / _ \ / _` |/ _ \ '__| ",
+    r' | |__| (_) | (_| |  __/ |    ',
+    r'  \____\___/ \__,_|\___|_|    ',
     '',
-    'a game for the MetaGameJam 17-31 March 2018',
+    'a game for the #MetaGameJam 17-31 March 2018',
     '',
     '',
     '~~~~~~~~~~~~',
@@ -57,6 +57,7 @@ ABOUT = [
     'python',
     'pyinstaller',
     'pygame',
+    'qemu',
     '~~~~~~~~~~~~',
     '',
     '',
@@ -91,7 +92,7 @@ class About(state_manager.State):
     def _render_surface(self):
         font = pygame.font.Font(locations.font('DejaVuSansMono.ttf'), 20)
         top = 0
-        line_height = int(font.get_height() * 1.3)
+        line_height = int(font.get_height() * 1.2)
         self._surface = pygame.Surface((consts.SCREEN_W, line_height * (len(ABOUT) + 2)), pygame.SRCALPHA, None)
         for txt in ABOUT:
             surf = font.render(txt, True, (255, 255, 255), None)
@@ -109,6 +110,10 @@ class About(state_manager.State):
                 self.state_manager.change_state(quit_.Quit)
             elif event.type == pygame.KEYDOWN:
                 self.state_manager.change_state(menu.Menu)
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                l, m, r = pygame.mouse.get_pressed()
+                if l == 1:
+                    self._skip = True
 
 
     def update(self, delta: int, fps: float) -> None:
