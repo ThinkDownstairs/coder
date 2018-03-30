@@ -5,6 +5,7 @@ import state_manager
 import background
 import sound
 import quit_
+import howto
 
 import pygame
 import consts
@@ -150,10 +151,12 @@ if __name__ == '__main__':
     sm = state_manager.StateManager(init())
     m = Menu()
     m.add(MenuEntry('Start', game.Game))
+    m.add(MenuEntry('HowTo', howto.HowTo))
     m.add(MenuEntry('About', about.About))
     m.add(MenuEntry('Quit', None))
     sm.add_state(m)
     sm.add_state(game.Game())
+    sm.add_state(howto.HowTo())
     sm.add_state(about.About())
     sm.change_state(Menu)
     sm.main_loop()
