@@ -8,6 +8,13 @@ import menu
 import consts
 
 
+LEFT = 25
+TOP = 5
+STEP = 20
+WIDTH = 90
+HEIGHT = 90
+
+
 chosen_editor = None
 
 class Chooser(state_manager.State):
@@ -24,11 +31,26 @@ class Chooser(state_manager.State):
             animations.Player(animations.Surfaces.VSCODE),
             animations.RandomEditor()]
 
+    def _select(self, clicked: bool):
+        global chosen_editor
+        x, y = self._mouse
+        if TOP < y < (HEIGHT + TOP):
+            for i in range(len(self._animations)):
+                if (LEFT + i * (WIDTH + STEP)) < x < ((LEFT + i * (WIDTH + STEP)) + WIDTH):
+                    self._idx = i
+                    if clicked:
+                        if isinstance(self._animations[self._idx], animations.Player):
+                            chosen_editor = self._animations[self._idx]
+                        else:
+                            chosen_editor = None
+                        self.state_manager.change_state(menu.Menu)
+                    break
+
 
     def render(self) -> None:
-        left = 25
-        top = 5
-        step = 20
+        left = LEFT
+        top = TOP
+        step = STEP
         self.screen.fill((0, 0, 0))
         for i in range(len(self._animations)):
             s = self._animations[i].surface
@@ -64,11 +86,10 @@ class Chooser(state_manager.State):
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 l, m, r = pygame.mouse.get_pressed()
                 if l == 1:
-                    self._skip = True
+                    self._select(True)
             elif event.type == pygame.MOUSEMOTION:
                 self._mouse = event.pos
-                for i in range(len(self._animations)):
-                    pass
+                self._select(False)
 
 
     def update(self, delta: int, fps: float) -> None:
@@ -79,6 +100,7 @@ class Chooser(state_manager.State):
         pass
 
     def enter(self, prev_: state_manager.StateType) -> None:
+        global chosen_editor
         if chosen_editor is None:
             self._idx = len(self._animations) - 1
         else:
