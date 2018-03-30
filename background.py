@@ -2,6 +2,7 @@
 from typing import List
 
 import pygame
+import color
 
 from collections import namedtuple
 import random
@@ -97,7 +98,7 @@ class Matrix(object):
             c.y += (c.v * delta)
 
     def render(self, target: pygame.Surface) -> None:
-        target.fill((30, 30, 30))
+        target.fill(color.GRAY12)
         for c in self._chars:
             target.blit(c.surface, (c.x, int(c.y)))
 
