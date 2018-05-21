@@ -56,6 +56,7 @@ class Surfaces(enum.Enum):
     COFFEE_BROKEN = auto()
 
     EXPLOSION = auto()
+    EFFECT = auto()
 
 
     def get_filename(self):
@@ -97,6 +98,7 @@ class Surfaces(enum.Enum):
         elif self == Surfaces.COFFEE: fn = 'coffee.png'
         elif self == Surfaces.COFFEE_BROKEN: fn = 'coffee-broken.png'
         elif self == Surfaces.EXPLOSION: fn = 'bug-explode.png'
+        elif self == Surfaces.EFFECT: fn = 'effect.png'
         else: raise Exception('Unknown Surface Type: {}'.format(str(self)))
         return locations.image(fn)
 
@@ -151,5 +153,9 @@ class Explosion(animation.Animation):
     def __init__(self):
         super().__init__(Surfaces.EXPLOSION.get_surface(), 5, 8, True)
 
+
+class Effect(animation.Animation):
+    def __init__(self):
+        super().__init__(Surfaces.EFFECT.get_surface(), 5, 6, False)
 
 

@@ -7,6 +7,7 @@ import animations
 from typing import Tuple, List
 import random
 import status
+import effect
 
 class Excepties(game_objects.GameObject):
     def __init__(self, status_: status.Status) -> None:
@@ -30,16 +31,14 @@ class Excepties(game_objects.GameObject):
 
     def render(self, target) -> None:
         self._animation.render(target, self._x, self._y)
-        #self._rect = pygame.Rect(int(self._x), int(self._y), consts.EXCEPTIE_W, consts.EXCEPTIE_H)
-        #pygame.draw.rect(screen, self._col, self._rect, 0)
 
-    def update(self, delta) -> bool:
+    def update(self, delta) -> None:
         self._x += (delta * self._speed)
         self._animation.update(delta)
         if (self._x + self._width) > consts.SCREEN_W:
             self.delete()
             self._status.dec_health()
-        #return (bool(self._x < 0) or self._is_catched)
+            effect.Effect(self.pos, (300, 10))
 
     def _get_surface(self) -> pygame.Surface:
         return self._animation.surface
